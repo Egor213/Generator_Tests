@@ -1,35 +1,35 @@
-# FILE: src/prompt_system/prompt_engine.py
+# src/managers/prompt_engine.py
 import logging
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader, StrictUndefined, Template, select_autoescape
+from jinja2 import Environment, FileSystemLoader, TemplateNotFound
 
 logger = logging.getLogger(__name__)
 
 
 class PromptEngine:
-    """Генератор промптов на основе Jinja2 шаблонов"""
+    def __init__(self, templates_dir: str = None):
+        if templates_dir is None:
+            templates_dir = Path(__file__).parent.parent / "prompts"
+        else:
+            templates_dir = Path(templates_dir)
 
-    def __init__(self, templates_dir: str | Path = "./src/prompts"):
-        self.templates_dir = Path(templates_dir)
-
-        if not self.templates_dir.exists():
+        if not templates_dir.exists():
             raise FileNotFoundError(f"Папка с шаблонами не найдена: {templates_dir}")
 
         self.env = Environment(
-            loader=FileSystemLoader(self.templates_dir),
-            autoescape=select_autoescape(),
+            loader=FileSystemLoader(str(templates_dir)),
             trim_blocks=True,
             lstrip_blocks=True,
-            undefined=StrictUndefined,
         )
+        logger.debug(f"PromptEngine инициализирован: {templates_dir}")
 
     def render(self, template_name: str, **kwargs) -> str:
         """Рендерит шаблон с переданными параметрами"""
         template = self._load_template(template_name)
         return template.render(**kwargs)
 
-    def _load_template(self, template_name: str) -> Template:
+    def _load_template(self, template_name: str):
         """Загружает шаблон по имени"""
         try:
             template = self.env.get_template(template_name)
