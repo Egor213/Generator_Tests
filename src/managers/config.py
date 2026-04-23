@@ -1,17 +1,22 @@
-# FILE: src/manager/config.py
+# FILE: src/managers/config.py
 import logging
 from pathlib import Path
-from typing import ClassVar
+from typing import ClassVar, Optional
 
 from pydantic import BaseModel, Field, field_validator
-from pydantic_settings import BaseSettings, DotEnvSettingsSource, YamlConfigSettingsSource
+from pydantic_settings import (
+    BaseSettings,
+    DotEnvSettingsSource,
+    PydanticBaseSettingsSource,
+    YamlConfigSettingsSource,
+)
 
 from src.app.logger import LogLevel, LogOutput
 from src.entity.llm import LLMProvider
 
 
 class AIConfig(BaseModel):
-    llm_provider: LLMProvider = "openai"
+    llm_provider: LLMProvider = LLMProvider.OPENAI
     model: str
     temperature: float = 0.1
     max_tokens: int = 40000
@@ -67,31 +72,49 @@ class LoggerConfig(BaseModel):
 
 
 class App(BaseModel):
-    max_async_workers: int = 1
+    max_async_workers: int = 5
 
 
 class Config(BaseSettings):
     app: App
     ai: AIConfig
     logger: LoggerConfig
-    ai_api_key: str | None = None
+    ai_api_key: str
+
+    _config_file_path: ClassVar[Path] = Path("config/config.yaml")
+    _env_file_path: ClassVar[Path] = Path("config/.env")
 
     def __init__(
         self,
-        config_file_path: Path | None = None,
-        _env_file_path: Path | None = None,
+        config_file_path: Optional[Path] = None,
+        env_file_path: Optional[Path] = None,
         **data,
     ):
-        self._config_file_path = config_file_path or Path("config/config.yaml")
-        self._env_file_path = _env_file_path or Path("config/.env")
+        cls = type(self)
+        if config_file_path is not None:
+            cls._config_file_path = Path(config_file_path)
+        if env_file_path is not None:
+            cls._env_file_path = Path(env_file_path)
+
         super().__init__(**data)
 
-    def settings_customise_sources(self, settings_cls, **kwargs):
+    @classmethod
+    def settings_customise_sources(
+        cls,
+        settings_cls: type[BaseSettings],
+        init_settings: PydanticBaseSettingsSource,
+        env_settings: PydanticBaseSettingsSource,
+        dotenv_settings: PydanticBaseSettingsSource,
+        file_secret_settings: PydanticBaseSettingsSource,
+    ) -> tuple[PydanticBaseSettingsSource, ...]:
         return (
+            init_settings,
             DotEnvSettingsSource(
                 settings_cls,
-                env_file=self._env_file_path,
+                env_file=cls._env_file_path,
                 env_file_encoding="utf-8",
             ),
-            YamlConfigSettingsSource(settings_cls, self._config_file_path),
+            YamlConfigSettingsSource(settings_cls, cls._config_file_path),
+            env_settings,
+            file_secret_settings,
         )
