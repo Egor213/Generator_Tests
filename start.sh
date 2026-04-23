@@ -2,7 +2,7 @@
 # Необязательные параметры, удалятся скоро
 export PYTHONDONTWRITEBYTECODE=1
 export TEST=1
-export AI_API_KEY=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
+# export AI_API_KEY=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
 isort ./src
 black -l 100 ./src
 

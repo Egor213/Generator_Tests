@@ -4,3 +4,350 @@
 2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
 2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
 2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:49:26 - PipelineOrchestrator - DEBUG - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:49:26 - PipelineOrchestrator - DEBUG - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:49:26 - PipelineOrchestrator - DEBUG - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:49:26 - PipelineOrchestrator - DEBUG - [coro_id=2445241372864 coro_name=Task-1] - Песочница создана: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71
+2026-04-24 00:49:26 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - Создание venv: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71\.venv
+2026-04-24 00:49:35 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+2026-04-24 00:49:43 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip upgrade] Зависимости установлены
+2026-04-24 00:49:43 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip install -r requirements.txt] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71\.venv\Scripts\python.exe -m pip install -r C:\Task_project\requirements.txt --quiet
+2026-04-24 00:50:35 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip install -r requirements.txt] Зависимости установлены
+2026-04-24 00:50:35 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov coverage --quiet
+2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip install pytest] Зависимости установлены
+2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445242192064 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445242192064 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445242192064 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 00:50:39 - PipelineOrchestrator - DEBUG - [coro_id=2445242192064 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 00:52:40 - PipelineOrchestrator - DEBUG - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:52:40 - PipelineOrchestrator - DEBUG - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:52:40 - PipelineOrchestrator - DEBUG - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:52:40 - PipelineOrchestrator - DEBUG - [coro_id=1410890027200 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 00:52:40 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - Создание venv: ..\Test_dir\.venv
+2026-04-24 00:52:48 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip upgrade] Выполняю: ..\Test_dir\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+2026-04-24 00:52:56 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip upgrade] Зависимости установлены
+2026-04-24 00:52:56 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip install -r requirements.txt] Выполняю: ..\Test_dir\.venv\Scripts\python.exe -m pip install -r C:\Task_project\requirements.txt --quiet
+2026-04-24 00:53:42 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip install -r requirements.txt] Зависимости установлены
+2026-04-24 00:53:42 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip install pytest] Выполняю: ..\Test_dir\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov coverage --quiet
+2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip install pytest] Зависимости установлены
+2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890845056 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890845056 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890845056 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 00:53:46 - PipelineOrchestrator - DEBUG - [coro_id=1410890845056 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559108272320 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559109091520 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559109091520 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559109091520 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559109091520 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 00:56:01 - PipelineOrchestrator - DEBUG - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:56:01 - PipelineOrchestrator - DEBUG - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:56:01 - PipelineOrchestrator - DEBUG - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:56:02 - PipelineOrchestrator - DEBUG - [coro_id=1556025331904 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556026151104 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556026151104 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556026151104 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 00:56:02 - PipelineOrchestrator - DEBUG - [coro_id=1556026151104 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456596406464 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456597225664 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456597225664 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456597225664 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456597225664 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117003968 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117823168 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117823168 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117823168 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117823168 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015204954304 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015205773504 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015205773504 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015205773504 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015205773504 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882233389248 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882234208448 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882234208448 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882234208448 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882234208448 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 01:00:58 - PipelineOrchestrator - DEBUG - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 01:00:58 - PipelineOrchestrator - DEBUG - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 01:00:58 - PipelineOrchestrator - DEBUG - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 01:00:58 - PipelineOrchestrator - DEBUG - [coro_id=2155987833024 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 01:00:58 - PipelineOrchestrator - INFO - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 01:00:58 - PipelineOrchestrator - INFO - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 01:00:59 - PipelineOrchestrator - INFO - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 01:00:59 - PipelineOrchestrator - INFO - [coro_id=2155988652224 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 01:00:59 - PipelineOrchestrator - INFO - [coro_id=2155988652224 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 01:00:59 - PipelineOrchestrator - INFO - [coro_id=2155988652224 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 01:00:59 - PipelineOrchestrator - DEBUG - [coro_id=2155988652224 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 01:01:14 - PipelineOrchestrator - DEBUG - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 01:01:14 - PipelineOrchestrator - DEBUG - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 01:01:14 - PipelineOrchestrator - DEBUG - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 01:01:15 - PipelineOrchestrator - DEBUG - [coro_id=1536609833152 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 01:01:15 - PipelineOrchestrator - DEBUG - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 01:01:23 - PipelineOrchestrator - WARNING - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Ошибка извлечения кода (попытка 1): OpenAI API error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2026-04-24 01:01:25 - PipelineOrchestrator - DEBUG - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 2/3
+2026-04-24 01:01:32 - PipelineOrchestrator - WARNING - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Ошибка извлечения кода (попытка 2): OpenAI API error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2026-04-24 01:01:34 - PipelineOrchestrator - DEBUG - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 3/3
+2026-04-24 01:01:42 - PipelineOrchestrator - WARNING - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Ошибка извлечения кода (попытка 3): OpenAI API error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2026-04-24 01:01:44 - PipelineOrchestrator - ERROR - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Не удалось извлечь код тестов из ответа LLM
+2026-04-24 01:01:44 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 01:01:44 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 2/3
+2026-04-24 01:01:44 - PipelineOrchestrator - DEBUG - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 01:02:01 - PipelineOrchestrator - DEBUG - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 01:02:01 - PipelineOrchestrator - DEBUG - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 01:02:01 - PipelineOrchestrator - DEBUG - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 01:02:01 - PipelineOrchestrator - DEBUG - [coro_id=2845714501824 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 01:02:01 - PipelineOrchestrator - INFO - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 01:02:01 - PipelineOrchestrator - INFO - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 01:02:02 - PipelineOrchestrator - INFO - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 01:02:02 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 01:02:02 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 01:02:02 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 01:02:02 - PipelineOrchestrator - DEBUG - [coro_id=2845715321024 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-24 01:02:12 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [pip install pytest] Выполняю: ..\Test_dir\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov coverage --quiet
+2026-04-24 01:02:13 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [pip install pytest] Зависимости установлены
+2026-04-24 01:02:14 - PipelineOrchestrator - DEBUG - [coro_id=2845715321024 coro_name=Task-2] - [REFINE] TEST CODE 
+import pytest
+from unittest.mock import MagicMock, patch
+from service.task import TaskService
+from entity.entity import Task
+
+
+class TestTaskServiceCreateTask:
+    """Тесты для метода TaskService.create_task"""
+
+    @pytest.fixture
+    def task_service(self):
+        """Создает экземпляр TaskService для тестов."""
+        return TaskService()
+
+    @pytest.mark.parametrize(
+        "description, priority",
+        [
+            ("Test task", 1),
+            ("Another task", 3),
+            ("Important task", 5),
+            ("A" * 100, 2),
+        ],
+    )
+    def test_create_task_valid_inputs_returns_correct_message(
+        self, task_service, description, priority
+    ):
+        """Проверяет, что метод возвращает правильное сообщение при валидных входных данных."""
+        result = task_service.create_task(description, priority)
+        assert result == f"Task '{description}' created with priority {priority}"
+
+    @pytest.mark.parametrize(
+        "invalid_description",
+        [
+            "",
+            "   ",
+        ],
+    )
+    def test_create_task_empty_description_raises_value_error(
+        self, task_service, invalid_description
+    ):
+        """Проверяет, что метод выбрасывает ValueError при пустом описании."""
+        with pytest.raises(ValueError, match="Description cannot be empty"):
+            task_service.create_task(invalid_description, 3)
+
+    @pytest.mark.parametrize(
+        "invalid_priority",
+        [
+            0,
+            -1,
+            6,
+            10,
+        ],
+    )
+    def test_create_task_invalid_priority_raises_value_error(
+        self, task_service, invalid_priority
+    ):
+        """Проверяет, что метод выбрасывает ValueError при некорректном приоритете."""
+        with pytest.raises(ValueError, match="Priority must be between 1 and 5"):
+            task_service.create_task("Valid task", invalid_priority)
+
+    def test_create_task_calls_manager_add_task_with_correct_arguments(
+        self, task_service
+    ):
+        """Проверяет, что метод вызывает add_task у TaskManager с правильными аргументами."""
+        description = "Test task"
+        priority = 3
+        with patch.object(task_service.manager, "add_task") as mock_add_task:
+            task_service.create_task(description, priority)
+            mock_add_task.assert_called_once_with(description, priority)
+
+    def test_create_task_creates_and_modifies_internal_task_object(self, task_service):
+        """Проверяет, что метод создает внутренний объект Task и вызывает его методы."""
+        description = "Test task"
+        priority = 3
+        with patch("service.task.Task") as MockTask:
+            mock_task_instance = MagicMock()
+            MockTask.return_value = mock_task_instance
+            task_service.create_task(description, priority)
+            MockTask.assert_called_once_with("descr", 1)
+            mock_task_instance.mark_completed.assert_called_once()
+            mock_task_instance.test_method.assert_called_once()
+
+    def test_create_task_with_explicit_none_task_argument_raises_type_error(
+        self, task_service
+    ):
+        """Проверяет, что передача task=None приводит к TypeError из-за отсутствующего аргумента test."""
+        description = "Test task"
+        priority = 3
+        with pytest.raises(TypeError, match="missing 1 required positional argument: 'test'"):
+            task_service.create_task(description, priority, task=None)
+
+    def test_create_task_with_faulty_task_object_raises_type_error(
+        self, task_service
+    ):
+        """Проверяет, что передача объекта task с некорректным mark_completed приводит к TypeError."""
+        class FaultyTask:
+            def mark_completed(self):
+                raise RuntimeError("Mark completed failed")
+
+        description = "Test task"
+        priority = 3
+        mock_task = FaultyTask()
+        with pytest.raises(TypeError, match="missing 1 required positional argument: 'test'"):
+            task_service.create_task(description, priority, task=mock_task)
+
+    def test_create_task_with_minimal_task_object_raises_type_error(
+        self, task_service
+    ):
+        """Проверяет, что передача объекта task без необходимых методов приводит к TypeError."""
+        class MinimalTask:
+            pass
+
+        description = "Test task"
+        priority = 3
+        mock_task = MinimalTask()
+        with pytest.raises(TypeError, match="missing 1 required positional argument: 'test'"):
+            task_service.create_task(description, priority, task=mock_task)
+2026-04-24 01:02:14 - PipelineOrchestrator - DEBUG - [coro_id=2845715321024 coro_name=Task-2] - [REFINE] FEEDBACK 
+============================= test session starts =============================
+collecting ... collected 15 items
+
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Test task-1] FAILED [  6%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Another task-3] FAILED [ 13%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Important task-5] FAILED [ 20%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-2] FAILED [ 26%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_empty_description_raises_value_error[] PASSED [ 33%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_empty_description_raises_value_error[   ] FAILED [ 40%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_invalid_priority_raises_value_error[0] PASSED [ 46%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_invalid_priority_raises_value_error[-1] PASSED [ 53%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_invalid_priority_raises_value_error[6] PASSED [ 60%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_invalid_priority_raises_value_error[10] PASSED [ 66%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_calls_manager_add_task_with_correct_arguments FAILED [ 73%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_creates_and_modifies_internal_task_object PASSED [ 80%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_with_explicit_none_task_argument_raises_type_error PASSED [ 86%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_with_faulty_task_object_raises_type_error PASSED [ 93%]
+..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_with_minimal_task_object_raises_type_error PASSED [100%]
+
+================================== FAILURES ===================================
+_ TestTaskServiceCreateTask.test_create_task_valid_inputs_returns_correct_message[Test task-1] _
+C:\Test_dir\test_task.py:28: in test_create_task_valid_inputs_returns_correct_message
+    result = task_service.create_task(description, priority)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service\task.py:19: in create_task
+    a.test_method()
+E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
+_ TestTaskServiceCreateTask.test_create_task_valid_inputs_returns_correct_message[Another task-3] _
+C:\Test_dir\test_task.py:28: in test_create_task_valid_inputs_returns_correct_message
+    result = task_service.create_task(description, priority)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service\task.py:19: in create_task
+    a.test_method()
+E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
+_ TestTaskServiceCreateTask.test_create_task_valid_inputs_returns_correct_message[Important task-5] _
+C:\Test_dir\test_task.py:28: in test_create_task_valid_inputs_returns_correct_message
+    result = task_service.create_task(description, priority)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service\task.py:19: in create_task
+    a.test_method()
+E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
+_ TestTaskServiceCreateTask.test_create_task_valid_inputs_returns_correct_message[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-2] _
+C:\Test_dir\test_task.py:28: in test_create_task_valid_inputs_returns_correct_message
+    result = task_service.create_task(description, priority)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+service\task.py:19: in create_task
+    a.test_method()
+E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
+_ TestTaskServiceCreateTask.test_create_task_empty_description_raises_value_error[   ] _
+C:\Test_dir\test_task.py:43: in test_create_task_empty_description_raises_value_error
+    task_service.create_task(invalid_description, 3)
+service\task.py:19: in create_task
+    a.test_method()
+E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
+_ TestTaskServiceCreateTask.test_create_task_calls_manager_add_task_with_correct_arguments _
+C:\Test_dir\test_task.py:68: in test_create_task_calls_manager_add_task_with_correct_arguments
+    task_service.create_task(description, priority)
+service\task.py:19: in create_task
+    a.test_method()
+E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
+=========================== short test summary info ===========================
+FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Test task-1]
+FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Another task-3]
+FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Important task-5]
+FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-2]
+FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_empty_description_raises_value_error[   ]
+FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_calls_manager_add_task_with_correct_arguments
+========================= 6 failed, 9 passed in 0.10s =========================
+
+
+2026-04-24 01:02:14 - PipelineOrchestrator - WARNING - [coro_id=2845715321024 coro_name=Task-2] - [REFINE] Провалено 6/15, починка 1/4
+2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880056000 coro_name=Task-1] - Песочница создана: ..\Test_dir
+2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880875200 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
+2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880875200 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
+2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880875200 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
+2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880875200 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3

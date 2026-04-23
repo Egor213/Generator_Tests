@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 class PromptEngine:
     """Генератор промптов на основе Jinja2 шаблонов"""
 
-    def __init__(self, templates_dir: str | Path = "src/prompts"):
+    def __init__(self, templates_dir: str | Path = "./src/prompts"):
         self.templates_dir = Path(templates_dir)
 
         if not self.templates_dir.exists():
