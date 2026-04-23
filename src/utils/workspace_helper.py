@@ -19,15 +19,15 @@ class WorkspaceHelper:
         self.project_path = project_path
         self.logger = logger or NullLogger()
 
-        # self.sandbox_dir = Path(tempfile.mkdtemp(prefix="testgen_sandbox_"))
-        self.sandbox_dir = Path("../Test_dir")
+        self.sandbox_dir = Path(tempfile.mkdtemp(prefix="testgen_sandbox_"))
+        # self.sandbox_dir = Path("../Test_dir")
         self.logger.debug(f"Песочница создана: {self.sandbox_dir}")
 
         self.venv_dir = self.sandbox_dir / ".venv"
 
-        # self._create_venv()
-        # self._install_project_dependencies()
-        # self.ensure_pytest_installed()
+        self._create_venv()
+        self._install_project_dependencies()
+        self.ensure_pytest_installed()
 
     def _create_venv(self) -> None:
         self.logger.info(f"Создание venv: {self.venv_dir}")
@@ -50,8 +50,7 @@ class WorkspaceHelper:
             shutil.rmtree(self.sandbox_dir, ignore_errors=True)
 
     def __del__(self):
-        # self.cleanup()
-        pass
+        self.cleanup()
 
     def ensure_pytest_installed(self) -> None:
         self._run_install_cmd(
