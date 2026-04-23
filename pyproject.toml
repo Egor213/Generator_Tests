@@ -3,7 +3,7 @@ name = "generator-tests"
 version = "0.1.0"
 description = "LLM-powered pytest generator with coverage & mutation analysis"
 requires-python = ">=3.10"
-authors = [{name = "Your Name", email = "[Email5]"}]
+authors = [{name = "Egor", email = "zamok7707@gmail.com"}]
 dependencies = [
     "aiohttp>=3.9",
     "openai>=1.0",
