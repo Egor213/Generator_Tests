@@ -99,7 +99,7 @@ class PipelineOrchestrator:
         console: ConsoleManager | None = None,
         logger: logging.Logger | None = None,
     ):
-        print(f"\nДерево директории: {os.path.abspath(".")}\n")
+        print(f"\nДерево директории: {os.path.abspath('.')}\n")
         print_directory_tree(".", show_files=True, max_depth=None)
         self.logger = logger or NullLogger()
         self.console = console or ConsoleManager()
