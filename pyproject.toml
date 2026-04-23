@@ -32,4 +32,4 @@ where = ["."]
 include = ["src*"]
 
 [tool.setuptools.package-data]
-"src" = ["prompts/*.j2", "prompts/**/*.j2"]
+"src.prompts" = ["*.j2"]

@@ -148,7 +148,7 @@ class PipelineOrchestrator:
 
         if args.max_async_workers is not None:
             setattr(self.config.app, "max_async_workers", args.max_async_workers)
-        
+
         for attr, value in overrides.items():
             if value is not None:
                 setattr(self.config.ai, attr, value)

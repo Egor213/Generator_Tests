@@ -1,3 +1,6 @@
 2026-04-24 00:26:01 - PipelineOrchestrator - DEBUG - [coro_id=2296103522688 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
 2026-04-24 00:26:01 - PipelineOrchestrator - DEBUG - [coro_id=2296103522688 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
 2026-04-24 00:26:01 - PipelineOrchestrator - DEBUG - [coro_id=2296103522688 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
