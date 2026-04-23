@@ -46,7 +46,7 @@ class PipelineOrchestrator:
         self.context_manager = ContextManager(self.project_indexer)
         self.llm_client = LLMClient(config)
         self.text_parser = TextParser(self.console.args.project)
-        self.prompt_engine = PromptEngine(templates_dir="prompts")
+        self.prompt_engine = PromptEngine(templates_dir="src/prompts")
         self.path_filter = PathFilter(
             self.project_indexer,
             target_dir=getattr(self.console.args, "target_dir", None),
