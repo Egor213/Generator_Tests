@@ -1,6 +1,7 @@
 import argparse
-from pathlib import Path
 import os
+from pathlib import Path
+
 
 class ConsoleManager:
     def __init__(self):

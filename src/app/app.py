@@ -1,6 +1,7 @@
 # File path: Generator_Tests/src/app/app.py
-import os
 import asyncio
+import os
+
 from src.app.logger import get_logger
 from src.managers.config import Config
 from src.managers.console import ConsoleManager
@@ -31,7 +32,7 @@ async def main():
 
 def main_sync():
     asyncio.run(main())
-    
+
 
 if __name__ == "__main__":
     main_sync()

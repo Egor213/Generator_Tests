@@ -143,9 +143,12 @@ class PipelineOrchestrator:
             "temperature": args.temperature,
             "max_generate_retries": args.max_generate_retries,
             "max_fix_attempts": args.max_fix_attempts,
-            "max_async_workers": args.max_async_workers,
             "target_line_coverage": args.target_line_coverage,
         }
+
+        if args.max_async_workers is not None:
+            setattr(self.config.app, "max_async_workers", args.max_async_workers)
+        
         for attr, value in overrides.items():
             if value is not None:
                 setattr(self.config.ai, attr, value)

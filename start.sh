@@ -33,5 +33,5 @@ python main.py --project "../Task_project/" --target-function "service/task.py::
 
 
 
-docker run --rm -e INPUT_PROJECT="../github/workspace/Task_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
-docker run --rm -e INPUT_PROJECT="/github/workspace/test_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
+# docker run --rm -e INPUT_PROJECT="../github/workspace/Task_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
+# docker run --rm -e INPUT_PROJECT="/github/workspace/test_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
