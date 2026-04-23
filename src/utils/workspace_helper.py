@@ -75,37 +75,7 @@ class WorkspaceHelper:
             [self._venv_python, "-m", "pip", "install", "--upgrade", "pip", "--quiet"],
             label="pip upgrade",
         )
-
-        pyproject = root / "pyproject.toml"
-        if pyproject.exists():
-            if self._file_contains(pyproject, "[tool.poetry]"):
-                if shutil.which("poetry"):
-                    env = os.environ.copy()
-                    env["VIRTUAL_ENV"] = str(self.venv_dir)
-                    self._run_install_cmd(
-                        ["poetry", "install", "--no-interaction", "--no-root"],
-                        label="poetry install",
-                        extra_env=env,
-                    )
-                    return
-                self.logger.warning("poetry не найден в PATH, пробую pip")
-
-            self._run_install_cmd(
-                [self._venv_python, "-m", "pip", "install", "-e", ".", "--quiet"],
-                label="pip install -e . (pyproject.toml)",
-            )
-            return
-
-        pipfile = root / "Pipfile"
-        if pipfile.exists():
-            if shutil.which("pipenv"):
-                self._run_install_cmd(
-                    ["pipenv", "install", "--dev", "--skip-lock"],
-                    label="pipenv install",
-                )
-                return
-            self.logger.warning("pipenv не найден в PATH, ищу другие варианты")
-
+        
         req_files = sorted(root.glob("requirements*.txt"))
         if req_files:
             for req_file in req_files:
@@ -122,6 +92,37 @@ class WorkspaceHelper:
                     label=f"pip install -r {req_file.name}",
                 )
             return
+
+        pyproject = root / "pyproject.toml"
+        if pyproject.exists():
+            if self._file_contains(pyproject, "[tool.poetry]"):
+                if shutil.which("poetry"):
+                    env = os.environ.copy()
+                    env["VIRTUAL_ENV"] = str(self.venv_dir)
+                    self._run_install_cmd(
+                        ["poetry", "install", "--no-interaction", "--no-root"],
+                        label="poetry install",
+                        extra_env=env,
+                    )
+                    return
+                self.logger.warning("poetry не найден в PATH, пробую pip")
+            try:
+                self._run_install_cmd(
+                    [self._venv_python, "-m", "pip", "install", "-e", ".", "--quiet"],
+                    label="pip install -e . (pyproject.toml)",
+                )
+            except:
+                pass
+
+        pipfile = root / "Pipfile"
+        if pipfile.exists():
+            if shutil.which("pipenv"):
+                self._run_install_cmd(
+                    ["pipenv", "install", "--dev", "--skip-lock"],
+                    label="pipenv install",
+                )
+                return
+            self.logger.warning("pipenv не найден в PATH, ищу другие варианты")
 
         setup_py = root / "setup.py"
         setup_cfg = root / "setup.cfg"
