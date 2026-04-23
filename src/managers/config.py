@@ -79,7 +79,7 @@ class Config(BaseSettings):
     app: App
     ai: AIConfig
     logger: LoggerConfig
-    ai_api_key: str
+    ai_api_key: str | None = None
 
     _config_file_path: ClassVar[Path] = Path("config/config.yaml")
     _env_file_path: ClassVar[Path] = Path("config/.env")
