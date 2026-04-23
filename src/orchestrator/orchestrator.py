@@ -109,6 +109,8 @@ class PipelineOrchestrator:
         self.target_line_coverage = getattr(self.console.args, "target_line_coverage", 60)
 
         self._apply_console_args()
+        self.logger.info(f"AI Config {self.config.ai}")
+        self.logger.info(f"Console params {self.console.args}")
 
         self.project_indexer = ProjectIndexer(self.console.args.project)
         self.context_manager = ContextManager(self.project_indexer)
