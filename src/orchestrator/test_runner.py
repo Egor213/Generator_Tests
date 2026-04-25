@@ -37,15 +37,16 @@ class TestRunner:
                 pytest_args = ["-x", "--tb=no", "--no-header", "-q"]
             else:
                 pytest_args = ["-v", "--tb=short", "--no-header"]
-
+            cmd = [
+                self.workspace_helper._venv_python,
+                "-m",
+                "pytest",
+                str(test_file),
+                *pytest_args,
+            ]
+            self.logger.debug(f"{cmd}, {str(self.project_path)}")
             result = subprocess.run(
-                [
-                    self.workspace_helper._venv_python,
-                    "-m",
-                    "pytest",
-                    str(test_file),
-                    *pytest_args,
-                ],
+                cmd,
                 capture_output=True,
                 text=True,
                 timeout=self.timeout,

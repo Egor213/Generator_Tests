@@ -19,7 +19,6 @@ class AIConfig(BaseModel):
     llm_provider: LLMProvider = LLMProvider.OPENAI
     model: str
     temperature: float = 0.1
-    max_tokens: int = 40000
     base_url: str = "http://localhost:1234/v1/"
     timeout: int = 900
     max_generate_retries: int = 3
@@ -35,7 +34,6 @@ class AIConfig(BaseModel):
         return v
 
     @field_validator(
-        "max_tokens",
         "timeout",
         "max_generate_retries",
         "max_fix_attempts",

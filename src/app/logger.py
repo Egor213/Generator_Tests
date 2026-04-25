@@ -3,6 +3,7 @@ import asyncio
 import logging
 from enum import Enum
 from logging.handlers import RotatingFileHandler
+from pathlib import Path
 
 
 class CoroutineIdFilter(logging.Filter):
@@ -69,6 +70,8 @@ def get_logger(
     logger.setLevel(min(file_level, console_level))
 
     if output in (LogOutput.FILE, LogOutput.BOTH):
+        log_path = Path(log_file)
+        log_path.parent.mkdir(parents=True, exist_ok=True)
         file_handler = RotatingFileHandler(
             log_file,
             encoding="utf-8",
