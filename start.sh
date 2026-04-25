@@ -32,6 +32,8 @@ python main.py --project "../Task_project/" --target-function "service/task.py::
 # docker exec -it 6b4e5b0b6909 sh
 
 
-
-# docker run --rm -e INPUT_PROJECT="../github/workspace/Task_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
-# docker run --rm -e INPUT_PROJECT="/github/workspace/test_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
+# Для запусков через докер можно использовать эти команды
+# Только нужно сбилдить образ
+# docker build -t my-analyzer .
+# docker run --rm -e INPUT_PROJECT="../github/workspace/Task_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
+# docker run --rm -e INPUT_PROJECT="/github/workspace/test_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
