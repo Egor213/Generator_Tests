@@ -37,7 +37,7 @@ class TestAnalysisManager:
     ) -> int:
         sandbox = self.workspace_helper.sandbox_dir
         sandbox.mkdir(parents=True, exist_ok=True)
-        self.workspace_helper.ensure_pytest_installed()
+        # self.workspace_helper.ensure_pytest_installed()
 
         test_file = sandbox / test_filename
         test_file.write_text(test_code, encoding="utf-8")

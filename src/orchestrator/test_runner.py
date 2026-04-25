@@ -27,7 +27,7 @@ class TestRunner:
         fast: bool = False,
     ) -> tuple[bool, str]:
         self.workspace_helper.sandbox_dir.mkdir(parents=True, exist_ok=True)
-        self.workspace_helper.ensure_pytest_installed()
+        # self.workspace_helper.ensure_pytest_installed()
         test_file = self.workspace_helper.sandbox_dir / test_filename
 
         try:
@@ -37,15 +37,16 @@ class TestRunner:
                 pytest_args = ["-x", "--tb=no", "--no-header", "-q"]
             else:
                 pytest_args = ["-v", "--tb=short", "--no-header"]
-
+            cmd = [
+                self.workspace_helper._venv_python,
+                "-m",
+                "pytest",
+                str(test_file),
+                *pytest_args,
+            ]
+            self.logger.debug(cmd, str(self.project_path), self.workspace_helper.build_env())
             result = subprocess.run(
-                [
-                    self.workspace_helper._venv_python,
-                    "-m",
-                    "pytest",
-                    str(test_file),
-                    *pytest_args,
-                ],
+                cmd,
                 capture_output=True,
                 text=True,
                 timeout=self.timeout,

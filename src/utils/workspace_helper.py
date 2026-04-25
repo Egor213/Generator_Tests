@@ -75,7 +75,7 @@ class WorkspaceHelper:
             [self._venv_python, "-m", "pip", "install", "--upgrade", "pip", "--quiet"],
             label="pip upgrade",
         )
-        
+
         req_files = sorted(root.glob("requirements*.txt"))
         if req_files:
             for req_file in req_files:
