@@ -23,7 +23,6 @@ class LLMClient:
         return {
             "model": model,
             "messages": [{"role": m.role, "content": m.content} for m in messages],
-            "max_tokens": self.config.ai.max_tokens,
             "temperature": self.config.ai.temperature,
         }
 

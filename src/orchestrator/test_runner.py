@@ -44,7 +44,7 @@ class TestRunner:
                 str(test_file),
                 *pytest_args,
             ]
-            self.logger.debug(cmd, str(self.project_path), self.workspace_helper.build_env())
+            self.logger.debug(f"{cmd}, {str(self.project_path)}")
             result = subprocess.run(
                 cmd,
                 capture_output=True,
