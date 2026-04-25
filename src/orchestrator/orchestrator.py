@@ -28,70 +28,6 @@ from src.utils.path_filter import PathFilter
 from src.utils.workspace_helper import WorkspaceHelper
 
 
-def print_directory_tree(
-    startpath: str,
-    indent: str = "",
-    show_files: bool = True,
-    max_depth: int = None,
-    current_depth: int = 0,
-):
-    """
-    Выводит дерево директории.
-
-    Аргументы:
-        startpath: путь до корневой директории
-        indent: строка отступа (используется в рекурсии)
-        show_files: показывать файлы или только папки
-        max_depth: максимальная глубина рекурсии (None — без ограничений)
-        current_depth: текущая глубина (для внутреннего использования)
-    """
-    if max_depth is not None and current_depth > max_depth:
-        return
-
-    # Получаем список элементов в директории
-    try:
-        items = os.listdir(startpath)
-    except PermissionError:
-        print(f"{indent}[Нет доступа]")
-        return
-    except FileNotFoundError:
-        print(f"Директория '{startpath}' не найдена.")
-        return
-
-    # Разделяем на папки и файлы
-    dirs = []
-    files = []
-    for item in items:
-        full_path = os.path.join(startpath, item)
-        if os.path.isdir(full_path):
-            dirs.append(item)
-        else:
-            files.append(item)
-
-    # Сортируем для предсказуемого порядка
-    dirs.sort()
-    files.sort()
-
-    # Сначала выводим папки
-    for i, dirname in enumerate(dirs):
-        is_last = (i == len(dirs) - 1) and (not show_files or not files)
-        print(f"{indent}{'└── ' if is_last else '├── '}{dirname}/")
-        next_indent = indent + ("    " if is_last else "│   ")
-        print_directory_tree(
-            os.path.join(startpath, dirname),
-            indent=next_indent,
-            show_files=show_files,
-            max_depth=max_depth,
-            current_depth=current_depth + 1,
-        )
-
-    # Затем файлы (если нужно)
-    if show_files:
-        for i, filename in enumerate(files):
-            is_last = i == len(files) - 1
-            print(f"{indent}{'└── ' if is_last else '├── '}{filename}")
-
-
 class PipelineOrchestrator:
     def __init__(
         self,
@@ -99,8 +35,6 @@ class PipelineOrchestrator:
         console: ConsoleManager | None = None,
         logger: logging.Logger | None = None,
     ):
-        print(f"\nДерево директории: {os.path.abspath('.')}\n")
-        print_directory_tree(".", show_files=True, max_depth=None)
         self.logger = logger or NullLogger()
         self.console = console or ConsoleManager()
         self.config = config or Config()

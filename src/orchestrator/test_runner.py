@@ -27,7 +27,7 @@ class TestRunner:
         fast: bool = False,
     ) -> tuple[bool, str]:
         self.workspace_helper.sandbox_dir.mkdir(parents=True, exist_ok=True)
-        self.workspace_helper.ensure_pytest_installed()
+        # self.workspace_helper.ensure_pytest_installed()
         test_file = self.workspace_helper.sandbox_dir / test_filename
 
         try:
