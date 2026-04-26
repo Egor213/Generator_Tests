@@ -51,6 +51,7 @@ class WorkspaceHelper:
 
     def __del__(self):
         self.cleanup()
+        # pass
 
     def ensure_pytest_installed(self) -> None:
         self._run_install_cmd(

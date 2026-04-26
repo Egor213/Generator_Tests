@@ -28,31 +28,41 @@ class TestAnalysisManager:
         self.coverage_data: dict[str, Any] = {}
         self.logger = logger or NullLogger()
 
+    def _write_coverage_config(self, sandbox: Path, coverage_data_file: Path) -> Path:
+        config_content = f"""[run]
+    parallel = false
+    data_file = {coverage_data_file}
+    branch = true
+    source = {self.project_root}
+    omit =
+        {self.tests_path}/*
+        */migrations/*
+        */venv/*
+        */.venv/*
+        {sandbox}/*
+    """
+        config_file = sandbox / ".coveragerc"
+        config_file.write_text(config_content.strip(), encoding="utf-8")
+        return config_file
+
     def run_coverage(
-        self,
-        test_code: str,
-        test_function_name: str,
-        file_path: str,
-        test_filename: str = "test_generated.py",
-    ) -> int:
+        self, test_code, test_function_name, file_path, test_filename="test_generated.py"
+    ):
         sandbox = self.workspace_helper.sandbox_dir
         sandbox.mkdir(parents=True, exist_ok=True)
-        # self.workspace_helper.ensure_pytest_installed()
+
+        for old in sandbox.glob(".coverage*"):
+            old.unlink(missing_ok=True)
+        for old in sandbox.glob("*.cover"):
+            old.unlink(missing_ok=True)
+        for old in sandbox.glob(test_filename + "*"):
+            old.unlink(missing_ok=True)
 
         test_file = sandbox / test_filename
         test_file.write_text(test_code, encoding="utf-8")
 
         coverage_data_file = sandbox / ".coverage"
-
-        source = str(self.project_root)
-        omit = ",".join(
-            [
-                str(self.tests_path / "*"),
-                "*/migrations/*",
-                "*/venv/*",
-                "*/.venv/*",
-            ]
-        )
+        config_file = self._write_coverage_config(sandbox, coverage_data_file)
 
         env = self.workspace_helper.build_env()
         existing_pp = env.get("PYTHONPATH", "")
@@ -61,18 +71,15 @@ class TestAnalysisManager:
             if existing_pp
             else str(self.project_root)
         )
+        env["COVERAGE_FILE"] = str(coverage_data_file)
+        env.pop("COVERAGE_PROCESS_START", None)
 
         cmd = [
             self.workspace_helper._venv_python,
             "-m",
             "coverage",
             "run",
-            "--source",
-            source,
-            "--branch",
-            "--omit",
-            omit,
-            f"--data-file={coverage_data_file}",
+            f"--rcfile={config_file}",
             "-m",
             "pytest",
             str(test_file),
@@ -80,6 +87,7 @@ class TestAnalysisManager:
             "--tb=short",
             "--no-header",
         ]
+
         try:
             result = subprocess.run(
                 cmd,
@@ -92,38 +100,44 @@ class TestAnalysisManager:
             retcode = result.returncode
 
             if result.stdout:
-                self.logger.debug(f"[COVERAGE] Pytest stdout: {result.stdout}")
+                self.logger.debug(f"[COVERAGE] stdout: {result.stdout}")
             if result.stderr:
-                self.logger.warning(f"[COVERAGE] Pytest stderr: {result.stderr}")
+                self.logger.warning(f"[COVERAGE] stderr: {result.stderr}")
 
         except subprocess.TimeoutExpired:
             self.logger.error("Test execution timed out")
             return -1
 
-        if not coverage_data_file.exists():
-            self.logger.error(
-                "[COVERAGE] .coverage файл не найден. Убедитесь, что pytest и coverage установлены, и что тесты выполняются."
-            )
+        coverage_file = self._find_coverage_file(sandbox)
+        if not coverage_file:
+            self.logger.error("[COVERAGE] .coverage файл не найден")
             return retcode
 
         cov = coverage.Coverage(
-            data_file=str(coverage_data_file),
-            source=[source],
-            branch=True,
-            omit=[
-                str(self.tests_path / "*"),
-                "*/migrations/*",
-                "*/venv/*",
-                "*/.venv/*",
-            ],
+            data_file=str(coverage_file),
+            config_file=str(config_file),
         )
         cov.load()
 
-        self._generate_reports(cov)
-        self._process_annotate_file(file_path, test_function_name)
+        file_path_obj = Path(file_path).resolve()
+        self._generate_reports(cov, file_path_obj)
+        self._process_annotate_file(file_path_obj, test_function_name)
         return retcode
 
-    def _generate_reports(self, cov: coverage.Coverage) -> None:
+    def _find_coverage_file(self, sandbox: Path) -> Path | None:
+        exact = sandbox / ".coverage"
+        if exact.exists():
+            return exact
+
+        candidates = list(sandbox.glob(".coverage.*"))
+        if len(candidates) == 1:
+            return candidates[0]
+        if len(candidates) > 1:
+            return max(candidates, key=lambda f: f.stat().st_mtime)
+
+        return None
+
+    def _generate_reports(self, cov: coverage.Coverage, file_path) -> None:
         sandbox_dir = self.workspace_helper.sandbox_dir
 
         original_dir = os.getcwd()
@@ -131,7 +145,11 @@ class TestAnalysisManager:
             os.chdir(sandbox_dir)
 
             try:
-                cov.annotate(directory=str(sandbox_dir))
+                os.chdir(sandbox_dir)
+                cov.annotate(
+                    morfs=[str(file_path)],
+                    directory=str(sandbox_dir),
+                )
             except Exception as exc:
                 self.logger.warning(f"[COVERAGE] annotate() не удался: {exc}")
         finally:

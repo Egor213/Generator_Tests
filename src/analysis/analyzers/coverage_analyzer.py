@@ -84,7 +84,7 @@ class CoverageAnalyzer(BaseAnalyzer):
                 continue
 
             parts_lower = [p.lower() for p in sp.parts]
-            if any(p in ("tests", "test") or p.startswith("test_") for p in parts_lower):
+            if any(p.startswith("test") for p in parts_lower):
                 continue
 
             try:

@@ -13,6 +13,7 @@ from src.orchestrator.test_merger import TestMerger
 from src.orchestrator.test_refiner import TestRefiner
 from src.orchestrator.test_runner import TestRunner
 from src.utils.file_lock import FileLockManager
+from src.utils.profiler import ProfileBlock
 
 
 @dataclass
@@ -45,10 +46,9 @@ class ImprovementReport:
 
 class QualityImprover:
     MAX_COVERAGE_IMPROVE_ITERATIONS = 3
-    MAX_MUTATION_ITERATIONS = 2
+    MAX_MUTATION_IMPROVE_ITERATIONS = 3
     TARGET_COVERAGE = 70.0
     TARGET_MUTATION_SCORE = 60.0
-    GAPS_PER_PROMPT = 3
 
     def __init__(
         self,
@@ -61,6 +61,7 @@ class QualityImprover:
         test_refiner: TestRefiner,
         test_merger: TestMerger,
         logger: logging.Logger | None = None,
+        target_coverage: int | None = None,
     ):
         self.llm_client = llm_client
         self.prompt_engine = prompt_engine
@@ -72,6 +73,7 @@ class QualityImprover:
         self.test_merger = test_merger
         self.logger = logger or NullLogger()
         self._file_lock_manager = FileLockManager()
+        self.TARGET_COVERAGE = target_coverage or self.TARGET_COVERAGE
 
     async def improve(
         self,
@@ -123,6 +125,7 @@ class QualityImprover:
 
         return current_test_code, report
 
+    @ProfileBlock("_phase_coverage")
     async def _phase_coverage(
         self,
         current_test_code: str,
@@ -137,12 +140,14 @@ class QualityImprover:
                 f"[IMPROVE] Coverage improve итерация "
                 f"{iteration}/{self.MAX_COVERAGE_IMPROVE_ITERATIONS}"
             )
-            analysis = self._run_coverage_analysis(
-                current_test_code,
-                function_name,
-                test_filename,
-                source_file,
-            )
+
+            with ProfileBlock("_phase_coverage._run_coverage_analysis"):
+                analysis = self._run_coverage_analysis(
+                    current_test_code,
+                    function_name,
+                    test_filename,
+                    source_file,
+                )
 
             if iteration == 1:
                 report.initial_coverage = analysis.coverage_percent
@@ -159,12 +164,13 @@ class QualityImprover:
                 self.logger.info("[IMPROVE] Нет непокрытых строк")
                 break
 
-            new_tests = await self._generate_coverage_tests(
-                annotated_body=analysis.annotated_body,
-                context=context,
-                existing_tests=current_test_code,
-                function_name=function_name,
-            )
+            with ProfileBlock("_phase_coverage._generate_coverage_tests"):
+                new_tests = await self._generate_coverage_tests(
+                    annotated_body=analysis.annotated_body,
+                    context=context,
+                    existing_tests=current_test_code,
+                    function_name=function_name,
+                )
 
             if not new_tests:
                 self.logger.warning("[IMPROVE] LLM не сгенерировал тесты")
@@ -172,11 +178,12 @@ class QualityImprover:
 
             self.logger.info(f"[IMPROVE] сгенерированы тесты для повышения покрытия")
 
-            refine_result = await self.test_refiner.refine(
-                test_code=new_tests,
-                test_filename=test_filename,
-                source_code=context,
-            )
+            with ProfileBlock("_phase_coverage.refine"):
+                refine_result = await self.test_refiner.refine(
+                    test_code=new_tests,
+                    test_filename=test_filename,
+                    source_code=context,
+                )
 
             if not refine_result.success:
                 self.logger.warning(
@@ -186,11 +193,12 @@ class QualityImprover:
 
             self.logger.info(f"[IMPROVE] refine успешно починил тесты")
 
-            merged = self._merge_validated_methods(
-                current_code=current_test_code,
-                new_code=refine_result.code,
-                test_filename=test_filename,
-            )
+            with ProfileBlock("_phase_coverage._merge_validated_methods"):
+                merged = self._merge_validated_methods(
+                    current_code=current_test_code,
+                    new_code=refine_result.code,
+                    test_filename=test_filename,
+                )
 
             if merged == current_test_code:
                 self.logger.warning("[IMPROVE] Ни один метод не прошёл merge")
@@ -251,6 +259,7 @@ class QualityImprover:
             self.logger.error(f"[IMPROVE] Ошибка генерации coverage-тестов: {e}")
             return None
 
+    @ProfileBlock("_phase_mutation_killing")
     async def _phase_mutation_killing(
         self,
         current_test_code: str,
@@ -261,19 +270,21 @@ class QualityImprover:
         context: str,
         report: ImprovementReport,
     ) -> tuple[str, ImprovementReport]:
-        for iteration in range(1, self.MAX_MUTATION_ITERATIONS + 1):
+        for iteration in range(1, self.MAX_MUTATION_IMPROVE_ITERATIONS + 1):
             self.logger.info(
-                f"[IMPROVE] Mutation итерация " f"{iteration}/{self.MAX_MUTATION_ITERATIONS}"
+                f"[IMPROVE] Mutation итерация "
+                f"{iteration}/{self.MAX_MUTATION_IMPROVE_ITERATIONS}"
             )
 
-            mutation_result = self.mutation_tester.run_mutation_testing(
-                source_code=source_code,
-                source_file=source_file,
-                test_code=current_test_code,
-                test_filename=test_filename,
-                function_name=self._extract_short_name(function_name),
-                _lock_acquired=True,
-            )
+            with ProfileBlock("_phase_mutation_killing.run_mutation_testing"):
+                mutation_result = self.mutation_tester.run_mutation_testing(
+                    source_code=source_code,
+                    source_file=source_file,
+                    test_code=current_test_code,
+                    test_filename=test_filename,
+                    function_name=self._extract_short_name(function_name),
+                    _lock_acquired=True,
+                )
 
             if iteration == 1:
                 report.initial_mutation_score = mutation_result.score
@@ -295,23 +306,25 @@ class QualityImprover:
                 f"[IMPROVE] {len(survived)} мутантов выжили, " f"генерируем убивающие тесты"
             )
 
-            killer_tests = await self._generate_mutation_killers(
-                survived_mutants=survived,
-                context=context,
-                function_name=function_name,
-                existing_tests=current_test_code,
-                mutation_result=mutation_result,
-            )
+            with ProfileBlock("_phase_mutation_killing._generate_mutation_killers"):
+                killer_tests = await self._generate_mutation_killers(
+                    survived_mutants=survived,
+                    context=context,
+                    function_name=function_name,
+                    existing_tests=current_test_code,
+                    mutation_result=mutation_result,
+                )
 
             if not killer_tests:
                 self.logger.warning("[IMPROVE] LLM не сгенерировал killer-тесты")
                 break
 
-            refine_result = await self.test_refiner.refine(
-                test_code=killer_tests,
-                test_filename=test_filename,
-                source_code=context,
-            )
+            with ProfileBlock("_phase_mutation_killing.refine"):
+                refine_result = await self.test_refiner.refine(
+                    test_code=killer_tests,
+                    test_filename=test_filename,
+                    source_code=context,
+                )
 
             if not refine_result.success:
                 self.logger.warning(
@@ -319,11 +332,12 @@ class QualityImprover:
                 )
                 continue
 
-            merged = self._merge_validated_methods(
-                current_code=current_test_code,
-                new_code=refine_result.code,
-                test_filename=test_filename,
-            )
+            with ProfileBlock("_phase_mutation_killing._merge_validated_methods"):
+                merged = self._merge_validated_methods(
+                    current_code=current_test_code,
+                    new_code=refine_result.code,
+                    test_filename=test_filename,
+                )
 
             if merged == current_test_code:
                 self.logger.warning("[IMPROVE] Ни один killer не прошёл merge")

@@ -156,7 +156,7 @@ class ReportGenerator:
                 continue
 
             parts_lower = [p.lower() for p in sp.parts]
-            if any(p in ("tests", "test") or p.startswith("test_") for p in parts_lower):
+            if any(p.startswith("test") for p in parts_lower):
                 continue
 
             try:
@@ -337,7 +337,7 @@ class ReportGenerator:
 
             try:
                 rel_path = matched_path.relative_to(self.project_root)
-            except ValueError:
+            except (ValueError, AttributeError):
                 rel_path = matched_path
 
             percent = self._parse_annotate_percent(content)

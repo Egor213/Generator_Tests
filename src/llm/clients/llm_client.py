@@ -5,6 +5,7 @@ from src.entity.llm import LLMProvider, LLMResponse, Message
 from src.factories.invoker_factory import create_invoker
 from src.llm.invoker import LLMInvoker
 from src.managers.config import Config
+from src.utils.usage_tracker import LLMUsageTracker
 
 logger = logging.getLogger(__name__)
 
@@ -17,6 +18,7 @@ class LLMClient:
         self.config = config
         self.provider = LLMProvider(config.ai.llm_provider.lower())
         self.invoker: LLMInvoker = create_invoker(self.provider, config)
+        self.usage_tracker = LLMUsageTracker()
 
     def _build_payload(self, messages: list[Message]) -> dict:
         model = self.config.ai.model or self._get_default_model()
@@ -45,7 +47,11 @@ class LLMClient:
         logger.debug("Запрос отправлен")
 
         response = await self.invoker.invoke_with_retry(payload)
+        self.usage_tracker.record(response.usage, response.model)
         return response
+
+    def print_usage_report(self) -> None:
+        print(self.usage_tracker.report())
 
     async def close(self) -> None:
         await self.invoker.close()

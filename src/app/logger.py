@@ -8,13 +8,16 @@ from pathlib import Path
 
 class CoroutineIdFilter(logging.Filter):
     def filter(self, record):
-        task = asyncio.current_task()
-        if task:
-            record.coro_id = id(task)
-            record.coro_name = task.get_name()
-        else:
-            record.coro_id = None
-            record.coro_name = None
+        try:
+            task = asyncio.current_task()
+            if task:
+                record.coro_id = id(task)
+                record.coro_name = task.get_name()
+            else:
+                record.coro_id = None
+                record.coro_name = None
+        except:
+            pass
         return True
 
 
@@ -90,7 +93,6 @@ def get_logger(
         console_formatter = logging.Formatter("%(levelname)s: %(message)s")
         console_handler.setFormatter(console_formatter)
         logger.addHandler(console_handler)
-
     return logger
 
 

@@ -25,6 +25,7 @@ from src.orchestrator.test_merger import GeneratedTest, TestMerger
 from src.orchestrator.test_refiner import TestRefiner
 from src.orchestrator.test_runner import TestRunner
 from src.utils.path_filter import PathFilter
+from src.utils.profiler import ProfileBlock
 from src.utils.workspace_helper import WorkspaceHelper
 
 
@@ -120,6 +121,7 @@ class PipelineOrchestrator:
             test_refiner=self.test_refiner,
             test_merger=self.test_merger,
             logger=self.logger,
+            target_coverage=self.target_line_coverage,
         )
 
         self.report_generator = ReportGenerator(
@@ -221,6 +223,7 @@ class PipelineOrchestrator:
         self.logger.error("[ORCHESTRATOR] Не удалось извлечь код тестов из ответа LLM")
         return None
 
+    @ProfileBlock("_collect_context")
     def _collect_context(self, target: FunctionTarget, dependency_depth: int = -1) -> str | None:
         try:
             context = self.context_manager.collect_context(
@@ -239,6 +242,7 @@ class PipelineOrchestrator:
         path.write_text(code, encoding="utf-8")
         self.written_test_paths.append(path)
 
+    @ProfileBlock("_build_and_generate_test_code")
     async def _build_and_generate_test_code(
         self,
         target: FunctionTarget,
@@ -253,6 +257,7 @@ class PipelineOrchestrator:
 
         for step in range(1, self.max_gen_test_retry + 1):
             context = self._collect_context(target, dependency_depth=step)
+
             self.logger.info(
                 f"[ORCHESTRATOR] Генерация тестов для {target.function_name}, "
                 f"попытка {step}/{self.max_gen_test_retry}"
@@ -264,18 +269,22 @@ class PipelineOrchestrator:
                     continue
 
                 source_code = context or target.info.code
-                refine_result = await self.test_refiner.refine(
-                    test_code=test_code,
-                    test_filename=target.test_filename,
-                    source_code=source_code,
-                )
+
+                with ProfileBlock("refine"):
+                    refine_result = await self.test_refiner.refine(
+                        test_code=test_code,
+                        test_filename=target.test_filename,
+                        source_code=source_code,
+                    )
 
                 if not refine_result.success:
                     continue
 
-                final_code, report = await self._analyze_and_improve(
-                    refine_result.code, target, context
-                )
+                with ProfileBlock("_analyze_and_improve"):
+                    final_code, report = await self._analyze_and_improve(
+                        refine_result.code, target, context
+                    )
+
                 if report.final_coverage < self.target_line_coverage:
                     if result.line_coverage is None or report.final_coverage > result.line_coverage:
                         result.line_coverage = report.final_coverage
@@ -660,7 +669,9 @@ class PipelineOrchestrator:
         self.logger.info(
             f"[ORCHESTRATOR] Пайплайн запущен с {self.config.app.max_async_workers} воркерами"
         )
-        self.project_indexer.analyze()
+
+        with ProfileBlock("analyze()"):
+            self.project_indexer.analyze()
 
         targets: deque[FunctionTarget] = self._discover_targets()
         if not targets:
@@ -674,12 +685,15 @@ class PipelineOrchestrator:
 
         self.logger.info(f"[ORCHESTRATOR] Найдено {len(targets)} функций для генерации тестов")
 
-        await self._process_targets(targets)
+        with ProfileBlock("_process_targets()"):
+            await self._process_targets(targets)
 
-        self._merge_and_write_results()
+        with ProfileBlock("_merge_and_write_results()"):
+            self._merge_and_write_results()
 
         tests_dir = getattr(self.console.args, "tests_dir", "tests")
         await self._run_analysis(tests_dir=tests_dir)
 
+        self.llm_client.print_usage_report()
         await self.close_llm()
         self.logger.info("[ORCHESTRATOR] Пайплайн завершён")
