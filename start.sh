@@ -39,10 +39,12 @@ black -l 100 ./src
 
 # python main.py --project "../diplom_projects/xs/" --target-function "./main.py::parse_config"
 
-python main.py --project "../diplom_projects/s/python-slugify" --target-function "./slugify/slugify.py::slugify"
+# python main.py --project "../diplom_projects/s/python-slugify" --target-function "./slugify/slugify.py::slugify"
 
-# Для запусков через докер можно использовать эти команды
-# Только нужно сбилдить образ
-# docker build -t my-analyzer .
-# docker run --rm -e INPUT_PROJECT="../github/workspace/Task_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
-# docker run --rm -e INPUT_PROJECT="/github/workspace/test_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
+# python main.py --project "../diplom_projects/m/requests/" --target-function "./src/requests/auth.py::HTTPDigestAuth.build_digest_header"
+# C:\diplom_projects\l\fastapi\fastapi\dependencies\utils.py
+
+# python main.py --project "../diplom_projects/l/fastapi/" --target-function "./fastapi/dependencies/utils.py::analyze_param"
+
+
+python main.py --project "../diplom_projects/kogn/9/" --target-function "./main.py::nine_level_priority_processor"

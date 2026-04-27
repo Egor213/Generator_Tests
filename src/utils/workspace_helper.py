@@ -63,6 +63,7 @@ class WorkspaceHelper:
                 "pytest",
                 "pytest-asyncio",
                 "pytest-cov",
+                "pytest-timeout",
                 "coverage",
                 "--quiet",
             ],

@@ -1,353 +1,810 @@
-2026-04-24 00:26:01 - PipelineOrchestrator - DEBUG - [coro_id=2296103522688 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:26:01 - PipelineOrchestrator - DEBUG - [coro_id=2296103522688 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:26:01 - PipelineOrchestrator - DEBUG - [coro_id=2296103522688 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:47:35 - PipelineOrchestrator - DEBUG - [coro_id=2262403535040 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:49:26 - PipelineOrchestrator - DEBUG - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:49:26 - PipelineOrchestrator - DEBUG - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:49:26 - PipelineOrchestrator - DEBUG - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:49:26 - PipelineOrchestrator - DEBUG - [coro_id=2445241372864 coro_name=Task-1] - Песочница создана: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71
-2026-04-24 00:49:26 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - Создание venv: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71\.venv
-2026-04-24 00:49:35 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
-2026-04-24 00:49:43 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip upgrade] Зависимости установлены
-2026-04-24 00:49:43 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip install -r requirements.txt] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71\.venv\Scripts\python.exe -m pip install -r C:\Task_project\requirements.txt --quiet
-2026-04-24 00:50:35 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip install -r requirements.txt] Зависимости установлены
-2026-04-24 00:50:35 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_2jeapp71\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov coverage --quiet
-2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [pip install pytest] Зависимости установлены
-2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445241372864 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445242192064 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445242192064 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 00:50:39 - PipelineOrchestrator - INFO - [coro_id=2445242192064 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 00:50:39 - PipelineOrchestrator - DEBUG - [coro_id=2445242192064 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 00:52:40 - PipelineOrchestrator - DEBUG - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:52:40 - PipelineOrchestrator - DEBUG - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:52:40 - PipelineOrchestrator - DEBUG - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:52:40 - PipelineOrchestrator - DEBUG - [coro_id=1410890027200 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 00:52:40 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - Создание venv: ..\Test_dir\.venv
-2026-04-24 00:52:48 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip upgrade] Выполняю: ..\Test_dir\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
-2026-04-24 00:52:56 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip upgrade] Зависимости установлены
-2026-04-24 00:52:56 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip install -r requirements.txt] Выполняю: ..\Test_dir\.venv\Scripts\python.exe -m pip install -r C:\Task_project\requirements.txt --quiet
-2026-04-24 00:53:42 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip install -r requirements.txt] Зависимости установлены
-2026-04-24 00:53:42 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip install pytest] Выполняю: ..\Test_dir\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov coverage --quiet
-2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [pip install pytest] Зависимости установлены
-2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890027200 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890845056 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890845056 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 00:53:46 - PipelineOrchestrator - INFO - [coro_id=1410890845056 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 00:53:46 - PipelineOrchestrator - DEBUG - [coro_id=1410890845056 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559108272320 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559108272320 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559109091520 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559109091520 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 00:54:16 - PipelineOrchestrator - INFO - [coro_id=2559109091520 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 00:54:16 - PipelineOrchestrator - DEBUG - [coro_id=2559109091520 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 00:56:01 - PipelineOrchestrator - DEBUG - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:56:01 - PipelineOrchestrator - DEBUG - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:56:01 - PipelineOrchestrator - DEBUG - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:56:02 - PipelineOrchestrator - DEBUG - [coro_id=1556025331904 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556025331904 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556026151104 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556026151104 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 00:56:02 - PipelineOrchestrator - INFO - [coro_id=1556026151104 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 00:56:02 - PipelineOrchestrator - DEBUG - [coro_id=1556026151104 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456596406464 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456596406464 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456597225664 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456597225664 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 00:56:19 - PipelineOrchestrator - INFO - [coro_id=1456597225664 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 00:56:19 - PipelineOrchestrator - DEBUG - [coro_id=1456597225664 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117003968 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117003968 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117823168 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117823168 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 00:56:41 - PipelineOrchestrator - INFO - [coro_id=2105117823168 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 00:56:41 - PipelineOrchestrator - DEBUG - [coro_id=2105117823168 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015204954304 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015204954304 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015205773504 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015205773504 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 00:58:25 - PipelineOrchestrator - INFO - [coro_id=2015205773504 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 00:58:25 - PipelineOrchestrator - DEBUG - [coro_id=2015205773504 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882233389248 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882233389248 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882234208448 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882234208448 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 00:59:35 - PipelineOrchestrator - INFO - [coro_id=2882234208448 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 00:59:35 - PipelineOrchestrator - DEBUG - [coro_id=2882234208448 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 01:00:58 - PipelineOrchestrator - DEBUG - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 01:00:58 - PipelineOrchestrator - DEBUG - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 01:00:58 - PipelineOrchestrator - DEBUG - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 01:00:58 - PipelineOrchestrator - DEBUG - [coro_id=2155987833024 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 01:00:58 - PipelineOrchestrator - INFO - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 01:00:58 - PipelineOrchestrator - INFO - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 01:00:59 - PipelineOrchestrator - INFO - [coro_id=2155987833024 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 01:00:59 - PipelineOrchestrator - INFO - [coro_id=2155988652224 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 01:00:59 - PipelineOrchestrator - INFO - [coro_id=2155988652224 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 01:00:59 - PipelineOrchestrator - INFO - [coro_id=2155988652224 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 01:00:59 - PipelineOrchestrator - DEBUG - [coro_id=2155988652224 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 01:01:14 - PipelineOrchestrator - DEBUG - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 01:01:14 - PipelineOrchestrator - DEBUG - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 01:01:14 - PipelineOrchestrator - DEBUG - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 01:01:15 - PipelineOrchestrator - DEBUG - [coro_id=1536609833152 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536609833152 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 01:01:15 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 01:01:15 - PipelineOrchestrator - DEBUG - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 01:01:23 - PipelineOrchestrator - WARNING - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Ошибка извлечения кода (попытка 1): OpenAI API error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
-2026-04-24 01:01:25 - PipelineOrchestrator - DEBUG - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 2/3
-2026-04-24 01:01:32 - PipelineOrchestrator - WARNING - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Ошибка извлечения кода (попытка 2): OpenAI API error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
-2026-04-24 01:01:34 - PipelineOrchestrator - DEBUG - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 3/3
-2026-04-24 01:01:42 - PipelineOrchestrator - WARNING - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Ошибка извлечения кода (попытка 3): OpenAI API error: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
-2026-04-24 01:01:44 - PipelineOrchestrator - ERROR - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Не удалось извлечь код тестов из ответа LLM
-2026-04-24 01:01:44 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 01:01:44 - PipelineOrchestrator - INFO - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 2/3
-2026-04-24 01:01:44 - PipelineOrchestrator - DEBUG - [coro_id=1536610652352 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 01:02:01 - PipelineOrchestrator - DEBUG - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 01:02:01 - PipelineOrchestrator - DEBUG - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 01:02:01 - PipelineOrchestrator - DEBUG - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 01:02:01 - PipelineOrchestrator - DEBUG - [coro_id=2845714501824 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 01:02:01 - PipelineOrchestrator - INFO - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 01:02:01 - PipelineOrchestrator - INFO - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 01:02:02 - PipelineOrchestrator - INFO - [coro_id=2845714501824 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 01:02:02 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 01:02:02 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 01:02:02 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 01:02:02 - PipelineOrchestrator - DEBUG - [coro_id=2845715321024 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
-2026-04-24 01:02:12 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [pip install pytest] Выполняю: ..\Test_dir\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov coverage --quiet
-2026-04-24 01:02:13 - PipelineOrchestrator - INFO - [coro_id=2845715321024 coro_name=Task-2] - [pip install pytest] Зависимости установлены
-2026-04-24 01:02:14 - PipelineOrchestrator - DEBUG - [coro_id=2845715321024 coro_name=Task-2] - [REFINE] TEST CODE 
+2026-04-27 23:46:15 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-27 23:46:15 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-27 23:46:15 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-27 23:46:15 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - AI Config llm_provider=<LLMProvider.OPENAI: 'openai'> model='inclusionai/ling-2.6-1t:free' temperature=0.5 base_url='https://api.proxyapi.ru/openrouter/v1' timeout=900 max_generate_retries=3 max_fix_attempts=4 max_invoke_retries=3 target_line_coverage=60
+2026-04-27 23:46:15 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - Console params Namespace(max_async_workers=None, project=WindowsPath('../diplom_projects/kogn/9'), max_generate_retries=3, target_line_coverage=60, max_fix_attempts=4, model=None, temperature=None, config=WindowsPath('config/config.yaml'), verbose=False, target_dir=None, target_function='./main.py::nine_level_priority_processor', target_class=None, target_file=None, tests_dir='tests')
+2026-04-27 23:46:16 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - Песочница создана: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe
+2026-04-27 23:46:16 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - Создание venv: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\.venv
+2026-04-27 23:46:23 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+2026-04-27 23:46:29 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [pip upgrade] Зависимости установлены
+2026-04-27 23:46:29 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - Файлы зависимостей не найдены, пропускаю установку
+2026-04-27 23:46:29 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov pytest-timeout coverage --quiet
+2026-04-27 23:46:38 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [pip install pytest] Зависимости установлены
+2026-04-27 23:46:38 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-27 23:46:38 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-27 23:46:38 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-27 23:46:38 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [ORCHESTRATOR] Обработка: nine_level_priority_processor (C:\diplom_projects\kogn\9\main.py)
+2026-04-27 23:46:38 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для nine_level_priority_processor
+2026-04-27 23:46:38 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для nine_level_priority_processor, попытка 1/3
+2026-04-27 23:46:38 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-27 23:46:57 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:46:58 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] TEST CODE 
 import pytest
-from unittest.mock import MagicMock, patch
-from service.task import TaskService
-from entity.entity import Task
+from typing import List, Dict
+from unittest.mock import patch
+from main import nine_level_priority_processor
 
 
-class TestTaskServiceCreateTask:
-    """Тесты для метода TaskService.create_task"""
+class TestNineLevelPriorityProcessor:
+    @pytest.fixture
+    def sample_queue(self) -> List[Dict]:
+        """Фикстура с базовой очередью задач для тестов."""
+        return [
+            {"id": 1, "name": "task1", "tags": [{"name": "t1", "active": True}, {"name": "t2", "active": False}]},
+            {"id": 2, "name": "task2", "items": [{"key": "a", "active": True}]},
+        ]
 
     @pytest.fixture
-    def task_service(self):
-        """Создает экземпляр TaskService для тестов."""
-        return TaskService()
+    def priority_map(self) -> Dict[str, int]:
+        """Фикстура с маппингом приоритетов."""
+        return {"tags": 7, "items": 5, "name": 3}
 
-    @pytest.mark.parametrize(
-        "description, priority",
-        [
-            ("Test task", 1),
-            ("Another task", 3),
-            ("Important task", 5),
-            ("A" * 100, 2),
-        ],
-    )
-    def test_create_task_valid_inputs_returns_correct_message(
-        self, task_service, description, priority
-    ):
-        """Проверяет, что метод возвращает правильное сообщение при валидных входных данных."""
-        result = task_service.create_task(description, priority)
-        assert result == f"Task '{description}' created with priority {priority}"
+    def test_returns_list_of_dicts(
+        self,
+        sample_queue: List[Dict],
+        priority_map: Dict[str, int],
+    ) -> None:
+        """Возвращает список словарей без изменения исходной очереди при вызове."""
+        result = nine_level_priority_processor(sample_queue, priority_map)
+        assert isinstance(result, list)
+        assert all(isinstance(item, dict) for item in result)
 
-    @pytest.mark.parametrize(
-        "invalid_description",
-        [
-            "",
-            "   ",
-        ],
-    )
-    def test_create_task_empty_description_raises_value_error(
-        self, task_service, invalid_description
-    ):
-        """Проверяет, что метод выбрасывает ValueError при пустом описании."""
-        with pytest.raises(ValueError, match="Description cannot be empty"):
-            task_service.create_task(invalid_description, 3)
+    def test_preserves_original_task_fields(
+        self,
+        sample_queue: List[Dict],
+        priority_map: Dict[str, int],
+    ) -> None:
+        """Сохраняет все исходные поля задачи в результате."""
+        result = nine_level_priority_processor(sample_queue, priority_map)
+        assert len(result) == 2
+        assert result[0]["id"] == 1
+        assert result[0]["name"] == "task1"
+        assert result[1]["id"] == 2
+        assert result[1]["name"] == "task2"
 
-    @pytest.mark.parametrize(
-        "invalid_priority",
-        [
-            0,
-            -1,
-            6,
-            10,
-        ],
-    )
-    def test_create_task_invalid_priority_raises_value_error(
-        self, task_service, invalid_priority
-    ):
-        """Проверяет, что метод выбрасывает ValueError при некорректном приоритете."""
-        with pytest.raises(ValueError, match="Priority must be between 1 and 5"):
-            task_service.create_task("Valid task", invalid_priority)
+    def test_adds_priority_to_active_subdicts(
+        self,
+        sample_queue: List[Dict],
+        priority_map: Dict[str, int],
+    ) -> None:
+        """Добавляет priority=7 в активные подсловари списка поля с приоритетом >=5."""
+        result = nine_level_priority_processor(sample_queue, priority_map)
+        subtasks = result[0].get("subtasks", [])
+        assert len(subtasks) == 1
+        assert subtasks[0]["name"] == "t1"
+        assert subtasks[0]["priority"] == 7
 
-    def test_create_task_calls_manager_add_task_with_correct_arguments(
-        self, task_service
-    ):
-        """Проверяет, что метод вызывает add_task у TaskManager с правильными аргументами."""
-        description = "Test task"
-        priority = 3
-        with patch.object(task_service.manager, "add_task") as mock_add_task:
-            task_service.create_task(description, priority)
-            mock_add_task.assert_called_once_with(description, priority)
+    def test_ignores_inactive_subdicts(
+        self,
+        sample_queue: List[Dict],
+        priority_map: Dict[str, int],
+    ) -> None:
+        """Не добавляет неактивные подсловари в subtasks."""
+        result = nine_level_priority_processor(sample_queue, priority_map)
+        subtasks = result[0].get("subtasks", [])
+        assert all(item.get("active", False) for item in subtasks)
 
-    def test_create_task_creates_and_modifies_internal_task_object(self, task_service):
-        """Проверяет, что метод создает внутренний объект Task и вызывает его методы."""
-        description = "Test task"
-        priority = 3
-        with patch("service.task.Task") as MockTask:
-            mock_task_instance = MagicMock()
-            MockTask.return_value = mock_task_instance
-            task_service.create_task(description, priority)
-            MockTask.assert_called_once_with("descr", 1)
-            mock_task_instance.mark_completed.assert_called_once()
-            mock_task_instance.test_method.assert_called_once()
+    def test_priority_map_field_not_found(
+        self,
+        sample_queue: List[Dict],
+    ) -> None:
+        """Поля, отсутствующие в priority_map, не обрабатываются и остаются неизменными."""
+        priority_map = {"nonexistent": 9}
+        result = nine_level_priority_processor(sample_queue, priority_map)
+        assert "subtasks" not in result[0]
+        assert "subtasks" not in result[1]
 
-    def test_create_task_with_explicit_none_task_argument_raises_type_error(
-        self, task_service
-    ):
-        """Проверяет, что передача task=None приводит к TypeError из-за отсутствующего аргумента test."""
-        description = "Test task"
-        priority = 3
-        with pytest.raises(TypeError, match="missing 1 required positional argument: 'test'"):
-            task_service.create_task(description, priority, task=None)
+    def test_priority_below_five_skips_subtask_processing(
+        self,
+        sample_queue: List[Dict],
+    ) -> None:
+        """Приоритеты <5 не добавляют подзадачи, даже если поле — список словарей."""
+        priority_map = {"tags": 4}
+        result = nine_level_priority_processor(sample_queue, priority_map)
+        assert "subtasks" not in result[0]
 
-    def test_create_task_with_faulty_task_object_raises_type_error(
-        self, task_service
-    ):
-        """Проверяет, что передача объекта task с некорректным mark_completed приводит к TypeError."""
-        class FaultyTask:
-            def mark_completed(self):
-                raise RuntimeError("Mark completed failed")
+    def test_non_list_field_with_high_priority_no_side_effect(
+        self,
+        sample_queue: List[Dict],
+    ) -> None:
+        """Поле с приоритетом >=5, но не являющееся списком, не вызывает ошибок и не добавляет subtasks."""
+        priority_map = {"name": 6}
+        result = nine_level_priority_processor(sample_queue, priority_map)
+        assert "subtasks" not in result[0]
+        assert "subtasks" not in result[1]
 
-        description = "Test task"
-        priority = 3
-        mock_task = FaultyTask()
-        with pytest.raises(TypeError, match="missing 1 required positional argument: 'test'"):
-            task_service.create_task(description, priority, task=mock_task)
+    def test_non_dict_subitems_ignored(
+        self,
+    ) -> None:
+        """Нетипизированные элементы списка (не dict) пропускаются без исключений."""
+        queue = [{"id": 1, "data": [1, "text", None, {"active": True}]}]
+        priority_map = {"data": 8}
+        result = nine_level_priority_processor(queue, priority_map)
+        # dict внутри списка должен быть добавлен, если active=True
+        subtasks = result[0].get("subtasks", [])
+        assert len(subtasks) == 1
+        assert subtasks[0]["active"] is True
+        assert subtasks[0]["priority"] == 8
 
-    def test_create_task_with_minimal_task_object_raises_type_error(
-        self, task_service
-    ):
-        """Проверяет, что передача объекта task без необходимых методов приводит к TypeError."""
-        class MinimalTask:
-            pass
+    def test_empty_queue_returns_empty_list(
+        self,
+        priority_map: Dict[str, int],
+    ) -> None:
+        """Пустая очередь возвращает пустой список."""
+        result = nine_level_priority_processor([], priority_map)
+        assert result == []
 
-        description = "Test task"
-        priority = 3
-        mock_task = MinimalTask()
-        with pytest.raises(TypeError, match="missing 1 required positional argument: 'test'"):
-            task_service.create_task(description, priority, task=mock_task)
-2026-04-24 01:02:14 - PipelineOrchestrator - DEBUG - [coro_id=2845715321024 coro_name=Task-2] - [REFINE] FEEDBACK 
+    def test_deepcopy_ensures_no_mutation_of_original(
+        self,
+        sample_queue: List[Dict],
+        priority_map: Dict[str, int],
+    ) -> None:
+        """Исходные словари задач не изменяются после обработки."""
+        original_first_task = sample_queue[0].copy()
+        nine_level_priority_processor(sample_queue, priority_map)
+        # Убеждаемся, что исходный элемент не приобрёл subtasks
+        assert "subtasks" not in sample_queue[0]
+        # Словарь внутри списка tags также не должен быть изменён
+        tags = sample_queue[0].get("tags", [])
+        if tags and isinstance(tags[0], dict):
+            assert "priority" not in tags[0]
+
+    def test_max_depth_parameter_unused_in_current_logic(
+        self,
+        sample_queue: List[Dict],
+        priority_map: Dict[str, int],
+    ) -> None:
+        """Параметр max_depth принимается, но не влияет на текущую реализацию."""
+        result_default = nine_level_priority_processor(sample_queue, priority_map)
+        result_custom = nine_level_priority_processor(sample_queue, priority_map, max_depth=10)
+        assert result_default == result_custom
+
+    def test_multiple_active_subdicts_collected(
+        self,
+    ) -> None:
+        """Все активные подсловари из списка поля с приоритетом >=5 добавляются в subtasks."""
+        queue = [
+            {
+                "id": 1,
+                "entries": [
+                    {"key": "a", "active": True},
+                    {"key": "b", "active": True},
+                    {"key": "c", "active": False},
+                ],
+            }
+        ]
+        priority_map = {"entries": 5}
+        result = nine_level_priority_processor(queue, priority_map)
+        subtasks = result[0].get("subtasks", [])
+        assert len(subtasks) == 2
+        assert all(item["priority"] == 5 for item in subtasks)
+        keys = {item["key"] for item in subtasks}
+        assert keys == {"a", "b"}
+
+    def test_attribute_error_in_subdict_handled_gracefully(
+        self,
+    ) -> None:
+        """AttributeError внутри блока try (например, у sub_item отсутствует get) не прерывает обработку."""
+        queue = [{"id": 1, "broken": [None]}]
+        priority_map = {"broken": 7}
+        # None не имеет метода get — должен быть перехвачен и проигнорирован
+        result = nine_level_priority_processor(queue, priority_map)
+        assert "subtasks" not in result[0]
+
+    def test_preserves_nested_structure_outside_processed_fields(
+        self,
+    ) -> None:
+        """Вложенные структуры, не участвующие в приоритетной обработке, остаются нетронутыми."""
+        queue = [
+            {
+                "id": 1,
+                "meta": {"version": 2, "flags": [1, 2]},
+                "targets": [{"x": 1, "active": True}],
+            }
+        ]
+        priority_map = {"targets": 6}
+        result = nine_level_priority_processor(queue, priority_map)
+        assert result[0]["meta"] == {"version": 2, "flags": [1, 2]}
+        subtasks = result[0].get("subtasks", [])
+        assert len(subtasks) == 1
+        assert subtasks[0]["x"] == 1
+        assert subtasks[0]["priority"] == 6
+2026-04-27 23:46:58 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] FEEDBACK 
 ============================= test session starts =============================
-collecting ... collected 15 items
+collecting ... collected 14 items
 
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Test task-1] FAILED [  6%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Another task-3] FAILED [ 13%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Important task-5] FAILED [ 20%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-2] FAILED [ 26%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_empty_description_raises_value_error[] PASSED [ 33%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_empty_description_raises_value_error[   ] FAILED [ 40%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_invalid_priority_raises_value_error[0] PASSED [ 46%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_invalid_priority_raises_value_error[-1] PASSED [ 53%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_invalid_priority_raises_value_error[6] PASSED [ 60%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_invalid_priority_raises_value_error[10] PASSED [ 66%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_calls_manager_add_task_with_correct_arguments FAILED [ 73%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_creates_and_modifies_internal_task_object PASSED [ 80%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_with_explicit_none_task_argument_raises_type_error PASSED [ 86%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_with_faulty_task_object_raises_type_error PASSED [ 93%]
-..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_with_minimal_task_object_raises_type_error PASSED [100%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_returns_list_of_dicts PASSED [  7%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_preserves_original_task_fields PASSED [ 14%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_adds_priority_to_active_subdicts PASSED [ 21%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_ignores_inactive_subdicts PASSED [ 28%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_priority_map_field_not_found PASSED [ 35%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_priority_below_five_skips_subtask_processing PASSED [ 42%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_non_list_field_with_high_priority_no_side_effect PASSED [ 50%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_non_dict_subitems_ignored PASSED [ 57%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_empty_queue_returns_empty_list PASSED [ 64%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_deepcopy_ensures_no_mutation_of_original FAILED [ 71%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_max_depth_parameter_unused_in_current_logic FAILED [ 78%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_multiple_active_subdicts_collected PASSED [ 85%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_attribute_error_in_subdict_handled_gracefully PASSED [ 92%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_preserves_nested_structure_outside_processed_fields PASSED [100%]
 
 ================================== FAILURES ===================================
-_ TestTaskServiceCreateTask.test_create_task_valid_inputs_returns_correct_message[Test task-1] _
-C:\Test_dir\test_task.py:28: in test_create_task_valid_inputs_returns_correct_message
-    result = task_service.create_task(description, priority)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-service\task.py:19: in create_task
-    a.test_method()
-E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
-_ TestTaskServiceCreateTask.test_create_task_valid_inputs_returns_correct_message[Another task-3] _
-C:\Test_dir\test_task.py:28: in test_create_task_valid_inputs_returns_correct_message
-    result = task_service.create_task(description, priority)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-service\task.py:19: in create_task
-    a.test_method()
-E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
-_ TestTaskServiceCreateTask.test_create_task_valid_inputs_returns_correct_message[Important task-5] _
-C:\Test_dir\test_task.py:28: in test_create_task_valid_inputs_returns_correct_message
-    result = task_service.create_task(description, priority)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-service\task.py:19: in create_task
-    a.test_method()
-E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
-_ TestTaskServiceCreateTask.test_create_task_valid_inputs_returns_correct_message[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-2] _
-C:\Test_dir\test_task.py:28: in test_create_task_valid_inputs_returns_correct_message
-    result = task_service.create_task(description, priority)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-service\task.py:19: in create_task
-    a.test_method()
-E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
-_ TestTaskServiceCreateTask.test_create_task_empty_description_raises_value_error[   ] _
-C:\Test_dir\test_task.py:43: in test_create_task_empty_description_raises_value_error
-    task_service.create_task(invalid_description, 3)
-service\task.py:19: in create_task
-    a.test_method()
-E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
-_ TestTaskServiceCreateTask.test_create_task_calls_manager_add_task_with_correct_arguments _
-C:\Test_dir\test_task.py:68: in test_create_task_calls_manager_add_task_with_correct_arguments
-    task_service.create_task(description, priority)
-service\task.py:19: in create_task
-    a.test_method()
-E   TypeError: Task.test_method() missing 1 required positional argument: 'test'
+_ TestNineLevelPriorityProcessor.test_deepcopy_ensures_no_mutation_of_original _
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py:125: in test_deepcopy_ensures_no_mutation_of_original
+    assert "subtasks" not in sample_queue[0]
+                             ^^^^^^^^^^^^^^^
+E   IndexError: list index out of range
+_ TestNineLevelPriorityProcessor.test_max_depth_parameter_unused_in_current_logic _
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py:139: in test_max_depth_parameter_unused_in_current_logic
+    assert result_default == result_custom
+E   AssertionError: assert [{'id': 1, 'n...iority': 5}]}] == []
+E     
+E     Left contains 2 more items, first extra item: {'id': 1, 'name': 'task1', 'subtasks': [{'active': True, 'name': 't1', 'priority': 7}], 'tags': [{'active': True, 'name': 't1'}, {'active': False, 'name': 't2'}]}
+E     
+E     Full diff:
+E     - []
+E     + [
+E     +     {...
+E     
+E     ...Full output truncated (38 lines hidden), use '-vv' to show
 =========================== short test summary info ===========================
-FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Test task-1]
-FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Another task-3]
-FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[Important task-5]
-FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_valid_inputs_returns_correct_message[AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-2]
-FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_empty_description_raises_value_error[   ]
-FAILED ..\Test_dir\test_task.py::TestTaskServiceCreateTask::test_create_task_calls_manager_add_task_with_correct_arguments
-========================= 6 failed, 9 passed in 0.10s =========================
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_deepcopy_ensures_no_mutation_of_original
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_max_depth_parameter_unused_in_current_logic
+======================== 2 failed, 12 passed in 0.09s =========================
 
 
-2026-04-24 01:02:14 - PipelineOrchestrator - WARNING - [coro_id=2845715321024 coro_name=Task-2] - [REFINE] Провалено 6/15, починка 1/4
-2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
-2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
-2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
-2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880056000 coro_name=Task-1] - Песочница создана: ..\Test_dir
-2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
-2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
-2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880056000 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
-2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880875200 coro_name=Task-2] - [ORCHESTRATOR] Обработка: TaskService.create_task (C:\Task_project\service\task.py)
-2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880875200 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для TaskService.create_task
-2026-04-24 01:05:35 - PipelineOrchestrator - INFO - [coro_id=2073880875200 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для TaskService.create_task, попытка 1/3
-2026-04-24 01:05:35 - PipelineOrchestrator - DEBUG - [coro_id=2073880875200 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-27 23:46:58 - PipelineOrchestrator - WARNING - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] Провалено 2/14, починка 1/4
+2026-04-27 23:47:22 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] Исправленный код получен
+2026-04-27 23:47:22 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:47:24 - PipelineOrchestrator - WARNING - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] Провалено 2/14, починка 2/4
+2026-04-27 23:47:52 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] Исправленный код получен
+2026-04-27 23:47:52 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:47:54 - PipelineOrchestrator - WARNING - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] Провалено 1/14, починка 3/4
+2026-04-27 23:48:22 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] Исправленный код получен
+2026-04-27 23:48:22 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:22 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:48:22 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] Тесты прошли после починки (попытка 3)
+2026-04-27 23:48:22 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - Запуск пост-обработки тестов через LLM...
+2026-04-27 23:48:41 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - Пост-обработка завершена: 196 → 195 строк
+2026-04-27 23:48:41 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:41 - PipelineOrchestrator - WARNING - [coro_id=2083292257280 coro_name=Task-2] - [REFINE] Пост-обработка сломала тесты, используется оригинал
+2026-04-27 23:48:41 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Лок захвачен для C:\diplom_projects\kogn\9\main.py
+2026-04-27 23:48:41 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Фаза 1: закрытие coverage для nine_level_priority_processor
+2026-04-27 23:48:41 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Coverage improve итерация 1/3
+2026-04-27 23:48:42 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [COVERAGE] stdout: ============================= test session starts =============================
+collecting ... collected 14 items
+
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_returns_list_of_dicts PASSED [  7%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_preserves_original_task_fields PASSED [ 14%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_adds_priority_to_active_subdicts PASSED [ 21%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_ignores_inactive_subdicts PASSED [ 28%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_priority_map_field_not_found PASSED [ 35%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_priority_below_five_skips_subtask_processing PASSED [ 42%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_non_list_field_with_high_priority_no_side_effect PASSED [ 50%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_non_dict_subitems_ignored PASSED [ 57%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_empty_queue_returns_empty_list PASSED [ 64%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_deepcopy_ensures_no_mutation_of_original PASSED [ 71%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_max_depth_parameter_unused_in_current_logic PASSED [ 78%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_multiple_active_subdicts_collected PASSED [ 85%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_attribute_error_in_subdict_handled_gracefully PASSED [ 92%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_7upangqe\test_main.py::TestNineLevelPriorityProcessor::test_preserves_nested_structure_outside_processed_fields PASSED [100%]
+
+============================= 14 passed in 0.08s ==============================
+
+2026-04-27 23:48:42 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - Функция nine_level_priority_processor найдена: строки 4-28
+2026-04-27 23:48:42 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [COVERAGE] z_ab964e9673417756_main.py,cover: similarity=1.000
+2026-04-27 23:48:42 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [COVERAGE] Выбран annotate файл: z_ab964e9673417756_main.py,cover (score=1.000)
+2026-04-27 23:48:42 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - Функция nine_level_priority_processor: покрытие 91.7% (22/24 строк)
+2026-04-27 23:48:42 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Coverage 91.7% >= 60%
+2026-04-27 23:48:42 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Фаза 2: мутационное тестирование для nine_level_priority_processor
+2026-04-27 23:48:42 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Mutation итерация 1/3
+2026-04-27 23:48:42 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Запуск для nine_level_priority_processor
+2026-04-27 23:48:42 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [Mutator] Найдено 13 точек мутации (функция: nine_level_priority_processor)
+2026-04-27 23:48:42 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [Mutator] Сгенерировано 8 мутантов для nine_level_priority_processor
+2026-04-27 23:48:42 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Бэкап создан: C:\diplom_projects\kogn\9\main.py.mutation_backup
+2026-04-27 23:48:42 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Мутант 1/8: return_none на строке 23: 'return processed'
+2026-04-27 23:48:42 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:43 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] ✓ Мутант 1 УБИТ
+2026-04-27 23:48:43 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Мутант 2/8: constant_swap на строке 3: 'def nine_level_priority_processor(queue: List[Dict], priority_map: Dict[str, int], max_depth: int=3) -> List[Dict]:'
+2026-04-27 23:48:43 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:43 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:48:43 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] ✗ Мутант 2 ВЫЖИЛ
+2026-04-27 23:48:43 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Мутант 3/8: negate_condition на строке 10: 'if field_name in priority_map:'
+2026-04-27 23:48:43 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:44 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] ✓ Мутант 3 УБИТ
+2026-04-27 23:48:44 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Мутант 4/8: constant_swap на строке 7: 'task = queue.pop(0)'
+2026-04-27 23:48:44 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:44 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] ✓ Мутант 4 УБИТ
+2026-04-27 23:48:44 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Мутант 5/8: comparison_swap на строке 12: 'if p >= 5:'
+2026-04-27 23:48:44 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:45 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] ✓ Мутант 5 УБИТ
+2026-04-27 23:48:45 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Мутант 6/8: constant_swap на строке 12: 'if p >= 5:'
+2026-04-27 23:48:45 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:45 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] ✓ Мутант 6 УБИТ
+2026-04-27 23:48:45 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Мутант 7/8: boolean_swap на строке 17: 'if sub_item.get('active', False):'
+2026-04-27 23:48:45 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:48:46 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] ✗ Мутант 7 ВЫЖИЛ
+2026-04-27 23:48:46 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Мутант 8/8: arithmetic_swap на строке 19: 'temp['subtasks'] = temp.get('subtasks', []) + [sub_item]'
+2026-04-27 23:48:46 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:46 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] ✓ Мутант 8 УБИТ
+2026-04-27 23:48:46 - PipelineOrchestrator - DEBUG - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Бэкап удалён: C:\diplom_projects\kogn\9\main.py.mutation_backup
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [MUTATION] Завершено: score=75.0%, killed=6/8, survived=2
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Mutation score 75.0% >= 60.0%, достаточно
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Лок освобождён для C:\diplom_projects\kogn\9\main.py
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [IMPROVE] Завершено для nine_level_priority_processor: coverage 91.7% → 91.7%, mutation 75.0% → 75.0%
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [ORCHESTRATOR] nine_level_priority_processor: улучшение не требуется или невозможно
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [ORCHESTRATOR] ✓ Тесты готовы для nine_level_priority_processor
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083292257280 coro_name=Task-2] - [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+2026-04-27 23:48:46 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - Объединение 1 тестов в C:\diplom_projects\kogn\9\tests\test_main.py
+2026-04-27 23:48:46 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:47 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:48:47 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] ✓ Тесты записаны: C:\diplom_projects\kogn\9\tests\test_main.py
+2026-04-27 23:48:47 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Создан C:\diplom_projects\kogn\9\tests\__init__.py
+2026-04-27 23:48:47 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Итого: 1 функций → 1 файлов
+2026-04-27 23:48:47 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Запуск анализа сгенерированных тестов
+2026-04-27 23:48:47 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [REPORT] coverage ...
+2026-04-27 23:48:47 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [COVERAGE] Running: ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\pytest.exe', '--tb=no', '--no-header', '-q', '--cov-report=json:C:\\diplom_projects\\kogn\\9\\.coverage_report.json', '--cov-config=C:\\diplom_projects\\kogn\\9\\.coveragerc_tmp', '--cov=.', 'C:\\diplom_projects\\kogn\\9\\tests\\test_main.py']
+2026-04-27 23:48:48 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [REPORT] duplication ...
+2026-04-27 23:48:48 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [REPORT] reliability ...
+2026-04-27 23:48:48 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [RELIABILITY] Run 1/3
+2026-04-27 23:48:48 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [RELIABILITY] Run 2/3
+2026-04-27 23:48:49 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [RELIABILITY] Run 3/3
+2026-04-27 23:48:49 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [REPORT] mutation ...
+2026-04-27 23:48:49 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION_ANALYZER] Testing function: nine_level_priority_processor
+2026-04-27 23:48:49 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Запуск для nine_level_priority_processor
+2026-04-27 23:48:49 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [Mutator] Найдено 13 точек мутации (функция: nine_level_priority_processor)
+2026-04-27 23:48:49 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [Mutator] Сгенерировано 8 мутантов для nine_level_priority_processor
+2026-04-27 23:48:49 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Бэкап создан: C:\diplom_projects\kogn\9\main.py.mutation_backup
+2026-04-27 23:48:49 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Мутант 1/8: return_none на строке 23: 'return processed'
+2026-04-27 23:48:49 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:50 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] ✓ Мутант 9 УБИТ
+2026-04-27 23:48:50 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Мутант 2/8: constant_swap на строке 3: 'def nine_level_priority_processor(queue: List[Dict], priority_map: Dict[str, int], max_depth: int=3) -> List[Dict]:'
+2026-04-27 23:48:50 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:50 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:48:50 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] ✗ Мутант 10 ВЫЖИЛ
+2026-04-27 23:48:50 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Мутант 3/8: negate_condition на строке 10: 'if field_name in priority_map:'
+2026-04-27 23:48:50 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:51 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] ✓ Мутант 11 УБИТ
+2026-04-27 23:48:51 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Мутант 4/8: constant_swap на строке 7: 'task = queue.pop(0)'
+2026-04-27 23:48:51 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:51 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] ✓ Мутант 12 УБИТ
+2026-04-27 23:48:51 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Мутант 5/8: comparison_swap на строке 12: 'if p >= 5:'
+2026-04-27 23:48:51 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:52 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] ✓ Мутант 13 УБИТ
+2026-04-27 23:48:52 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Мутант 6/8: constant_swap на строке 12: 'if p >= 5:'
+2026-04-27 23:48:52 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:52 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] ✓ Мутант 14 УБИТ
+2026-04-27 23:48:52 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Мутант 7/8: boolean_swap на строке 17: 'if sub_item.get('active', False):'
+2026-04-27 23:48:52 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:53 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:48:53 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] ✗ Мутант 15 ВЫЖИЛ
+2026-04-27 23:48:53 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Мутант 8/8: arithmetic_swap на строке 19: 'temp['subtasks'] = temp.get('subtasks', []) + [sub_item]'
+2026-04-27 23:48:53 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:48:53 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] ✓ Мутант 16 УБИТ
+2026-04-27 23:48:53 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Бэкап удалён: C:\diplom_projects\kogn\9\main.py.mutation_backup
+2026-04-27 23:48:53 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [MUTATION] Завершено: score=75.0%, killed=6/8, survived=2
+2026-04-27 23:48:53 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [REPORT] Coverage cmd: ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_7upangqe\\.venv\\Scripts\\pytest.exe', '--tb=no', '--no-header', '-q', '--cov-report=html:C:\\diplom_projects\\kogn\\9\\test_analysis_report\\coverage_html', '--cov-config=C:\\diplom_projects\\kogn\\9\\test_analysis_report\\.coveragerc', '--cov=.', 'C:\\diplom_projects\\kogn\\9\\tests\\test_main.py']
+2026-04-27 23:48:54 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - [REPORT] stdout: ..............                                                           [100%]
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.12.0-final-0 _______________
+
+Coverage HTML written to dir C:\diplom_projects\kogn\9\test_analysis_report\coverage_html
+14 passed in 0.20s
+
+2026-04-27 23:48:55 - PipelineOrchestrator - DEBUG - [coro_id=2083291372928 coro_name=Task-1] - Skipping test file: z_a44f0ac069e85531_test_main.py,cover
+2026-04-27 23:48:55 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [REPORT] HTML → C:\diplom_projects\kogn\9\test_analysis_report\index.html
+2026-04-27 23:48:55 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] HTML-отчёт: C:\diplom_projects\kogn\9\test_analysis_report\index.html
+2026-04-27 23:48:55 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] HTML-отчёт покрытия: C:\diplom_projects\kogn\9\test_analysis_report\coverage_html
+2026-04-27 23:48:55 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Аннотированные файлы покрытия: C:\diplom_projects\kogn\9\test_analysis_report\coverage_annotate
+2026-04-27 23:48:55 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] LLM-клиент закрыт
+2026-04-27 23:48:55 - PipelineOrchestrator - INFO - [coro_id=2083291372928 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн завершён
+2026-04-27 23:49:58 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_generate_retries=3
+2026-04-27 23:49:58 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: max_fix_attempts=4
+2026-04-27 23:49:58 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Конфиг переопределён: target_line_coverage=60
+2026-04-27 23:49:58 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - AI Config llm_provider=<LLMProvider.OPENAI: 'openai'> model='inclusionai/ling-2.6-1t:free' temperature=0.5 base_url='https://api.proxyapi.ru/openrouter/v1' timeout=900 max_generate_retries=3 max_fix_attempts=4 max_invoke_retries=3 target_line_coverage=60
+2026-04-27 23:49:58 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - Console params Namespace(max_async_workers=None, project=WindowsPath('../diplom_projects/kogn/9'), max_generate_retries=3, target_line_coverage=60, max_fix_attempts=4, model=None, temperature=None, config=WindowsPath('config/config.yaml'), verbose=False, target_dir=None, target_function='./main.py::nine_level_priority_processor', target_class=None, target_file=None, tests_dir='tests')
+2026-04-27 23:49:59 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - Песочница создана: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u
+2026-04-27 23:49:59 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - Создание venv: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\.venv
+2026-04-27 23:50:06 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+2026-04-27 23:50:12 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [pip upgrade] Зависимости установлены
+2026-04-27 23:50:12 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - Файлы зависимостей не найдены, пропускаю установку
+2026-04-27 23:50:12 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov pytest-timeout coverage --quiet
+2026-04-27 23:50:21 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [pip install pytest] Зависимости установлены
+2026-04-27 23:50:21 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] PipelineOrchestrator инициализирован
+2026-04-27 23:50:21 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+2026-04-27 23:50:21 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+2026-04-27 23:50:21 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [ORCHESTRATOR] Обработка: nine_level_priority_processor (C:\diplom_projects\kogn\9\main.py)
+2026-04-27 23:50:21 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [ORCHESTRATOR] Контекст собран для nine_level_priority_processor
+2026-04-27 23:50:21 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [ORCHESTRATOR] Генерация тестов для nine_level_priority_processor, попытка 1/3
+2026-04-27 23:50:21 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ORCHESTRATOR] Извлечение кода, попытка 1/3
+2026-04-27 23:50:38 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:50:38 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [REFINE] TEST CODE 
+import pytest
+from typing import List, Dict
+from unittest.mock import patch
+from main import nine_level_priority_processor
+
+
+class TestNineLevelPriorityProcessor:
+    @pytest.fixture
+    def sample_queue(self) -> List[Dict]:
+        """Фикстура с базовой очередью задач для тестов."""
+        return [
+            {"id": 1, "name": "task1", "tags": [{"id": "a", "active": True}, {"id": "b", "active": False}]},
+            {"id": 2, "name": "task2", "items": [{"id": "c", "active": True}]},
+        ]
+
+    @pytest.fixture
+    def priority_map(self) -> Dict[str, int]:
+        """Фикстура с маппингом приоритетов."""
+        return {"tags": 7, "items": 5, "name": 3}
+
+    @pytest.mark.parametrize(
+        "queue, priority_map, max_depth, expected_len",
+        [
+            ([{"tags": [{"active": True}]}], {"tags": 7}, 3, 1),
+            ([{"tags": [{"active": False}]}], {"tags": 7}, 3, 1),
+            ([{"tags": [{"active": True}, {"active": True}]}], {"tags": 7}, 3, 1),
+            ([{"other": [{"active": True}]}], {"tags": 7}, 3, 1),
+            ([{"tags": "not_list"}], {"tags": 7}, 3, 1),
+            ([{"tags": [{"no_active_key": True}]}], {"tags": 7}, 3, 1),
+        ],
+    )
+    def test_priority_assignment_and_subtasks_creation(
+        self,
+        queue: List[Dict],
+        priority_map: Dict[str, int],
+        max_depth: int,
+        expected_len: int,
+    ) -> None:
+        """
+        Проверяет, что приоритет назначается только активным подэлементам-словарям
+        и формируется список subtasks в обработанной задаче.
+        """
+        result = nine_level_priority_processor(queue, priority_map, max_depth)
+        assert len(result) == expected_len
+        processed_task = result[0]
+        if "tags" in priority_map and priority_map["tags"] >= 5 and isinstance(queue[0].get("tags"), list):
+            active_subs = [
+                sub for sub in queue[0]["tags"]
+                if isinstance(sub, dict) and sub.get("active", False)
+            ]
+            assert processed_task.get("subtasks", []) == active_subs
+            for sub in processed_task.get("subtasks", []):
+                assert sub.get("priority") == priority_map["tags"]
+
+    @pytest.mark.parametrize(
+        "priority_value, field_name, field_value, expect_priority_set",
+        [
+            (7, "tags", [{"active": True}], True),
+            (4, "tags", [{"active": True}], False),
+            (5, "items", [{"active": True}], True),
+            (5, "items", [{"active": False}], False),
+            (10, "deps", [{"active": True}, {"active": True}], True),
+        ],
+    )
+    def test_priority_threshold_and_active_filter(
+        self,
+        priority_value: int,
+        field_name: str,
+        field_value: List[Dict],
+        expect_priority_set: bool,
+    ) -> None:
+        """
+        Проверяет порог приоритета (>=5) и фильтрацию только по active=True.
+        """
+        queue = [{field_name: field_value, "id": 1}]
+        priority_map = {field_name: priority_value}
+        result = nine_level_priority_processor(queue, priority_map, 3)
+        assert len(result) == 1
+        processed = result[0]
+        if expect_priority_set:
+            assert "subtasks" in processed
+            for sub in processed["subtasks"]:
+                assert sub.get("priority") == priority_value
+        else:
+            # либо нет subtasks, либо пустой список
+            assert not processed.get("subtasks")
+
+    def test_max_depth_unused_but_accepted(self) -> None:
+        """
+        Проверяет, что параметр max_depth принимается, но не влияет на текущую логику.
+        """
+        queue = [{"tags": [{"active": True}]}]
+        priority_map = {"tags": 7}
+        result_default = nine_level_priority_processor(queue, priority_map)
+        result_custom = nine_level_priority_processor(queue, priority_map, max_depth=10)
+        assert result_default == result_custom
+
+    def test_non_dict_subitems_ignored(self) -> None:
+        """
+        Проверяет, что неподходящие подэлементы (не dict) не вызывают исключений
+        и не добавляются в subtasks.
+        """
+        queue = [{"tags": ["string_item", 42, None, {"active": True}]}]
+        priority_map = {"tags": 7}
+        result = nine_level_priority_processor(queue, priority_map, 3)
+        assert len(result) == 1
+        processed = result[0]
+        assert processed.get("subtasks") == [{"active": True, "priority": 7}]
+
+    def test_attribute_error_on_subitem_handled_gracefully(self) -> None:
+        """
+        Проверяет, что AttributeError внутри блока try/except не ломает обработку.
+        """
+
+        class BadItem:
+            def get(self, key, default=None):
+                raise AttributeError("broken")
+
+        queue = [{"tags": [BadItem()]}]
+        priority_map = {"tags": 7}
+        # Не должно выбросить исключение
+        result = nine_level_priority_processor(queue, priority_map, 3)
+        assert len(result) == 1
+        assert "subtasks" not in result[0] or result[0]["subtasks"] == []
+
+    def test_original_queue_consumed(self) -> None:
+        """
+        Проверяет, что входная очередь опустошается в процессе работы (pop(0) в цикле).
+        """
+        queue = [{"id": 1}, {"id": 2}]
+        priority_map = {}
+        nine_level_priority_processor(queue, priority_map, 3)
+        assert queue == []
+
+    def test_deepcopy_preserves_original_task_structure(self) -> None:
+        """
+        Проверяет, что исходные задачи не модифицируются напрямую (используется deepcopy).
+        """
+        original_task = {"tags": [{"active": True}]}
+        queue = [original_task]
+        priority_map = {"tags": 7}
+        result = nine_level_priority_processor(queue, priority_map, 3)
+        # В оригинальной задаче не должно появиться "priority" или "subtasks"
+        assert "priority" not in original_task
+        assert "subtasks" not in original_task
+        # Но в результате должно быть
+        assert result[0].get("subtasks", [{}])[0].get("priority") == 7
+
+    def test_empty_queue_returns_empty_list(self) -> None:
+        """
+        Проверяет корректную обработку пустой очереди.
+        """
+        result = nine_level_priority_processor([], {"any": 5}, 3)
+        assert result == []
+
+    def test_field_not_in_priority_map_skipped(self) -> None:
+        """
+        Проверяет, что поля, отсутствующие в priority_map, не обрабатываются.
+        """
+        queue = [{"unknown": [{"active": True}]}]
+        priority_map = {"known": 7}
+        result = nine_level_priority_processor(queue, priority_map, 3)
+        assert result == [{"unknown": [{"active": True}]}]
+        assert "subtasks" not in result[0]
+2026-04-27 23:50:38 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [REFINE] FEEDBACK 
+============================= test session starts =============================
+collecting ... collected 18 items
+
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue0-priority_map0-3-1] FAILED [  5%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue1-priority_map1-3-1] FAILED [ 11%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue2-priority_map2-3-1] FAILED [ 16%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue3-priority_map3-3-1] FAILED [ 22%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue4-priority_map4-3-1] FAILED [ 27%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue5-priority_map5-3-1] FAILED [ 33%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[7-tags-field_value0-True] PASSED [ 38%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[4-tags-field_value1-False] PASSED [ 44%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[5-items-field_value2-True] PASSED [ 50%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[5-items-field_value3-False] PASSED [ 55%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[10-deps-field_value4-True] PASSED [ 61%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_max_depth_unused_but_accepted FAILED [ 66%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_non_dict_subitems_ignored PASSED [ 72%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_attribute_error_on_subitem_handled_gracefully PASSED [ 77%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_original_queue_consumed PASSED [ 83%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_deepcopy_preserves_original_task_structure PASSED [ 88%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_empty_queue_returns_empty_list PASSED [ 94%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_field_not_in_priority_map_skipped PASSED [100%]
+
+================================== FAILURES ===================================
+_ TestNineLevelPriorityProcessor.test_priority_assignment_and_subtasks_creation[queue0-priority_map0-3-1] _
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py:46: in test_priority_assignment_and_subtasks_creation
+    if "tags" in priority_map and priority_map["tags"] >= 5 and isinstance(queue[0].get("tags"), list):
+                                                                           ^^^^^^^^
+E   IndexError: list index out of range
+_ TestNineLevelPriorityProcessor.test_priority_assignment_and_subtasks_creation[queue1-priority_map1-3-1] _
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py:46: in test_priority_assignment_and_subtasks_creation
+    if "tags" in priority_map and priority_map["tags"] >= 5 and isinstance(queue[0].get("tags"), list):
+                                                                           ^^^^^^^^
+E   IndexError: list index out of range
+_ TestNineLevelPriorityProcessor.test_priority_assignment_and_subtasks_creation[queue2-priority_map2-3-1] _
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py:46: in test_priority_assignment_and_subtasks_creation
+    if "tags" in priority_map and priority_map["tags"] >= 5 and isinstance(queue[0].get("tags"), list):
+                                                                           ^^^^^^^^
+E   IndexError: list index out of range
+_ TestNineLevelPriorityProcessor.test_priority_assignment_and_subtasks_creation[queue3-priority_map3-3-1] _
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py:46: in test_priority_assignment_and_subtasks_creation
+    if "tags" in priority_map and priority_map["tags"] >= 5 and isinstance(queue[0].get("tags"), list):
+                                                                           ^^^^^^^^
+E   IndexError: list index out of range
+_ TestNineLevelPriorityProcessor.test_priority_assignment_and_subtasks_creation[queue4-priority_map4-3-1] _
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py:46: in test_priority_assignment_and_subtasks_creation
+    if "tags" in priority_map and priority_map["tags"] >= 5 and isinstance(queue[0].get("tags"), list):
+                                                                           ^^^^^^^^
+E   IndexError: list index out of range
+_ TestNineLevelPriorityProcessor.test_priority_assignment_and_subtasks_creation[queue5-priority_map5-3-1] _
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py:46: in test_priority_assignment_and_subtasks_creation
+    if "tags" in priority_map and priority_map["tags"] >= 5 and isinstance(queue[0].get("tags"), list):
+                                                                           ^^^^^^^^
+E   IndexError: list index out of range
+______ TestNineLevelPriorityProcessor.test_max_depth_unused_but_accepted ______
+C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py:96: in test_max_depth_unused_but_accepted
+    assert result_default == result_custom
+E   AssertionError: assert [{'subtasks':...ive': True}]}] == []
+E     
+E     Left contains one more item: {'subtasks': [{'active': True, 'priority': 7}], 'tags': [{'active': True}]}
+E     
+E     Full diff:
+E     - []
+E     + [
+E     +     {...
+E     
+E     ...Full output truncated (13 lines hidden), use '-vv' to show
+=========================== short test summary info ===========================
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue0-priority_map0-3-1]
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue1-priority_map1-3-1]
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue2-priority_map2-3-1]
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue3-priority_map3-3-1]
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue4-priority_map4-3-1]
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue5-priority_map5-3-1]
+FAILED ..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_max_depth_unused_but_accepted
+======================== 7 failed, 11 passed in 0.11s =========================
+
+
+2026-04-27 23:50:38 - PipelineOrchestrator - WARNING - [coro_id=2429898202496 coro_name=Task-2] - [REFINE] Провалено 7/18, починка 1/4
+2026-04-27 23:51:14 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [REFINE] Исправленный код получен
+2026-04-27 23:51:14 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:17 - PipelineOrchestrator - WARNING - [coro_id=2429898202496 coro_name=Task-2] - [REFINE] Провалено 2/18, починка 2/4
+2026-04-27 23:51:36 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [REFINE] Исправленный код получен
+2026-04-27 23:51:36 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:37 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:51:37 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [REFINE] Тесты прошли после починки (попытка 2)
+2026-04-27 23:51:37 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - Запуск пост-обработки тестов через LLM...
+2026-04-27 23:51:53 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - Пост-обработка завершена: 169 → 168 строк
+2026-04-27 23:51:53 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:54 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:51:54 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [REFINE] Пост-обработанные тесты прошли
+2026-04-27 23:51:54 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Лок захвачен для C:\diplom_projects\kogn\9\main.py
+2026-04-27 23:51:54 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Фаза 1: закрытие coverage для nine_level_priority_processor
+2026-04-27 23:51:54 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Coverage improve итерация 1/3
+2026-04-27 23:51:55 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [COVERAGE] stdout: ============================= test session starts =============================
+collecting ... collected 18 items
+
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue0-priority_map0-3-1] PASSED [  5%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue1-priority_map1-3-1] PASSED [ 11%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue2-priority_map2-3-1] PASSED [ 16%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue3-priority_map3-3-1] PASSED [ 22%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue4-priority_map4-3-1] PASSED [ 27%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_assignment_and_subtasks_creation[queue5-priority_map5-3-1] PASSED [ 33%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[7-tags-field_value0-True] PASSED [ 38%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[4-tags-field_value1-False] PASSED [ 44%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[5-items-field_value2-True] PASSED [ 50%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[5-items-field_value3-False] PASSED [ 55%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_priority_threshold_and_active_filter[10-deps-field_value4-True] PASSED [ 61%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_max_depth_unused_but_accepted PASSED [ 66%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_non_dict_subitems_ignored PASSED [ 72%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_attribute_error_on_subitem_handled_gracefully PASSED [ 77%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_original_queue_consumed PASSED [ 83%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_deepcopy_preserves_original_task_structure PASSED [ 88%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_empty_queue_returns_empty_list PASSED [ 94%]
+..\..\..\Users\zamok\AppData\Local\Temp\testgen_sandbox_bqcnyh3u\test_main.py::TestNineLevelPriorityProcessor::test_field_not_in_priority_map_skipped PASSED [100%]
+
+============================= 18 passed in 0.13s ==============================
+
+2026-04-27 23:51:55 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - Функция nine_level_priority_processor найдена: строки 4-28
+2026-04-27 23:51:55 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [COVERAGE] z_ab964e9673417756_main.py,cover: similarity=1.000
+2026-04-27 23:51:55 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [COVERAGE] Выбран annotate файл: z_ab964e9673417756_main.py,cover (score=1.000)
+2026-04-27 23:51:55 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - Функция nine_level_priority_processor: покрытие 91.7% (22/24 строк)
+2026-04-27 23:51:55 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Coverage 91.7% >= 60%
+2026-04-27 23:51:55 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Фаза 2: мутационное тестирование для nine_level_priority_processor
+2026-04-27 23:51:55 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Mutation итерация 1/3
+2026-04-27 23:51:55 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Запуск для nine_level_priority_processor
+2026-04-27 23:51:55 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [Mutator] Найдено 13 точек мутации (функция: nine_level_priority_processor)
+2026-04-27 23:51:55 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [Mutator] Сгенерировано 8 мутантов для nine_level_priority_processor
+2026-04-27 23:51:55 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Бэкап создан: C:\diplom_projects\kogn\9\main.py.mutation_backup
+2026-04-27 23:51:55 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Мутант 1/8: return_none на строке 23: 'return processed'
+2026-04-27 23:51:55 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:56 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] ✓ Мутант 1 УБИТ
+2026-04-27 23:51:56 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Мутант 2/8: constant_swap на строке 3: 'def nine_level_priority_processor(queue: List[Dict], priority_map: Dict[str, int], max_depth: int=3) -> List[Dict]:'
+2026-04-27 23:51:56 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:57 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:51:57 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] ✗ Мутант 2 ВЫЖИЛ
+2026-04-27 23:51:57 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Мутант 3/8: negate_condition на строке 10: 'if field_name in priority_map:'
+2026-04-27 23:51:57 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:57 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] ✓ Мутант 3 УБИТ
+2026-04-27 23:51:57 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Мутант 4/8: constant_swap на строке 7: 'task = queue.pop(0)'
+2026-04-27 23:51:58 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:58 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] ✓ Мутант 4 УБИТ
+2026-04-27 23:51:58 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Мутант 5/8: comparison_swap на строке 12: 'if p >= 5:'
+2026-04-27 23:51:58 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:59 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] ✓ Мутант 5 УБИТ
+2026-04-27 23:51:59 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Мутант 6/8: constant_swap на строке 12: 'if p >= 5:'
+2026-04-27 23:51:59 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:51:59 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] ✓ Мутант 6 УБИТ
+2026-04-27 23:51:59 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Мутант 7/8: boolean_swap на строке 17: 'if sub_item.get('active', False):'
+2026-04-27 23:51:59 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:00 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] ✓ Мутант 7 УБИТ
+2026-04-27 23:52:00 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Мутант 8/8: arithmetic_swap на строке 19: 'temp['subtasks'] = temp.get('subtasks', []) + [sub_item]'
+2026-04-27 23:52:00 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:01 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] ✓ Мутант 8 УБИТ
+2026-04-27 23:52:01 - PipelineOrchestrator - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Бэкап удалён: C:\diplom_projects\kogn\9\main.py.mutation_backup
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [MUTATION] Завершено: score=87.5%, killed=7/8, survived=1
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Mutation score 87.5% >= 60.0%, достаточно
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Лок освобождён для C:\diplom_projects\kogn\9\main.py
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [IMPROVE] Завершено для nine_level_priority_processor: coverage 91.7% → 91.7%, mutation 87.5% → 87.5%
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [ORCHESTRATOR] nine_level_priority_processor: улучшение не требуется или невозможно
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [ORCHESTRATOR] ✓ Тесты готовы для nine_level_priority_processor
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429898202496 coro_name=Task-2] - [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - Объединение 1 тестов в C:\diplom_projects\kogn\9\tests\test_main.py
+2026-04-27 23:52:01 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-v', '--tb=short', '--no-header'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] ✓ Тесты записаны: C:\diplom_projects\kogn\9\tests\test_main.py
+2026-04-27 23:52:01 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Создан C:\diplom_projects\kogn\9\tests\__init__.py
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Итого: 1 функций → 1 файлов
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Запуск анализа сгенерированных тестов
+2026-04-27 23:52:01 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [REPORT] coverage ...
+2026-04-27 23:52:01 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [COVERAGE] Running: ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\pytest.exe', '--tb=no', '--no-header', '-q', '--cov-report=json:C:\\diplom_projects\\kogn\\9\\.coverage_report.json', '--cov-config=C:\\diplom_projects\\kogn\\9\\.coveragerc_tmp', '--cov=.', 'C:\\diplom_projects\\kogn\\9\\tests\\test_main.py']
+2026-04-27 23:52:02 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [REPORT] duplication ...
+2026-04-27 23:52:02 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [REPORT] reliability ...
+2026-04-27 23:52:02 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [RELIABILITY] Run 1/3
+2026-04-27 23:52:03 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [RELIABILITY] Run 2/3
+2026-04-27 23:52:03 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [RELIABILITY] Run 3/3
+2026-04-27 23:52:04 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [REPORT] mutation ...
+2026-04-27 23:52:04 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION_ANALYZER] Testing function: nine_level_priority_processor
+2026-04-27 23:52:04 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Запуск для nine_level_priority_processor
+2026-04-27 23:52:04 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [Mutator] Найдено 13 точек мутации (функция: nine_level_priority_processor)
+2026-04-27 23:52:04 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [Mutator] Сгенерировано 8 мутантов для nine_level_priority_processor
+2026-04-27 23:52:04 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Бэкап создан: C:\diplom_projects\kogn\9\main.py.mutation_backup
+2026-04-27 23:52:04 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Мутант 1/8: return_none на строке 23: 'return processed'
+2026-04-27 23:52:04 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:04 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] ✓ Мутант 9 УБИТ
+2026-04-27 23:52:04 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Мутант 2/8: constant_swap на строке 3: 'def nine_level_priority_processor(queue: List[Dict], priority_map: Dict[str, int], max_depth: int=3) -> List[Dict]:'
+2026-04-27 23:52:04 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:05 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+2026-04-27 23:52:05 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] ✗ Мутант 10 ВЫЖИЛ
+2026-04-27 23:52:05 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Мутант 3/8: negate_condition на строке 10: 'if field_name in priority_map:'
+2026-04-27 23:52:05 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:05 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] ✓ Мутант 11 УБИТ
+2026-04-27 23:52:05 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Мутант 4/8: constant_swap на строке 7: 'task = queue.pop(0)'
+2026-04-27 23:52:05 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:06 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] ✓ Мутант 12 УБИТ
+2026-04-27 23:52:06 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Мутант 5/8: comparison_swap на строке 12: 'if p >= 5:'
+2026-04-27 23:52:06 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:06 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] ✓ Мутант 13 УБИТ
+2026-04-27 23:52:06 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Мутант 6/8: constant_swap на строке 12: 'if p >= 5:'
+2026-04-27 23:52:06 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:07 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] ✓ Мутант 14 УБИТ
+2026-04-27 23:52:07 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Мутант 7/8: boolean_swap на строке 17: 'if sub_item.get('active', False):'
+2026-04-27 23:52:07 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:07 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] ✓ Мутант 15 УБИТ
+2026-04-27 23:52:07 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Мутант 8/8: arithmetic_swap на строке 19: 'temp['subtasks'] = temp.get('subtasks', []) + [sub_item]'
+2026-04-27 23:52:07 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\python.exe', '-m', 'pytest', 'C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\test_main.py', '-x', '--tb=no', '--no-header', '-q'], C:\diplom_projects\kogn\9
+2026-04-27 23:52:08 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] ✓ Мутант 16 УБИТ
+2026-04-27 23:52:08 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Бэкап удалён: C:\diplom_projects\kogn\9\main.py.mutation_backup
+2026-04-27 23:52:08 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [MUTATION] Завершено: score=87.5%, killed=7/8, survived=1
+2026-04-27 23:52:08 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [REPORT] Coverage cmd: ['C:\\Users\\zamok\\AppData\\Local\\Temp\\testgen_sandbox_bqcnyh3u\\.venv\\Scripts\\pytest.exe', '--tb=no', '--no-header', '-q', '--cov-report=html:C:\\diplom_projects\\kogn\\9\\test_analysis_report\\coverage_html', '--cov-config=C:\\diplom_projects\\kogn\\9\\test_analysis_report\\.coveragerc', '--cov=.', 'C:\\diplom_projects\\kogn\\9\\tests\\test_main.py']
+2026-04-27 23:52:09 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [REPORT] stdout: ..................                                                       [100%]
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.12.0-final-0 _______________
+
+Coverage HTML written to dir C:\diplom_projects\kogn\9\test_analysis_report\coverage_html
+18 passed in 0.36s
+
+2026-04-27 23:52:10 - PipelineOrchestrator - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - Skipping test file: z_a44f0ac069e85531_test_main.py,cover
+2026-04-27 23:52:10 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [REPORT] HTML → C:\diplom_projects\kogn\9\test_analysis_report\index.html
+2026-04-27 23:52:10 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] HTML-отчёт: C:\diplom_projects\kogn\9\test_analysis_report\index.html
+2026-04-27 23:52:10 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] HTML-отчёт покрытия: C:\diplom_projects\kogn\9\test_analysis_report\coverage_html
+2026-04-27 23:52:10 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Аннотированные файлы покрытия: C:\diplom_projects\kogn\9\test_analysis_report\coverage_annotate
+2026-04-27 23:52:10 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] LLM-клиент закрыт
+2026-04-27 23:52:10 - PipelineOrchestrator - INFO - [coro_id=2429897301376 coro_name=Task-1] - [ORCHESTRATOR] Пайплайн завершён

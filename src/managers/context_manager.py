@@ -95,21 +95,40 @@ class ContextManager:
 
     def _collect_all_field_type_dependencies(self) -> None:
         """Финальный проход по всем собранным классам."""
-        all_class_keys = []
-        for file_ctx in self.files.values():
-            all_class_keys.extend(file_ctx.classes.keys())
+        max_iterations = 10
 
-        for class_key in all_class_keys:
-            class_info = self.project_indexer.classes.get(class_key)
-            if class_info:
-                self._collect_field_type_dependencies(class_info)
-                self._collect_method_type_dependencies(class_info)
+        for _ in range(max_iterations):
+            current_class_keys = []
+            for file_ctx in self.files.values():
+                current_class_keys.extend(file_ctx.classes.keys())
 
-        for file_ctx in self.files.values():
-            for func_collected in file_ctx.functions.values():
-                self._collect_body_annotation_dependencies(func_collected.info.code)
-                for sig_dep in func_collected.info.signature_dependencies:
-                    self._resolve_and_ensure_class_by_name(sig_dep)
+            current_func_keys = []
+            for file_ctx in self.files.values():
+                current_func_keys.extend(file_ctx.functions.keys())
+
+            size_before = len(self.seen_objects)
+
+            for class_key in list(current_class_keys):
+                class_info = self.project_indexer.classes.get(class_key)
+                if class_info:
+                    self._collect_field_type_dependencies(class_info)
+                    self._collect_method_type_dependencies(class_info)
+
+            for func_key in list(current_func_keys):
+                file_ctx_func = None
+                for fc in self.files.values():
+                    if func_key in fc.functions:
+                        file_ctx_func = fc.functions[func_key]
+                        break
+                if file_ctx_func:
+                    self._collect_body_annotation_dependencies(file_ctx_func.info.code)
+                    for sig_dep in file_ctx_func.info.signature_dependencies:
+                        self._resolve_and_ensure_class_by_name(sig_dep)
+
+            size_after = len(self.seen_objects)
+
+            if size_after == size_before:
+                break
 
     def _collect_signature_dependencies(self, function_info: FunctionInfo) -> None:
         for dep_path in function_info.signature_dependencies:

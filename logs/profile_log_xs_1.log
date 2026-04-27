@@ -1,0 +1,65 @@
+2026-04-26 17:58:38 - src.utils.profiler - DEBUG - [coro_id=2143879175552 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 0.1454, 'peak_rss_kb': 79736, 'peak_rss_mb': 77.867, 'peak_traced_kb': 2862, 'peak_traced_mb': 2.795}
+2026-04-26 17:58:38 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.0157, 'peak_rss_kb': 77924, 'peak_rss_mb': 76.098, 'peak_traced_kb': 204, 'peak_traced_mb': 0.199}
+2026-04-26 17:58:38 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 77924, 'peak_rss_mb': 76.098, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-26 17:59:13 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 17.5601, 'peak_rss_kb': 87420, 'peak_rss_mb': 85.371, 'peak_traced_kb': 684, 'peak_traced_mb': 0.668}
+2026-04-26 17:59:13 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 87428, 'peak_rss_mb': 85.379, 'peak_traced_kb': 18, 'peak_traced_mb': 0.018}
+2026-04-26 17:59:14 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 0.9418, 'peak_rss_kb': 88748, 'peak_rss_mb': 86.668, 'peak_traced_kb': 784, 'peak_traced_mb': 0.766}
+2026-04-26 17:59:14 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 88748, 'peak_rss_mb': 86.668, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-26 17:59:20 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 5.286, 'peak_rss_kb': 89272, 'peak_rss_mb': 87.18, 'peak_traced_kb': 490, 'peak_traced_mb': 0.479}
+2026-04-26 17:59:20 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 6.232, 'peak_rss_kb': 89272, 'peak_rss_mb': 87.18, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-26 17:59:20 - src.utils.profiler - DEBUG - [coro_id=2143879175552 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 41.7709, 'peak_rss_kb': 89272, 'peak_rss_mb': 87.18, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-26 17:59:20 - src.utils.profiler - DEBUG - [coro_id=2143879175552 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
+dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 0.528, 'peak_rss_kb': 89352, 'peak_rss_mb': 87.258, 'peak_traced_kb': 627, 'peak_traced_mb': 0.612}
+2026-04-26 17:59:29 - src.utils.profiler - DEBUG - [coro_id=2143879175552 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 79.4311, 'peak_rss_kb': 96232, 'peak_rss_mb': 93.977, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+
+
+Запуск 1:
+    покрытие 100%
+    мутанты 100%
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 1957 prompt + 2071 completion = 4028 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 3718 prompt + 2071 completion = 5789 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 2 calls, 5675 prompt tokens, 4142 completion tokens, 9817 total tokens
+============================================================
+
+Запуск 2:
+    покрытие 100%
+    мутанты 84.6%
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 1592 prompt + 1958 completion = 3550 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 4013 prompt + 706 completion = 4719 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 4739 prompt + 1970 completion = 6709 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 3252 prompt + 1970 completion = 5222 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 4 calls, 13596 prompt tokens, 6604 completion tokens, 20200 total tokens
+============================================================
+
+Запуск 3:
+    покрытие 100%
+    мутанты 100%
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 1592 prompt + 1768 completion = 3360 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 3627 prompt + 213 completion = 3840 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 3860 prompt + 1777 completion = 5637 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 3059 prompt + 1774 completion = 4833 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 4 calls, 12138 prompt tokens, 5532 completion tokens, 17670 total tokens
+============================================================

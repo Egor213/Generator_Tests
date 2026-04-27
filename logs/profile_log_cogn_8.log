@@ -1,0 +1,163 @@
+2026-04-27 23:34:46 - src.utils.profiler - DEBUG - [coro_id=2472533056896 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 0.017, 'peak_rss_kb': 77608, 'peak_rss_mb': 75.789, 'peak_traced_kb': 2558, 'peak_traced_mb': 2.498}
+2026-04-27 23:34:46 - src.utils.profiler - DEBUG - [coro_id=2472533924864 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.0072, 'peak_rss_kb': 77628, 'peak_rss_mb': 75.809, 'peak_traced_kb': 146, 'peak_traced_mb': 0.143}
+2026-04-27 23:34:46 - src.utils.profiler - DEBUG - [coro_id=2472533924864 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 77628, 'peak_rss_mb': 75.809, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-27 23:37:15 - src.utils.profiler - DEBUG - [coro_id=2472533924864 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 70.9802, 'peak_rss_kb': 87176, 'peak_rss_mb': 85.133, 'peak_traced_kb': 597, 'peak_traced_mb': 0.583}
+2026-04-27 23:37:15 - src.utils.profiler - DEBUG - [coro_id=2472533924864 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 87180, 'peak_rss_mb': 85.137, 'peak_traced_kb': 13, 'peak_traced_mb': 0.013}
+2026-04-27 23:37:16 - src.utils.profiler - DEBUG - [coro_id=2472533924864 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 0.9416, 'peak_rss_kb': 87996, 'peak_rss_mb': 85.934, 'peak_traced_kb': 277, 'peak_traced_mb': 0.271}
+2026-04-27 23:37:16 - src.utils.profiler - DEBUG - [coro_id=2472533924864 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 87996, 'peak_rss_mb': 85.934, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-27 23:37:23 - src.utils.profiler - DEBUG - [coro_id=2472533924864 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 7.1112, 'peak_rss_kb': 88364, 'peak_rss_mb': 86.293, 'peak_traced_kb': 321, 'peak_traced_mb': 0.313}
+2026-04-27 23:37:23 - src.utils.profiler - DEBUG - [coro_id=2472533924864 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 8.056, 'peak_rss_kb': 88364, 'peak_rss_mb': 86.293, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-27 23:37:23 - src.utils.profiler - DEBUG - [coro_id=2472533056896 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 156.3023, 'peak_rss_kb': 88364, 'peak_rss_mb': 86.293, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-27 23:37:23 - src.utils.profiler - DEBUG - [coro_id=2472533056896 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
+dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 0.485, 'peak_rss_kb': 88452, 'peak_rss_mb': 86.379, 'peak_traced_kb': 387, 'peak_traced_mb': 0.378}
+2026-04-27 23:37:34 - src.utils.profiler - DEBUG - [coro_id=2472533056896 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 198.0209, 'peak_rss_kb': 95372, 'peak_rss_mb': 93.137, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+
+
+
+
+INFO: [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_wmfa20b2\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+INFO: [pip upgrade] Зависимости установлены
+INFO: Файлы зависимостей не найдены, пропускаю установку
+INFO: [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_wmfa20b2\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov pytest-timeout coverage --quiet
+INFO: [pip install pytest] Зависимости установлены
+INFO: [ORCHESTRATOR] PipelineOrchestrator инициализирован
+INFO: [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+INFO: [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+INFO: [ORCHESTRATOR] Обработка: eight_level_analyzer (C:\diplom_projects\kogn\8\main.py)
+INFO: [ORCHESTRATOR] Контекст собран для eight_level_analyzer
+INFO: [ORCHESTRATOR] Генерация тестов для eight_level_analyzer, попытка 1/3
+WARNING: [REFINE] Провалено 7/15, починка 1/4
+WARNING: [REFINE] Провалено 2/14, починка 2/4
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [REFINE] Тесты прошли после починки (попытка 2)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка: LLM не внесла изменений, код чистый
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\kogn\8\main.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для eight_level_analyzer
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция eight_level_analyzer: покрытие 80.0% (24/30 строк)
+INFO: [IMPROVE] Coverage 80.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для eight_level_analyzer
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для eight_level_analyzer
+INFO: [Mutator] Сгенерировано 14 мутантов для eight_level_analyzer
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [MUTATION] Завершено: score=64.3%, killed=9/14, survived=5
+INFO: [IMPROVE] Mutation score 64.3% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\kogn\8\main.py
+INFO: [IMPROVE] Завершено для eight_level_analyzer: coverage 80.0% → 80.0%, mutation 64.3% → 64.3%
+INFO: [ORCHESTRATOR] eight_level_analyzer: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для eight_level_analyzer
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+INFO: Объединение 1 тестов в C:\diplom_projects\kogn\8\tests\test_main.py
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [ORCHESTRATOR] ✓ Тесты записаны: C:\diplom_projects\kogn\8\tests\test_main.py
+INFO: [ORCHESTRATOR] Итого: 1 функций → 1 файлов
+INFO: [ORCHESTRATOR] Запуск анализа сгенерированных тестов
+
+
+Запуск 1:
+    покрытие 80%
+    мутанты 64.3%
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 1416 prompt + 1510 completion = 2926 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 3611 prompt + 2501 completion = 6112 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 6132 prompt + 1377 completion = 7509 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 2464 prompt + 712 completion = 3176 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #5: 3196 prompt + 1374 completion = 4570 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #6: 2478 prompt + 1374 completion = 3852 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 6 calls, 19297 prompt tokens, 8848 completion tokens, 28145 total tokens
+============================================================
+
+
+
+INFO: [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_ou02n3am\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+INFO: [pip upgrade] Зависимости установлены
+INFO: Файлы зависимостей не найдены, пропускаю установку
+INFO: [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_ou02n3am\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov pytest-timeout coverage --quiet
+INFO: [pip install pytest] Зависимости установлены
+INFO: [ORCHESTRATOR] PipelineOrchestrator инициализирован
+INFO: [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+INFO: [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+INFO: [ORCHESTRATOR] Обработка: eight_level_analyzer (C:\diplom_projects\kogn\8\main.py)
+INFO: [ORCHESTRATOR] Контекст собран для eight_level_analyzer
+INFO: [ORCHESTRATOR] Генерация тестов для eight_level_analyzer, попытка 1/3
+WARNING: [REFINE] Провалено 12/27, починка 1/4
+WARNING: [REFINE] Провалено 7/27, починка 2/4
+WARNING: [REFINE] Провалено 5/27, починка 3/4
+WARNING: [REFINE] Провалено 4/27, починка 4/4
+INFO: [REFINE] Попытка очистки сломанных тестов
+INFO: Найдено 3 проваленных тестов
+INFO: Проваленные тесты удалены из кода
+INFO: Неиспользуемых фикстур не найдено
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [REFINE] Очищенные тесты прошли
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Удалено 4 неиспользуемых импортов: ['pytest', 'Dict', 'List', 'Union']
+INFO: Пост-обработка завершена: 45 → 43 строк
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\kogn\8\main.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для eight_level_analyzer
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция eight_level_analyzer: покрытие 80.0% (24/30 строк)
+INFO: [IMPROVE] Coverage 80.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для eight_level_analyzer
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для eight_level_analyzer
+INFO: [Mutator] Сгенерировано 14 мутантов для eight_level_analyzer
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [MUTATION] Завершено: score=71.4%, killed=10/14, survived=4
+INFO: [IMPROVE] Mutation score 71.4% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\kogn\8\main.py
+INFO: [IMPROVE] Завершено для eight_level_analyzer: coverage 80.0% → 80.0%, mutation 71.4% → 71.4%
+INFO: [ORCHESTRATOR] eight_level_analyzer: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для eight_level_analyzer
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+INFO: Объединение 1 тестов в C:\diplom_projects\kogn\8\tests\test_main.py
+INFO: [TESTRUNNER] Тесты в песочнице ПРОШЛИ
+INFO: [ORCHESTRATOR] ✓ Тесты записаны: C:\diplom_projects\kogn\8\tests\test_main.py
+INFO: [ORCHESTRATOR] Итого: 1 функций → 1 файлов
+INFO: [ORCHESTRATOR] Запуск анализа сгенерированных тестов
+
+
+Запуск 2:
+    покрытие 80%
+    мутанты 71.4%
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 1416 prompt + 2021 completion = 3437 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 5004 prompt + 12454 completion = 17458 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 17478 prompt + 2020 completion = 19498 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 4121 prompt + 2686 completion = 6807 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #5: 6827 prompt + 2020 completion = 8847 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #6: 3721 prompt + 1646 completion = 5367 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #7: 5387 prompt + 2020 completion = 7407 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #8: 3534 prompt + 1073 completion = 4607 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #9: 4627 prompt + 2020 completion = 6647 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #10: 1785 prompt + 681 completion = 2466 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 10 calls, 53900 prompt tokens, 28641 completion tokens, 82541 total tokens
+============================================================

@@ -1,0 +1,82 @@
+2026-04-27 22:34:12 - src.utils.profiler - DEBUG - [coro_id=2545932918144 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 0.0065, 'peak_rss_kb': 77200, 'peak_rss_mb': 75.391, 'peak_traced_kb': 2558, 'peak_traced_mb': 2.498}
+2026-04-27 22:34:12 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.006, 'peak_rss_kb': 76440, 'peak_rss_mb': 74.648, 'peak_traced_kb': 112, 'peak_traced_mb': 0.109}
+2026-04-27 22:34:12 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 76440, 'peak_rss_mb': 74.648, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-27 22:35:27 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 40.093, 'peak_rss_kb': 86644, 'peak_rss_mb': 84.613, 'peak_traced_kb': 582, 'peak_traced_mb': 0.568}
+2026-04-27 22:35:27 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 86648, 'peak_rss_mb': 84.617, 'peak_traced_kb': 12, 'peak_traced_mb': 0.012}
+2026-04-27 22:35:28 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 0.9372, 'peak_rss_kb': 87444, 'peak_rss_mb': 85.395, 'peak_traced_kb': 230, 'peak_traced_mb': 0.225}
+2026-04-27 22:35:28 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 87444, 'peak_rss_mb': 85.395, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-27 22:35:34 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 6.1954, 'peak_rss_kb': 87816, 'peak_rss_mb': 85.758, 'peak_traced_kb': 285, 'peak_traced_mb': 0.278}
+2026-04-27 22:35:34 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 7.1378, 'peak_rss_kb': 87816, 'peak_rss_mb': 85.758, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-27 22:35:34 - src.utils.profiler - DEBUG - [coro_id=2545932918144 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 82.5479, 'peak_rss_kb': 87816, 'peak_rss_mb': 85.758, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-27 22:35:35 - src.utils.profiler - DEBUG - [coro_id=2545932918144 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
+dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 0.491, 'peak_rss_kb': 88016, 'peak_rss_mb': 85.953, 'peak_traced_kb': 441, 'peak_traced_mb': 0.431}
+2026-04-27 22:35:45 - src.utils.profiler - DEBUG - [coro_id=2545932918144 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 116.3083, 'peak_rss_kb': 94804, 'peak_rss_mb': 92.582, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+
+
+def process_transactions_heavy(
+    transactions: list[dict],
+    thresholds: dict[str, float],
+    allowed_statuses: list[str],
+    tag_weights: dict[str, float] | None = None
+) -> dict[str, float]:
+    if tag_weights is None:
+        tag_weights = {}
+
+    result = {}
+    for tx in transactions:
+        tx_type = tx.get("type", "default")
+        threshold = thresholds.get(tx_type, 0.0)
+        amount = tx.get("amount", 0.0)
+        if amount > threshold:
+            currency = tx.get("currency", "USD")
+            if currency == "EUR":
+                amount = amount * 1.1
+                if tx.get("status") in allowed_statuses:
+                    tags = tx.get("tags", [])
+                    for tag in tags:
+                        multiplier = tag_weights.get(tag, 1.0)
+                        contrib = amount * multiplier
+                        result[tag] = result.get(tag, 0.0) + contrib
+    return result
+
+
+
+Запуск 1:
+    Покрытие: 100%
+    Мутационное: 78.6%
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 1339 prompt + 1930 completion = 3269 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 2784 prompt + 422 completion = 3206 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 3226 prompt + 1925 completion = 5151 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 2951 prompt + 1919 completion = 4870 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 4 calls, 10300 prompt tokens, 6196 completion tokens, 16496 total tokens
+============================================================
+
+
+Запуск 2:
+    Покрытие: 100%
+    Мутационное: 78.6%
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 1339 prompt + 2191 completion = 3530 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 3926 prompt + 843 completion = 4769 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 4789 prompt + 2206 completion = 6995 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 3232 prompt + 2200 completion = 5432 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 4 calls, 13286 prompt tokens, 7440 completion tokens, 20726 total tokens
+============================================================

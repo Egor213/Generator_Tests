@@ -154,13 +154,13 @@ class CoverageAnalyzer(BaseAnalyzer):
             )
 
             if result.stderr:
-                self.logger.debug(f"[COVERAGE] stderr: {result.stderr[-500:]}")
+                self.logger.debug(f"[COVERAGE] stderr: {result.stderr}")
 
             if not cov_json_path.exists():
-                self.logger.warning(
+                self.logger.debug(
                     f"[COVERAGE] JSON report not created. "
-                    f"stdout: {result.stdout[-300:]}, "
-                    f"stderr: {result.stderr[-300:]}"
+                    f"stdout: {result.stdout}, "
+                    f"stderr: {result.stderr}"
                 )
                 return None
 
