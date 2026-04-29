@@ -26,11 +26,11 @@ black -l 100 ./src
 # python "$@"
 
 
+# ВОТ ЭТО ЗАПУСК ЧЕРЕЗ ДОКЕР КОМПОУЗ
 # docker build -t my-analyzer .
 # docker run --rm -v "C:/Diplom/bsc_Muravin/Task_project:/target_project" my-analyzer python main.py --project /target_project --target-function "service/task.py::TaskService.create_task"
 # docker run --rm -v "C:/Diplom/bsc_Muravin/Task_project:/Task_project" -v "C:/Diplom/bsc_Muravin/Generator_Tests/logs:/app/logs"  my-analyzer python main.py --project ../Task_project --target-function "service/task.py::TaskService.create_task"
 # docker exec -it 6b4e5b0b6909 sh
-
 
 
 # docker run --rm -e INPUT_PROJECT="../github/workspace/Task_project" -e INPUT_TARGET_FUNCTION="service/task.py::TaskService.create_task" -e AI_API_KEY="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" -v "$(pwd -W):/github/workspace" my-analyzer
@@ -47,4 +47,10 @@ black -l 100 ./src
 # python main.py --project "../diplom_projects/l/fastapi/" --target-function "./fastapi/dependencies/utils.py::analyze_param"
 
 
-python main.py --project "../diplom_projects/kogn/9/" --target-function "./main.py::nine_level_priority_processor"
+# python main.py --project "../diplom_projects/kogn/9/" --target-function "./main.py::nine_level_priority_processor"
+
+
+python main.py --project "../Generator_Test_for_test/" --target-file "./src/orchestrator/orchestrator.py"
+
+# python main.py --project "../Generator_Test_for_test/" --target-function "./src/orchestrator/orchestrator.py::PipelineOrchestrator.orchestrate_pipeline"
+

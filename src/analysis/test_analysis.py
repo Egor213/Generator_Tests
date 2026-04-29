@@ -167,13 +167,18 @@ class TestAnalysisManager:
             for node in ast.walk(tree):
                 if class_name and isinstance(node, ast.ClassDef) and node.name == class_name:
                     for item in node.body:
-                        if isinstance(item, ast.FunctionDef) and item.name == func_name:
+                        if (
+                            isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef))
+                            and item.name == func_name
+                        ):
                             start_line = item.lineno
                             end_line = item.end_lineno
                             return (start_line, end_line)
 
                 elif (
-                    not class_name and isinstance(node, ast.FunctionDef) and node.name == func_name
+                    not class_name
+                    and isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
+                    and node.name == func_name
                 ):
                     start_line = node.lineno
                     end_line = node.end_lineno

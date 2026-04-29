@@ -51,6 +51,7 @@ Your goal is to write NEW test functions that execute the lines marked with "!" 
    - Assert return values, raised exceptions, or observable side effects
    - Use `pytest.raises` for expected exceptions
    - Use `@pytest.mark.parametrize` when multiple inputs target different "!" lines
+   - Use @pytest.mark.asyncio for async testing
    - Use `unittest.mock.patch` / `MagicMock` if the uncovered code depends on external calls
    - Name tests descriptively: `test_<function>_<what_uncovered_scenario_is_tested>`
 

@@ -5,9 +5,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: tests
+    container_name: my-analyzer
     volumes:
-      - /c/Diplom/bsc_Muravin/Generator_Tests:/app 
+      - ../Task_project:/target_project
+    command: >
+      python main.py --project /target_project
+      --target-function "service/task.py::TaskService.create_task"
     environment:
       PYTHONDONTWRITEBYTECODE: 1
       PYTHONUNBUFFERED: 1

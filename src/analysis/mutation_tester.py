@@ -87,8 +87,8 @@ class MutationTester:
         self,
         source_code: str,
         source_file: Path,
-        test_code: str,
-        test_filename: str,
+        test_code: list[str],
+        test_filename: list[str],
         function_name: str,
         _lock_acquired: bool = False,
     ) -> MutationResult:
@@ -113,10 +113,10 @@ class MutationTester:
 
     def _run_mutation_testing_impl(
         self,
-        source_code: str,
+        source_code: list[str],
         source_file: Path,
         test_code: str,
-        test_filename: str,
+        test_filename: list[str],
         function_name: str,
     ) -> MutationResult:
         import time
@@ -157,8 +157,8 @@ class MutationTester:
                     self._test_single_mutant(
                         mutant=mutant,
                         source_file=source_file_resolved,
-                        test_code=test_code,
-                        test_filename=test_filename,
+                        test_codes=test_code,
+                        test_filenames=test_filename,
                         result=result,
                     )
                 except Exception as e:
@@ -249,8 +249,8 @@ class MutationTester:
         self,
         mutant: Mutant,
         source_file: Path,
-        test_code: str,
-        test_filename: str,
+        test_codes: list[str],
+        test_filenames: list[str],
         result: MutationResult,
     ) -> None:
         try:
@@ -259,14 +259,21 @@ class MutationTester:
             self.logger.error(f"[MUTATION] Не удалось записать мутант в {source_file}: {e}")
             return
 
-        passed, feedback = self.test_runner.run_tests(
-            test_code=test_code,
-            test_filename=test_filename,
-            fast=True,
-        )
-
-        if not passed:
+        has_not_passed = False
+        has_timeout = False
+        for test_filename, test_code in zip(test_filenames, test_codes):
+            passed, feedback = self.test_runner.run_tests(
+                test_code=test_code,
+                test_filename=test_filename,
+                fast=True,
+            )
             if "timeout" in feedback.lower():
+                has_timeout = True
+            if not passed:
+                has_not_passed = True
+
+        if has_not_passed:
+            if has_timeout:
                 self.logger.debug(f"[MUTATION] ⏱ Мутант {mutant.id} TIMEOUT")
             else:
                 mutant.killed = True

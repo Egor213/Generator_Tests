@@ -121,9 +121,12 @@ class MutationAnalyzer(BaseAnalyzer):
                         function_map[func_name] = {
                             "source_file": source_file,
                             "source_code": source_code,
-                            "test_code": test_code,
-                            "test_filename": test_path.name,
+                            "test_code": [test_code],
+                            "test_filename": [test_path.name],
                         }
+                    else:
+                        function_map[func_name]["test_filename"].append(test_path.name)
+                        function_map[func_name]["test_code"].append(test_code)
 
         return function_map
 
@@ -132,7 +135,10 @@ class MutationAnalyzer(BaseAnalyzer):
         test_path: Path,
         source_files: dict[Path, str],
     ) -> Path | None:
-        test_name = test_path.stem
+        import re
+
+        test_name = str(test_path.stem)
+        test_name = re.sub(r"_part\d+$", "", test_name)
         if test_name.startswith("test_"):
             source_name = test_name[5:]
         else:
