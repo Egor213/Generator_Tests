@@ -1,0 +1,330 @@
+// profile_log_post_proc_worker_3_run_2.log
+2026-04-29 22:57:15 - src.utils.profiler - DEBUG - [coro_id=2934250528128 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 2.5637, 'peak_rss_kb': 86380, 'peak_rss_mb': 84.355, 'peak_traced_kb': 6051, 'peak_traced_mb': 5.909}
+2026-04-29 22:57:15 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.0567, 'peak_rss_kb': 81916, 'peak_rss_mb': 79.996, 'peak_traced_kb': 192, 'peak_traced_mb': 0.188}
+2026-04-29 22:57:15 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 81916, 'peak_rss_mb': 79.996, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:57:16 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.064, 'peak_rss_kb': 87020, 'peak_rss_mb': 84.98, 'peak_traced_kb': 172, 'peak_traced_mb': 0.168}
+2026-04-29 22:57:16 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 87020, 'peak_rss_mb': 84.98, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:57:16 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.0502, 'peak_rss_kb': 87064, 'peak_rss_mb': 85.023, 'peak_traced_kb': 168, 'peak_traced_mb': 0.164}
+2026-04-29 22:57:16 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 87064, 'peak_rss_mb': 85.023, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:57:40 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 12.1626, 'peak_rss_kb': 90756, 'peak_rss_mb': 88.629, 'peak_traced_kb': 633, 'peak_traced_mb': 0.618}
+2026-04-29 22:57:40 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 90760, 'peak_rss_mb': 88.633, 'peak_traced_kb': 36, 'peak_traced_mb': 0.035}
+2026-04-29 22:57:43 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 2.7068, 'peak_rss_kb': 92220, 'peak_rss_mb': 90.059, 'peak_traced_kb': 803, 'peak_traced_mb': 0.784}
+2026-04-29 22:57:43 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 92220, 'peak_rss_mb': 90.059, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:57:47 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 3.8235, 'peak_rss_kb': 93776, 'peak_rss_mb': 91.578, 'peak_traced_kb': 989, 'peak_traced_mb': 0.966}
+2026-04-29 22:57:47 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 6.5346, 'peak_rss_kb': 93776, 'peak_rss_mb': 91.578, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:57:47 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.0444, 'peak_rss_kb': 93776, 'peak_rss_mb': 91.578, 'peak_traced_kb': 167, 'peak_traced_mb': 0.163}
+2026-04-29 22:57:47 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 93776, 'peak_rss_mb': 91.578, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:58:03 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 24.7871, 'peak_rss_kb': 93828, 'peak_rss_mb': 91.629, 'peak_traced_kb': 816, 'peak_traced_mb': 0.797}
+2026-04-29 22:58:03 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 93828, 'peak_rss_mb': 91.629, 'peak_traced_kb': 36, 'peak_traced_mb': 0.035}
+2026-04-29 22:58:06 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 2.8488, 'peak_rss_kb': 93876, 'peak_rss_mb': 91.676, 'peak_traced_kb': 807, 'peak_traced_mb': 0.788}
+2026-04-29 22:58:06 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 93876, 'peak_rss_mb': 91.676, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:58:13 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 7.6611, 'peak_rss_kb': 94588, 'peak_rss_mb': 92.371, 'peak_traced_kb': 1051, 'peak_traced_mb': 1.026}
+2026-04-29 22:58:13 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 10.5136, 'peak_rss_kb': 94588, 'peak_rss_mb': 92.371, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:58:14 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.0439, 'peak_rss_kb': 94588, 'peak_rss_mb': 92.371, 'peak_traced_kb': 167, 'peak_traced_mb': 0.163}
+2026-04-29 22:58:14 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 94588, 'peak_rss_mb': 92.371, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:58:17 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 51.3085, 'peak_rss_kb': 94588, 'peak_rss_mb': 92.371, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:58:17 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 94588, 'peak_rss_mb': 92.371, 'peak_traced_kb': 36, 'peak_traced_mb': 0.035}
+2026-04-29 22:58:20 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 2.7938, 'peak_rss_kb': 94720, 'peak_rss_mb': 92.5, 'peak_traced_kb': 787, 'peak_traced_mb': 0.769}
+2026-04-29 22:58:20 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 94720, 'peak_rss_mb': 92.5, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:58:21 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.3607, 'peak_rss_kb': 95408, 'peak_rss_mb': 93.172, 'peak_traced_kb': 901, 'peak_traced_mb': 0.88}
+2026-04-29 22:58:21 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 4.1579, 'peak_rss_kb': 95408, 'peak_rss_mb': 93.172, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:58:21 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.0429, 'peak_rss_kb': 95408, 'peak_rss_mb': 93.172, 'peak_traced_kb': 166, 'peak_traced_mb': 0.162}
+2026-04-29 22:58:21 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 95408, 'peak_rss_mb': 93.172, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:58:35 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 39.1901, 'peak_rss_kb': 95416, 'peak_rss_mb': 93.18, 'peak_traced_kb': 385, 'peak_traced_mb': 0.376}
+2026-04-29 22:58:35 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 95416, 'peak_rss_mb': 93.18, 'peak_traced_kb': 36, 'peak_traced_mb': 0.035}
+2026-04-29 22:58:38 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 2.7833, 'peak_rss_kb': 95424, 'peak_rss_mb': 93.188, 'peak_traced_kb': 787, 'peak_traced_mb': 0.769}
+2026-04-29 22:58:38 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 95424, 'peak_rss_mb': 93.188, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:58:44 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 6.5193, 'peak_rss_kb': 95696, 'peak_rss_mb': 93.453, 'peak_traced_kb': 1018, 'peak_traced_mb': 0.994}
+2026-04-29 22:58:44 - src.utils.profiler - DEBUG - [coro_id=2934251417280 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 9.3065, 'peak_rss_kb': 95696, 'peak_rss_mb': 93.453, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:58:46 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 13.2073, 'peak_rss_kb': 95680, 'peak_rss_mb': 93.438, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:58:46 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 95680, 'peak_rss_mb': 93.438, 'peak_traced_kb': 36, 'peak_traced_mb': 0.035}
+2026-04-29 22:58:49 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 2.7912, 'peak_rss_kb': 95684, 'peak_rss_mb': 93.441, 'peak_traced_kb': 772, 'peak_traced_mb': 0.754}
+2026-04-29 22:58:49 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 95684, 'peak_rss_mb': 93.441, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:58:54 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 5.1778, 'peak_rss_kb': 96152, 'peak_rss_mb': 93.898, 'peak_traced_kb': 992, 'peak_traced_mb': 0.969}
+2026-04-29 22:58:54 - src.utils.profiler - DEBUG - [coro_id=2934251415744 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 7.9734, 'peak_rss_kb': 96152, 'peak_rss_mb': 93.898, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:59:12 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 41.5784, 'peak_rss_kb': 96152, 'peak_rss_mb': 93.898, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:59:12 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 96152, 'peak_rss_mb': 93.898, 'peak_traced_kb': 36, 'peak_traced_mb': 0.035}
+2026-04-29 22:59:14 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 2.8041, 'peak_rss_kb': 96156, 'peak_rss_mb': 93.902, 'peak_traced_kb': 815, 'peak_traced_mb': 0.796}
+2026-04-29 22:59:14 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 96156, 'peak_rss_mb': 93.902, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-29 22:59:16 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.3455, 'peak_rss_kb': 96360, 'peak_rss_mb': 94.102, 'peak_traced_kb': 903, 'peak_traced_mb': 0.882}
+2026-04-29 22:59:16 - src.utils.profiler - DEBUG - [coro_id=2934251417088 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 4.1554, 'peak_rss_kb': 96360, 'peak_rss_mb': 94.102, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:59:16 - src.utils.profiler - DEBUG - [coro_id=2934250528128 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 120.4589, 'peak_rss_kb': 96360, 'peak_rss_mb': 94.102, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-29 22:59:18 - src.utils.profiler - DEBUG - [coro_id=2934250528128 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
+dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 2.0041, 'peak_rss_kb': 97396, 'peak_rss_mb': 95.113, 'peak_traced_kb': 1972, 'peak_traced_mb': 1.926}
+2026-04-29 23:00:46 - src.utils.profiler - DEBUG - [coro_id=2934250528128 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 252.9169, 'peak_rss_kb': 137736, 'peak_rss_mb': 134.508, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+
+
+
+INFO: AI Config llm_provider=<LLMProvider.OPENAI: 'openai'> model='inclusionai/ling-2.6-1t:free' temperature=0.5 base_url='https://api.proxyapi.ru/openrouter/v1' timeout=900 max_generate_retries=3 max_fix_attempts=4 max_invoke_retries=3 target_line_coverage=60
+INFO: Console params Namespace(max_async_workers=None, project=WindowsPath('../Generator_Test_for_test'), max_generate_retries=3, target_line_coverage=60, max_fix_attempts=4, model=None, temperature=None, config=WindowsPath('config/config.yaml'), verbose=False, target_dir=None, target_function=None, target_class=None, target_file='./src/orchestrator/post_processor.py', tests_dir='tests')
+INFO: Создание venv: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_518n0xnj\.venv
+INFO: [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_518n0xnj\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+INFO: [pip upgrade] Зависимости установлены
+INFO: [pip install -r requirements.txt] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_518n0xnj\.venv\Scripts\python.exe -m pip install -r C:\Generator_Test_for_test\requirements.txt --quiet
+INFO: [pip install -r requirements.txt] Зависимости установлены
+INFO: [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_518n0xnj\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov pytest-timeout coverage --quiet
+INFO: [pip install pytest] Зависимости установлены
+INFO: [ORCHESTRATOR] PipelineOrchestrator инициализирован
+INFO: [ORCHESTRATOR] Пайплайн запущен с 3 воркерами
+INFO: [ORCHESTRATOR] Найдено 6 функций для генерации тестов
+INFO: [ORCHESTRATOR] Обработка: PostProcessor.review (C:\Generator_Test_for_test\src\orchestrator\post_processor.py)
+INFO: [ORCHESTRATOR] Контекст собран для PostProcessor.review
+INFO: [ORCHESTRATOR] Генерация тестов для PostProcessor.review, попытка 1/3
+INFO: [ORCHESTRATOR] Обработка: PostProcessor._unchanged_result (C:\Generator_Test_for_test\src\orchestrator\post_processor.py)
+INFO: [ORCHESTRATOR] Контекст собран для PostProcessor._unchanged_result
+INFO: [ORCHESTRATOR] Генерация тестов для PostProcessor._unchanged_result, попытка 1/3
+INFO: [ORCHESTRATOR] Обработка: PostProcessor._send_review (C:\Generator_Test_for_test\src\orchestrator\post_processor.py)
+INFO: [ORCHESTRATOR] Контекст собран для PostProcessor._send_review
+INFO: [ORCHESTRATOR] Генерация тестов для PostProcessor._send_review, попытка 1/3
+WARNING: [REFINE] Провалено 8/8, починка 1/4
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка: LLM не внесла изменений, код чистый
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для PostProcessor._send_review
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция PostProcessor._send_review: покрытие 100.0% (14/14 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для PostProcessor._send_review
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для PostProcessor._send_review
+INFO: [Mutator] Сгенерировано 6 мутантов для PostProcessor._send_review
+INFO: [MUTATION] Завершено: score=100.0%, killed=6/6, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Завершено для PostProcessor._send_review: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] PostProcessor._send_review: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для PostProcessor._send_review
+INFO: [ORCHESTRATOR] Осталось обработать: 3 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: PostProcessor._is_safe_modification (C:\Generator_Test_for_test\src\orchestrator\post_processor.py)
+INFO: [ORCHESTRATOR] Контекст собран для PostProcessor._is_safe_modification
+INFO: [ORCHESTRATOR] Генерация тестов для PostProcessor._is_safe_modification, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+WARNING: [REFINE] Провалено 2/15, починка 1/4
+INFO: Пост-обработка: LLM не внесла изменений, код чистый
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для PostProcessor.review
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция PostProcessor.review: покрытие 86.5% (32/37 строк)
+INFO: [IMPROVE] Coverage 86.5% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для PostProcessor.review
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для PostProcessor.review
+INFO: [Mutator] Сгенерировано 12 мутантов для PostProcessor.review
+INFO: [MUTATION] Завершено: score=100.0%, killed=12/12, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Завершено для PostProcessor.review: coverage 86.5% → 86.5%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] PostProcessor.review: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для PostProcessor.review
+INFO: [ORCHESTRATOR] Осталось обработать: 2 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: PostProcessor._preserves_test_coverage (C:\Generator_Test_for_test\src\orchestrator\post_processor.py)
+INFO: [ORCHESTRATOR] Контекст собран для PostProcessor._preserves_test_coverage
+INFO: [ORCHESTRATOR] Генерация тестов для PostProcessor._preserves_test_coverage, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 99 → 98 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для PostProcessor._unchanged_result
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция PostProcessor._unchanged_result: покрытие 100.0% (6/6 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для PostProcessor._unchanged_result
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для PostProcessor._unchanged_result
+INFO: [Mutator] Сгенерировано 2 мутантов для PostProcessor._unchanged_result
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Завершено для PostProcessor._unchanged_result: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] PostProcessor._unchanged_result: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для PostProcessor._unchanged_result
+INFO: [ORCHESTRATOR] Осталось обработать: 1 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: PostProcessor._extract_test_names (C:\Generator_Test_for_test\src\orchestrator\post_processor.py)
+INFO: [ORCHESTRATOR] Контекст собран для PostProcessor._extract_test_names
+INFO: [ORCHESTRATOR] Генерация тестов для PostProcessor._extract_test_names, попытка 1/3
+WARNING: [REFINE] Провалено 5/18, починка 1/4
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка: LLM не внесла изменений, код чистый
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для PostProcessor._is_safe_modification
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция PostProcessor._is_safe_modification: покрытие 100.0% (12/12 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для PostProcessor._is_safe_modification
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для PostProcessor._is_safe_modification
+INFO: [Mutator] Сгенерировано 10 мутантов для PostProcessor._is_safe_modification
+INFO: [MUTATION] Завершено: score=100.0%, killed=10/10, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Завершено для PostProcessor._is_safe_modification: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] PostProcessor._is_safe_modification: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для PostProcessor._is_safe_modification
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+INFO: Пост-обработка завершена: 104 → 92 строк
+INFO: Удалены дублирующиеся тесты: ['test_empty_original_tests_always_true']
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для PostProcessor._preserves_test_coverage
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция PostProcessor._preserves_test_coverage: покрытие 100.0% (12/12 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для PostProcessor._preserves_test_coverage
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для PostProcessor._preserves_test_coverage
+INFO: [Mutator] Сгенерировано 8 мутантов для PostProcessor._preserves_test_coverage
+INFO: [MUTATION] Завершено: score=100.0%, killed=8/8, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Завершено для PostProcessor._preserves_test_coverage: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] PostProcessor._preserves_test_coverage: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для PostProcessor._preserves_test_coverage
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 72 → 61 строк
+INFO: Удалены дублирующиеся тесты: ['test_extract_edge_names']
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для PostProcessor._extract_test_names
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция PostProcessor._extract_test_names: покрытие 100.0% (4/4 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для PostProcessor._extract_test_names
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для PostProcessor._extract_test_names
+INFO: [Mutator] Сгенерировано 2 мутантов для PostProcessor._extract_test_names
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\Generator_Test_for_test\src\orchestrator\post_processor.py
+INFO: [IMPROVE] Завершено для PostProcessor._extract_test_names: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] PostProcessor._extract_test_names: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для PostProcessor._extract_test_names
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+INFO: Объединение 6 тестов в C:\Generator_Test_for_test\tests\src\orchestrator\test_post_processor.py
+INFO: [ORCHESTRATOR] ✓ Тесты записаны: C:\Generator_Test_for_test\tests\src\orchestrator\test_post_processor.py
+INFO: [ORCHESTRATOR] Итого: 6 функций → 1 файлов
+INFO: [ORCHESTRATOR] Запуск анализа сгенерированных тестов
+INFO: [REPORT] coverage ...
+INFO: [REPORT] duplication ...
+INFO: [REPORT] reliability ...
+INFO: [REPORT] mutation ...
+INFO: [MUTATION_ANALYZER] Testing function: PostProcessor.review
+INFO: [MUTATION] Запуск для PostProcessor.review
+INFO: [Mutator] Сгенерировано 12 мутантов для PostProcessor.review
+INFO: [MUTATION] Завершено: score=83.3%, killed=10/12, survived=2
+INFO: [MUTATION_ANALYZER] Testing function: PostProcessor._unchanged_result
+INFO: [MUTATION] Запуск для PostProcessor._unchanged_result
+INFO: [Mutator] Сгенерировано 2 мутантов для PostProcessor._unchanged_result
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: PostProcessor._send_review
+INFO: [MUTATION] Запуск для PostProcessor._send_review
+INFO: [Mutator] Сгенерировано 6 мутантов для PostProcessor._send_review
+INFO: [MUTATION] Завершено: score=33.3%, killed=2/6, survived=4
+INFO: [MUTATION_ANALYZER] Testing function: PostProcessor._is_safe_modification
+INFO: [MUTATION] Запуск для PostProcessor._is_safe_modification
+INFO: [Mutator] Сгенерировано 10 мутантов для PostProcessor._is_safe_modification
+INFO: [MUTATION] Завершено: score=90.0%, killed=9/10, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PostProcessor._preserves_test_coverage
+INFO: [MUTATION] Запуск для PostProcessor._preserves_test_coverage
+INFO: [Mutator] Сгенерировано 8 мутантов для PostProcessor._preserves_test_coverage
+INFO: [MUTATION] Завершено: score=87.5%, killed=7/8, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PostProcessor._extract_test_names
+INFO: [MUTATION] Запуск для PostProcessor._extract_test_names
+INFO: [Mutator] Сгенерировано 2 мутантов для PostProcessor._extract_test_names
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [REPORT] HTML → C:\Generator_Test_for_test\test_analysis_report\index.html
+INFO: [ORCHESTRATOR] HTML-отчёт: C:\Generator_Test_for_test\test_analysis_report\index.html
+INFO: [ORCHESTRATOR] HTML-отчёт покрытия: C:\Generator_Test_for_test\test_analysis_report\coverage_html
+INFO: [ORCHESTRATOR] Аннотированные файлы покрытия: C:\Generator_Test_for_test\test_analysis_report\coverage_annotate
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 3654 prompt + 1006 completion = 4660 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 3914 prompt + 1146 completion = 5060 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 5754 prompt + 620 completion = 6374 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 4693 prompt + 2686 completion = 7379 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #5: 4720 prompt + 1146 completion = 5866 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #6: 6394 prompt + 989 completion = 7383 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #7: 3689 prompt + 739 completion = 4428 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #8: 3931 prompt + 404 completion = 4335 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #9: 7041 prompt + 2686 completion = 9727 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #10: 4355 prompt + 741 completion = 5096 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #11: 4303 prompt + 978 completion = 5281 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #12: 3484 prompt + 775 completion = 4259 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #13: 3674 prompt + 1108 completion = 4782 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #14: 4089 prompt + 741 completion = 4830 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #15: 4282 prompt + 907 completion = 5189 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #16: 4440 prompt + 1010 completion = 5450 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #17: 5209 prompt + 789 completion = 5998 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #18: 3933 prompt + 710 completion = 4643 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 18 calls, 81559 prompt tokens, 19181 completion tokens, 100740 total tokens
+============================================================
+
+
+ПОКРЫТИЕ 95.8%
+МУТАЦИОННЫЙ ПОКАЗАТЕЛЬ 80.0%

@@ -51,7 +51,7 @@ class WorkspaceHelper:
 
     def __del__(self):
         self.cleanup()
-        # pass
+        pass
 
     def ensure_pytest_installed(self) -> None:
         self._run_install_cmd(
@@ -79,6 +79,7 @@ class WorkspaceHelper:
         )
 
         req_files = sorted(root.glob("requirements*.txt"))
+
         if req_files:
             for req_file in req_files:
                 self._run_install_cmd(

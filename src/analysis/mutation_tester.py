@@ -92,6 +92,8 @@ class MutationTester:
         function_name: str,
         _lock_acquired: bool = False,
     ) -> MutationResult:
+        if isinstance(test_filename, str):
+            test_filename = [test_filename]
         if _lock_acquired:
             return self._run_mutation_testing_impl(
                 source_code=source_code,

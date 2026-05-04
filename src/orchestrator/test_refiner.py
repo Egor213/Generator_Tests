@@ -53,7 +53,7 @@ class TestRefiner:
         passed, feedback = self.test_runner.run_tests(test_code, test_filename=test_filename)
 
         if passed:
-            self.logger.info("[REFINE] Тесты прошли с первого раза")
+            self.logger.info("[REFINE] Тесты ПРОШЛИ с первого раза")
             final_code = await self.maybe_post_process(test_code, test_filename, source_code)
             return RefineResult(code=final_code, feedback=feedback, passed=True)
 
@@ -85,7 +85,7 @@ class TestRefiner:
             last_feedback = feedback
 
             if passed:
-                self.logger.info(f"[REFINE] Тесты прошли после починки (попытка {attempt})")
+                self.logger.info(f"[REFINE] Тесты ПРОШЛИ после починки (попытка {attempt})")
                 final_code = await self.maybe_post_process(
                     fixed,
                     test_filename,
@@ -102,7 +102,7 @@ class TestRefiner:
         passed, feedback = self.test_runner.run_tests(cleaned, test_filename=test_filename)
 
         if passed:
-            self.logger.info("[REFINE] Очищенные тесты прошли")
+            self.logger.info("[REFINE] Очищенные тесты ПРОШЛИ")
             final_code = await self.maybe_post_process(
                 cleaned,
                 test_filename,

@@ -15,7 +15,7 @@ class TextParser:
         """Извлечение Python кода из текста"""
         if "```python" in text:
             start = text.find("```python") + 9
-            end = text.find("```", start)
+            end = text.rfind("```", start)
             code = text[start:end].strip()
         elif "```" in text:
             parts = text.split("```")

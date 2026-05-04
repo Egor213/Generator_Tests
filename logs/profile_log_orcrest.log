@@ -1,0 +1,235 @@
+// Profile_log_orcrest
+2026-04-28 21:20:36 - src.utils.profiler - DEBUG - [coro_id=2506031013056 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 3.4615, 'peak_rss_kb': 81084, 'peak_rss_mb': 79.184, 'peak_traced_kb': 6500, 'peak_traced_mb': 6.348}
+2026-04-28 21:20:36 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.4124, 'peak_rss_kb': 77452, 'peak_rss_mb': 75.637, 'peak_traced_kb': 771, 'peak_traced_mb': 0.753}
+2026-04-28 21:20:37 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 77452, 'peak_rss_mb': 75.637, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-28 21:22:36 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 62.784, 'peak_rss_kb': 87068, 'peak_rss_mb': 85.027, 'peak_traced_kb': 857, 'peak_traced_mb': 0.837}
+2026-04-28 21:22:36 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 87076, 'peak_rss_mb': 85.035, 'peak_traced_kb': 141, 'peak_traced_mb': 0.138}
+2026-04-28 21:25:16 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 160.5354, 'peak_rss_kb': 34636, 'peak_rss_mb': 33.824, 'peak_traced_kb': 2732, 'peak_traced_mb': 2.668}
+2026-04-28 21:25:16 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0001, 'peak_rss_kb': 32740, 'peak_rss_mb': 31.973, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-28 21:25:19 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 2.0932, 'peak_rss_kb': 45204, 'peak_rss_mb': 44.145, 'peak_traced_kb': 4023, 'peak_traced_mb': 3.929}
+2026-04-28 21:25:19 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 162.6389, 'peak_rss_kb': 42664, 'peak_rss_mb': 41.664, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-28 21:25:19 - src.utils.profiler - DEBUG - [coro_id=2506031864064 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.1663, 'peak_rss_kb': 45072, 'peak_rss_mb': 44.016, 'peak_traced_kb': 575, 'peak_traced_mb': 0.562}
+2026-04-28 21:25:19 - src.utils.profiler - DEBUG - [coro_id=2506031013056 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 282.7333, 'peak_rss_kb': 45780, 'peak_rss_mb': 44.707, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-28 21:25:19 - src.utils.profiler - DEBUG - [coro_id=2506031013056 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 764.1691, 'peak_rss_kb': 45784, 'peak_rss_mb': 44.711, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-28 21:25:46 - src.utils.profiler - DEBUG - [coro_id=2499775143296 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 5.1648, 'peak_rss_kb': 86160, 'peak_rss_mb': 84.141, 'peak_traced_kb': 6042, 'peak_traced_mb': 5.9}
+2026-04-28 21:25:47 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.7859, 'peak_rss_kb': 81608, 'peak_rss_mb': 79.695, 'peak_traced_kb': 750, 'peak_traced_mb': 0.732}
+2026-04-28 21:25:47 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 81608, 'peak_rss_mb': 79.695, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-28 21:30:54 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 286.1143, 'peak_rss_kb': 48728, 'peak_rss_mb': 47.586, 'peak_traced_kb': 1242, 'peak_traced_mb': 1.213}
+2026-04-28 21:30:55 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
+dict:{'name': '_collect_context', 'elapsed_sec': 0.8988, 'peak_rss_kb': 52516, 'peak_rss_mb': 51.285, 'peak_traced_kb': 644, 'peak_traced_mb': 0.629}
+2026-04-28 21:30:55 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 52524, 'peak_rss_mb': 51.293, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-28 21:32:47 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 91.3012, 'peak_rss_kb': 40464, 'peak_rss_mb': 39.516, 'peak_traced_kb': 1060, 'peak_traced_mb': 1.035}
+2026-04-28 21:32:47 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0001, 'peak_rss_kb': 40660, 'peak_rss_mb': 39.707, 'peak_traced_kb': 141, 'peak_traced_mb': 0.138}
+2026-04-28 21:32:50 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 3.6602, 'peak_rss_kb': 48864, 'peak_rss_mb': 47.719, 'peak_traced_kb': 3604, 'peak_traced_mb': 3.52}
+2026-04-28 21:32:50 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 46448, 'peak_rss_mb': 45.359, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-04-28 21:32:53 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 2.8242, 'peak_rss_kb': 53816, 'peak_rss_mb': 52.555, 'peak_traced_kb': 4013, 'peak_traced_mb': 3.919}
+2026-04-28 21:32:53 - src.utils.profiler - DEBUG - [coro_id=2499775998336 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 6.4927, 'peak_rss_kb': 51236, 'peak_rss_mb': 50.035, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-28 21:32:53 - src.utils.profiler - DEBUG - [coro_id=2499775143296 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 426.5505, 'peak_rss_kb': 51260, 'peak_rss_mb': 50.059, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-04-28 21:32:55 - src.utils.profiler - DEBUG - [coro_id=2499775143296 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
+dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 2.0401, 'peak_rss_kb': 51444, 'peak_rss_mb': 50.238, 'peak_traced_kb': 532, 'peak_traced_mb': 0.52}
+2026-04-28 21:36:39 - src.utils.profiler - DEBUG - [coro_id=2499775143296 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 662.0588, 'peak_rss_kb': 122748, 'peak_rss_mb': 119.871, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+INFO: [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+INFO: [ORCHESTRATOR] Найдено 1 функций для генерации тестов
+INFO: [ORCHESTRATOR] Обработка: PipelineOrchestrator.orchestrate_pipeline (C:\Generator_Test_for_test\src\orchestrator\orchestrator.py)
+INFO: [ORCHESTRATOR] Контекст собран для PipelineOrchestrator.orchestrate_pipeline
+INFO: [ORCHESTRATOR] Генерация тестов для PipelineOrchestrator.orchestrate_pipeline, попытка 1/3
+WARNING: [REFINE] Провалено 4/4, починка 1/4
+WARNING: [REFINE] Провалено 4/4, починка 2/4
+WARNING: [REFINE] Провалено 4/4, починка 3/4
+ERROR: [TESTRUNNER] Таймаут выполнения тестов (60с)
+WARNING: [REFINE] Провалено 0/0, починка 4/4
+ERROR: [TESTRUNNER] Таймаут выполнения тестов (60с)
+INFO: [REFINE] Попытка очистки сломанных тестов
+INFO: Нет проваленных тестов для удаления
+INFO: Неиспользуемые фикстуры удалены из кода
+WARNING: [REFINE] Даже после очистки тесты не проходят
+INFO: [ORCHESTRATOR] Контекст собран для PipelineOrchestrator.orchestrate_pipeline
+INFO: [ORCHESTRATOR] Генерация тестов для PipelineOrchestrator.orchestrate_pipeline, попытка 2/3
+WARNING: [REFINE] Провалено 1/5, починка 1/4
+WARNING: [REFINE] Провалено 1/5, починка 2/4INFO: [REFINE] Тесты прошли после починки (попытка 2)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Удалено 1 неиспользуемых импортов: ['asyncio']
+INFO: Пост-обработка завершена: 171 → 119 строк
+WARNING: [REFINE] Пост-обработка сломала тесты, используется оригинал
+INFO: [IMPROVE] Лок захвачен для C:\Generator_Test_for_test\src\orchestrator\orchestrator.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для PipelineOrchestrator.orchestrate_pipeline
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция PipelineOrchestrator.orchestrate_pipeline: покрытие 100.0% (24/24 строк)
+INFO: [IMPROVE] Coverage    % >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для PipelineOrchestrator.orchestrate_pipeline
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для PipelineOrchestrator.orchestrate_pipeline
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator.orchestrate_pipeline
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\Generator_Test_for_test\src\orchestrator\orchestrator.py
+INFO: [IMPROVE] Завершено для PipelineOrchestrator.orchestrate_pipeline: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] PipelineOrchestrator.orchestrate_pipeline: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для PipelineOrchestrator.orchestrate_pipeline
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+INFO: Объединение 1 тестов в C:\Generator_Test_for_test\tests\src\orchestrator\test_orchestrator.py
+INFO: Удалено 3 неиспользуемых импортов: ['FunctionTestResult', 'FunctionInfo', 'asyncio']INFO: [ORCHESTRATOR] ✓ Тесты записаны: C:\Generator_Test_for_test\tests\src\orchestrator\test_orchestrator.py
+INFO: [ORCHESTRATOR] Итого: 1 функций → 1 файлов
+INFO: [ORCHESTRATOR] Запуск анализа сгенерированных тестов
+INFO: [REPORT] coverage ...
+INFO: [REPORT] duplication ...
+INFO: [REPORT] reliability ...
+INFO: [REPORT] mutation ...
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._apply_console_args
+INFO: [MUTATION] Запуск для PipelineOrchestrator._apply_console_args
+INFO: [Mutator] Сгенерировано 5 мутантов для PipelineOrchestrator._apply_console_argsINFO: [MUTATION] Завершено: score=0.0%, killed=0/5, survived=5
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator.close_llm
+INFO: [MUTATION] Запуск для PipelineOrchestrator.close_llm
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator.close_llmINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._send_prompt
+INFO: [MUTATION] Запуск для PipelineOrchestrator._send_prompt
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator._send_promptINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._send_prompt_raw
+INFO: [MUTATION] Запуск для PipelineOrchestrator._send_prompt_raw
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator._send_prompt_rawINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._pick_code_template
+INFO: [MUTATION] Запуск для PipelineOrchestrator._pick_code_template
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator._pick_code_templateINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._pick_fix_template
+INFO: [MUTATION] Запуск для PipelineOrchestrator._pick_fix_template
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator._pick_fix_templateINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._pick_recommendations_template
+INFO: [MUTATION] Запуск для PipelineOrchestrator._pick_recommendations_template
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator._pick_recommendations_templateINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._build_code_prompt
+INFO: [MUTATION] Запуск для PipelineOrchestrator._build_code_prompt
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator._build_code_promptINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._generate_test_code
+INFO: [MUTATION] Запуск для PipelineOrchestrator._generate_test_code
+INFO: [Mutator] Сгенерировано 6 мутантов для PipelineOrchestrator._generate_test_code
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/6, survived=6
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._collect_context
+INFO: [MUTATION] Запуск для PipelineOrchestrator._collect_context
+INFO: [Mutator] Сгенерировано 3 мутантов для PipelineOrchestrator._collect_contextINFO: [MUTATION] Завершено: score=0.0%, killed=0/3, survived=3
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._write_tests
+INFO: [MUTATION] Запуск для PipelineOrchestrator._write_tests
+INFO: [Mutator] Сгенерировано 0 мутантов для PipelineOrchestrator._write_tests
+INFO: [MUTATION] Мутанты не сгенерированы
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._build_and_generate_test_code
+INFO: [MUTATION] Запуск для PipelineOrchestrator._build_and_generate_test_code
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator._build_and_generate_test_codeINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._process_function
+INFO: [MUTATION] Запуск для PipelineOrchestrator._process_function
+INFO: [Mutator] Сгенерировано 8 мутантов для PipelineOrchestrator._process_function
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/8, survived=8
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._analyze_and_improve
+INFO: [MUTATION] Запуск для PipelineOrchestrator._analyze_and_improve
+INFO: [Mutator] Сгенерировано 7 мутантов для PipelineOrchestrator._analyze_and_improveINFO: [MUTATION] Завершено: score=0.0%, killed=0/7, survived=7
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._read_source_file
+INFO: [MUTATION] Запуск для PipelineOrchestrator._read_source_file
+INFO: [Mutator] Сгенерировано 2 мутантов для PipelineOrchestrator._read_source_file
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/2, survived=2
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._resolve_test_path
+INFO: [MUTATION] Запуск для PipelineOrchestrator._resolve_test_path
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator._resolve_test_pathINFO: [MUTATION] Завершено: score=0.0%, killed=0/1, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._discover_targets
+INFO: [MUTATION] Запуск для PipelineOrchestrator._discover_targets
+INFO: [Mutator] Сгенерировано 2 мутантов для PipelineOrchestrator._discover_targets
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/2, survived=2
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._worker
+INFO: [MUTATION] Запуск для PipelineOrchestrator._worker
+INFO: [Mutator] Сгенерировано 0 мутантов для PipelineOrchestrator._worker
+INFO: [MUTATION] Мутанты не сгенерированы
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._process_targets
+INFO: [MUTATION] Запуск для PipelineOrchestrator._process_targets
+INFO: [Mutator] Сгенерировано 0 мутантов для PipelineOrchestrator._process_targets
+INFO: [MUTATION] Мутанты не сгенерированы
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._merge_and_write_results
+INFO: [MUTATION] Запуск для PipelineOrchestrator._merge_and_write_results
+INFO: [Mutator] Сгенерировано 6 мутантов для PipelineOrchestrator._merge_and_write_results
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/6, survived=6
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._create_init_files
+INFO: [MUTATION] Запуск для PipelineOrchestrator._create_init_files
+INFO: [Mutator] Сгенерировано 6 мутантов для PipelineOrchestrator._create_init_files
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/6, survived=6
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._try_refine_merged
+INFO: [MUTATION] Запуск для PipelineOrchestrator._try_refine_merged
+INFO: [Mutator] Сгенерировано 3 мутантов для PipelineOrchestrator._try_refine_mergedINFO: [MUTATION] Завершено: score=0.0%, killed=0/3, survived=3
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._fallback_write_tests
+INFO: [MUTATION] Запуск для PipelineOrchestrator._fallback_write_tests
+INFO: [Mutator] Сгенерировано 10 мутантов для PipelineOrchestrator._fallback_write_tests
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/10, survived=10
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._merge_and_write_passing
+INFO: [MUTATION] Запуск для PipelineOrchestrator._merge_and_write_passing
+INFO: [Mutator] Сгенерировано 10 мутантов для PipelineOrchestrator._merge_and_write_passing
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/10, survived=10
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._find_compatible_groups
+INFO: [MUTATION] Запуск для PipelineOrchestrator._find_compatible_groups
+INFO: [Mutator] Сгенерировано 18 мутантов для PipelineOrchestrator._find_compatible_groups
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/18, survived=18
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._write_failing_separately
+INFO: [MUTATION] Запуск для PipelineOrchestrator._write_failing_separately
+INFO: [Mutator] Сгенерировано 4 мутантов для PipelineOrchestrator._write_failing_separately
+INFO: [MUTATION] Завершено: score=0.0%, killed=0/4, survived=4
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator._run_analysis
+INFO: [MUTATION] Запуск для PipelineOrchestrator._run_analysis
+INFO: [Mutator] Сгенерировано 3 мутантов для PipelineOrchestrator._run_analysisINFO: [MUTATION] Завершено: score=0.0%, killed=0/3, survived=3
+INFO: [MUTATION_ANALYZER] Testing function: PipelineOrchestrator.orchestrate_pipeline
+INFO: [MUTATION] Запуск для PipelineOrchestrator.orchestrate_pipeline
+INFO: [Mutator] Сгенерировано 1 мутантов для PipelineOrchestrator.orchestrate_pipeline
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [REPORT] HTML → C:\Generator_Test_for_test\test_analysis_report\index.html
+INFO: [ORCHESTRATOR] HTML-отчёт: C:\Generator_Test_for_test\test_analysis_report\index.html
+INFO: [ORCHESTRATOR] HTML-отчёт покрытия: C:\Generator_Test_for_test\test_analysis_report\coverage_html
+INFO: [ORCHESTRATOR] Аннотированные файлы покрытия: C:\Generator_Test_for_test\test_analysis_report\coverage_annotate
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 15299 prompt + 1624 completion = 16923 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 17197 prompt + 687 completion = 17884 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 17904 prompt + 1742 completion = 19646 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 17691 prompt + 597 completion = 18288 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #5: 18308 prompt + 1755 completion = 20063 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #6: 18260 prompt + 784 completion = 19044 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #7: 19064 prompt + 1853 completion = 20917 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #8: 16441 prompt + 1007 completion = 17448 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #9: 17468 prompt + 1831 completion = 19299 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #10: 17920 prompt + 2044 completion = 19964 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #11: 19756 prompt + 408 completion = 20164 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #12: 20184 prompt + 2112 completion = 22296 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #13: 19824 prompt + 487 completion = 20311 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #14: 20331 prompt + 2160 completion = 22491 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #15: 19736 prompt + 2054 completion = 21790 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 15 calls, 275383 prompt tokens, 21145 completion tokens, 296528 total tokens
+============================================================
+
+
+Есть минусы!
+Избыточность. Для каждого тестового класса свои моки
+Узкое место при улучшении покрытия и мутационного показателя
+не учитывается стиль разработки
+тесты генерятся только для функции, нет возможности генерить или изменять уже готовые тесты. Типо всегда с нуля. Не учитываются уже существующие тесты
+
+
+надо не забыть что время выполнения не уменьшается из за лока который при improve

@@ -1,0 +1,912 @@
+2026-05-02 10:12:59 - src.utils.profiler - DEBUG - [coro_id=1623308443008 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 1.2361, 'peak_rss_kb': 86460, 'peak_rss_mb': 84.434, 'peak_traced_kb': 6579, 'peak_traced_mb': 6.425}
+2026-05-02 10:12:59 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0101, 'peak_rss_kb': 81520, 'peak_rss_mb': 79.609, 'peak_traced_kb': 111, 'peak_traced_mb': 0.108}
+2026-05-02 10:12:59 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0321, 'peak_rss_kb': 91476, 'peak_rss_mb': 89.332, 'peak_traced_kb': 6787, 'peak_traced_mb': 6.628}
+2026-05-02 10:12:59 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0327, 'peak_rss_kb': 88624, 'peak_rss_mb': 86.547, 'peak_traced_kb': 234, 'peak_traced_mb': 0.229}
+2026-05-02 10:13:04 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 4.3355, 'peak_rss_kb': 91096, 'peak_rss_mb': 88.961, 'peak_traced_kb': 897, 'peak_traced_mb': 0.876}
+2026-05-02 10:13:05 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 5.5107, 'peak_rss_kb': 91228, 'peak_rss_mb': 89.09, 'peak_traced_kb': 133, 'peak_traced_mb': 0.13}
+2026-05-02 10:13:07 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 8.9213, 'peak_rss_kb': 91344, 'peak_rss_mb': 89.203, 'peak_traced_kb': 142, 'peak_traced_mb': 0.139}
+2026-05-02 10:13:11 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 7.4415, 'peak_rss_kb': 91420, 'peak_rss_mb': 89.277, 'peak_traced_kb': 206, 'peak_traced_mb': 0.201}
+2026-05-02 10:13:11 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 91424, 'peak_rss_mb': 89.281, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:13:13 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8146, 'peak_rss_kb': 93992, 'peak_rss_mb': 91.789, 'peak_traced_kb': 1683, 'peak_traced_mb': 1.644}
+2026-05-02 10:13:13 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 93992, 'peak_rss_mb': 91.789, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:13:13 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 0.0938, 'peak_rss_kb': 94444, 'peak_rss_mb': 92.23, 'peak_traced_kb': 1414, 'peak_traced_mb': 1.381}
+2026-05-02 10:13:13 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 1.9125, 'peak_rss_kb': 94444, 'peak_rss_mb': 92.23, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:13:13 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.031, 'peak_rss_kb': 94444, 'peak_rss_mb': 92.23, 'peak_traced_kb': 204, 'peak_traced_mb': 0.199}
+2026-05-02 10:13:18 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 5.048, 'peak_rss_kb': 94444, 'peak_rss_mb': 92.23, 'peak_traced_kb': 275, 'peak_traced_mb': 0.269}
+2026-05-02 10:13:30 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 22.1775, 'peak_rss_kb': 94456, 'peak_rss_mb': 92.242, 'peak_traced_kb': 365, 'peak_traced_mb': 0.356}
+2026-05-02 10:13:30 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 94456, 'peak_rss_mb': 92.242, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:13:31 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8158, 'peak_rss_kb': 94908, 'peak_rss_mb': 92.684, 'peak_traced_kb': 1671, 'peak_traced_mb': 1.632}
+2026-05-02 10:13:31 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 94908, 'peak_rss_mb': 92.684, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:13:37 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 5.3293, 'peak_rss_kb': 97512, 'peak_rss_mb': 95.227, 'peak_traced_kb': 1997, 'peak_traced_mb': 1.95}
+2026-05-02 10:13:37 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 7.1491, 'peak_rss_kb': 95152, 'peak_rss_mb': 92.922, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:13:37 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0369, 'peak_rss_kb': 95360, 'peak_rss_mb': 93.125, 'peak_traced_kb': 203, 'peak_traced_mb': 0.198}
+2026-05-02 10:13:44 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 7.586, 'peak_rss_kb': 95528, 'peak_rss_mb': 93.289, 'peak_traced_kb': 283, 'peak_traced_mb': 0.276}
+2026-05-02 10:13:53 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 48.0908, 'peak_rss_kb': 95716, 'peak_rss_mb': 93.473, 'peak_traced_kb': 285, 'peak_traced_mb': 0.278}
+2026-05-02 10:13:53 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 95716, 'peak_rss_mb': 93.473, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:13:55 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8105, 'peak_rss_kb': 97432, 'peak_rss_mb': 95.148, 'peak_traced_kb': 1641, 'peak_traced_mb': 1.603}
+2026-05-02 10:13:55 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 97432, 'peak_rss_mb': 95.148, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:13:57 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.8677, 'peak_rss_kb': 99728, 'peak_rss_mb': 97.391, 'peak_traced_kb': 1914, 'peak_traced_mb': 1.869}
+2026-05-02 10:13:57 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.682, 'peak_rss_kb': 99728, 'peak_rss_mb': 97.391, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:13:57 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0356, 'peak_rss_kb': 99728, 'peak_rss_mb': 97.391, 'peak_traced_kb': 203, 'peak_traced_mb': 0.198}
+2026-05-02 10:13:58 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 13.2826, 'peak_rss_kb': 99736, 'peak_rss_mb': 97.398, 'peak_traced_kb': 309, 'peak_traced_mb': 0.302}
+2026-05-02 10:13:58 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 99736, 'peak_rss_mb': 97.398, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:14:00 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8547, 'peak_rss_kb': 99756, 'peak_rss_mb': 97.418, 'peak_traced_kb': 1688, 'peak_traced_mb': 1.648}
+2026-05-02 10:14:00 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 99756, 'peak_rss_mb': 97.418, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:14:01 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 0.9727, 'peak_rss_kb': 101468, 'peak_rss_mb': 99.09, 'peak_traced_kb': 1890, 'peak_traced_mb': 1.846}
+2026-05-02 10:14:01 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 2.8311, 'peak_rss_kb': 101468, 'peak_rss_mb': 99.09, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:14:01 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0604, 'peak_rss_kb': 101468, 'peak_rss_mb': 99.09, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:14:09 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 7.9671, 'peak_rss_kb': 101476, 'peak_rss_mb': 99.098, 'peak_traced_kb': 231, 'peak_traced_mb': 0.226}
+2026-05-02 10:14:09 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 12.6561, 'peak_rss_kb': 101476, 'peak_rss_mb': 99.098, 'peak_traced_kb': 143, 'peak_traced_mb': 0.14}
+2026-05-02 10:14:16 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 57.3029, 'peak_rss_kb': 101476, 'peak_rss_mb': 99.098, 'peak_traced_kb': 292, 'peak_traced_mb': 0.285}
+2026-05-02 10:14:16 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 101476, 'peak_rss_mb': 99.098, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:14:17 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.856, 'peak_rss_kb': 101492, 'peak_rss_mb': 99.113, 'peak_traced_kb': 1626, 'peak_traced_mb': 1.588}
+2026-05-02 10:14:17 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 98764, 'peak_rss_mb': 96.449, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:14:19 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.8759, 'peak_rss_kb': 101816, 'peak_rss_mb': 99.43, 'peak_traced_kb': 1913, 'peak_traced_mb': 1.868}
+2026-05-02 10:14:19 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.7358, 'peak_rss_kb': 101816, 'peak_rss_mb': 99.43, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:14:19 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0591, 'peak_rss_kb': 101816, 'peak_rss_mb': 99.43, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:14:20 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 10.8409, 'peak_rss_kb': 101840, 'peak_rss_mb': 99.453, 'peak_traced_kb': 266, 'peak_traced_mb': 0.26}
+2026-05-02 10:14:20 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 101840, 'peak_rss_mb': 99.453, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:14:22 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 2.0239, 'peak_rss_kb': 101888, 'peak_rss_mb': 99.5, 'peak_traced_kb': 1617, 'peak_traced_mb': 1.579}
+2026-05-02 10:14:22 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 99572, 'peak_rss_mb': 97.238, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:14:23 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.0008, 'peak_rss_kb': 102612, 'peak_rss_mb': 100.207, 'peak_traced_kb': 1889, 'peak_traced_mb': 1.845}
+2026-05-02 10:14:23 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.0291, 'peak_rss_kb': 102612, 'peak_rss_mb': 100.207, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:14:23 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0615, 'peak_rss_kb': 99804, 'peak_rss_mb': 97.465, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:14:30 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 10.2273, 'peak_rss_kb': 100128, 'peak_rss_mb': 97.781, 'peak_traced_kb': 270, 'peak_traced_mb': 0.264}
+2026-05-02 10:14:33 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 24.5903, 'peak_rss_kb': 100252, 'peak_rss_mb': 97.902, 'peak_traced_kb': 275, 'peak_traced_mb': 0.269}
+2026-05-02 10:14:33 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 100252, 'peak_rss_mb': 97.902, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:14:35 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8263, 'peak_rss_kb': 102280, 'peak_rss_mb': 99.883, 'peak_traced_kb': 1703, 'peak_traced_mb': 1.663}
+2026-05-02 10:14:35 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 102280, 'peak_rss_mb': 99.883, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:14:37 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.8357, 'peak_rss_kb': 104212, 'peak_rss_mb': 101.77, 'peak_traced_kb': 1911, 'peak_traced_mb': 1.866}
+2026-05-02 10:14:37 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.666, 'peak_rss_kb': 104212, 'peak_rss_mb': 101.77, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:14:37 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0593, 'peak_rss_kb': 104212, 'peak_rss_mb': 101.77, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:14:37 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 13.5396, 'peak_rss_kb': 104252, 'peak_rss_mb': 101.809, 'peak_traced_kb': 145, 'peak_traced_mb': 0.142}
+2026-05-02 10:14:39 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 9.1258, 'peak_rss_kb': 104284, 'peak_rss_mb': 101.84, 'peak_traced_kb': 235, 'peak_traced_mb': 0.229}
+2026-05-02 10:14:39 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 104284, 'peak_rss_mb': 101.84, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:14:40 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8246, 'peak_rss_kb': 104304, 'peak_rss_mb': 101.859, 'peak_traced_kb': 1614, 'peak_traced_mb': 1.576}
+2026-05-02 10:14:40 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 104304, 'peak_rss_mb': 101.859, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:14:42 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.8409, 'peak_rss_kb': 104456, 'peak_rss_mb': 102.008, 'peak_traced_kb': 1910, 'peak_traced_mb': 1.865}
+2026-05-02 10:14:42 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.6692, 'peak_rss_kb': 104456, 'peak_rss_mb': 102.008, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:14:42 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0618, 'peak_rss_kb': 104456, 'peak_rss_mb': 102.008, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:14:50 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 12.8733, 'peak_rss_kb': 104504, 'peak_rss_mb': 102.055, 'peak_traced_kb': 300, 'peak_traced_mb': 0.293}
+2026-05-02 10:14:50 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 104504, 'peak_rss_mb': 102.055, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:14:52 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8457, 'peak_rss_kb': 104764, 'peak_rss_mb': 102.309, 'peak_traced_kb': 1618, 'peak_traced_mb': 1.58}
+2026-05-02 10:14:52 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 102076, 'peak_rss_mb': 99.684, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:14:54 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.8682, 'peak_rss_kb': 105464, 'peak_rss_mb': 102.992, 'peak_traced_kb': 1911, 'peak_traced_mb': 1.866}
+2026-05-02 10:14:54 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.7184, 'peak_rss_kb': 105464, 'peak_rss_mb': 102.992, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:14:54 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.087, 'peak_rss_kb': 105480, 'peak_rss_mb': 103.008, 'peak_traced_kb': 308, 'peak_traced_mb': 0.301}
+2026-05-02 10:14:57 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 14.5782, 'peak_rss_kb': 105568, 'peak_rss_mb': 103.094, 'peak_traced_kb': 166, 'peak_traced_mb': 0.162}
+2026-05-02 10:14:59 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 22.24, 'peak_rss_kb': 105600, 'peak_rss_mb': 103.125, 'peak_traced_kb': 155, 'peak_traced_mb': 0.151}
+2026-05-02 10:15:13 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 19.8886, 'peak_rss_kb': 105720, 'peak_rss_mb': 103.242, 'peak_traced_kb': 273, 'peak_traced_mb': 0.267}
+2026-05-02 10:15:27 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 27.9631, 'peak_rss_kb': 105732, 'peak_rss_mb': 103.254, 'peak_traced_kb': 359, 'peak_traced_mb': 0.351}
+2026-05-02 10:15:27 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 105732, 'peak_rss_mb': 103.254, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:15:29 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8774, 'peak_rss_kb': 105848, 'peak_rss_mb': 103.367, 'peak_traced_kb': 1615, 'peak_traced_mb': 1.577}
+2026-05-02 10:15:29 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 103380, 'peak_rss_mb': 100.957, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:15:31 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.9387, 'peak_rss_kb': 106884, 'peak_rss_mb': 104.379, 'peak_traced_kb': 1912, 'peak_traced_mb': 1.867}
+2026-05-02 10:15:31 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.8205, 'peak_rss_kb': 105708, 'peak_rss_mb': 103.23, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:15:31 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0588, 'peak_rss_kb': 105708, 'peak_rss_mb': 103.23, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:15:36 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 5.3341, 'peak_rss_kb': 105900, 'peak_rss_mb': 103.418, 'peak_traced_kb': 276, 'peak_traced_mb': 0.27}
+2026-05-02 10:15:50 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 36.7581, 'peak_rss_kb': 106100, 'peak_rss_mb': 103.613, 'peak_traced_kb': 548, 'peak_traced_mb': 0.535}
+2026-05-02 10:15:50 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 106100, 'peak_rss_mb': 103.613, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:15:52 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.9802, 'peak_rss_kb': 106640, 'peak_rss_mb': 104.141, 'peak_traced_kb': 1639, 'peak_traced_mb': 1.601}
+2026-05-02 10:15:52 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 106640, 'peak_rss_mb': 104.141, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:16:15 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 22.8762, 'peak_rss_kb': 108708, 'peak_rss_mb': 106.16, 'peak_traced_kb': 2307, 'peak_traced_mb': 2.253}
+2026-05-02 10:16:15 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 24.8605, 'peak_rss_kb': 107728, 'peak_rss_mb': 105.203, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:16:15 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.104, 'peak_rss_kb': 107732, 'peak_rss_mb': 105.207, 'peak_traced_kb': 311, 'peak_traced_mb': 0.304}
+2026-05-02 10:16:36 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 21.1349, 'peak_rss_kb': 107732, 'peak_rss_mb': 105.207, 'peak_traced_kb': 494, 'peak_traced_mb': 0.482}
+2026-05-02 10:17:02 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 85.3092, 'peak_rss_kb': 107824, 'peak_rss_mb': 105.297, 'peak_traced_kb': 469, 'peak_traced_mb': 0.458}
+2026-05-02 10:17:02 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 107824, 'peak_rss_mb': 105.297, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:17:03 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.7542, 'peak_rss_kb': 108472, 'peak_rss_mb': 105.93, 'peak_traced_kb': 1621, 'peak_traced_mb': 1.583}
+2026-05-02 10:17:03 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 108472, 'peak_rss_mb': 105.93, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:17:05 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.9043, 'peak_rss_kb': 110688, 'peak_rss_mb': 108.094, 'peak_traced_kb': 1950, 'peak_traced_mb': 1.904}
+2026-05-02 10:17:05 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.663, 'peak_rss_kb': 110688, 'peak_rss_mb': 108.094, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:17:05 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0799, 'peak_rss_kb': 110688, 'peak_rss_mb': 108.094, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:17:13 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 8.071, 'peak_rss_kb': 110692, 'peak_rss_mb': 108.098, 'peak_traced_kb': 153, 'peak_traced_mb': 0.149}
+2026-05-02 10:18:15 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 61.5079, 'peak_rss_kb': 110820, 'peak_rss_mb': 108.223, 'peak_traced_kb': 795, 'peak_traced_mb': 0.776}
+2026-05-02 10:18:15 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 110820, 'peak_rss_mb': 108.223, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:18:17 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8511, 'peak_rss_kb': 110928, 'peak_rss_mb': 108.328, 'peak_traced_kb': 1621, 'peak_traced_mb': 1.583}
+2026-05-02 10:18:17 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 110928, 'peak_rss_mb': 108.328, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:18:20 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 2.7785, 'peak_rss_kb': 112056, 'peak_rss_mb': 109.43, 'peak_traced_kb': 2009, 'peak_traced_mb': 1.962}
+2026-05-02 10:18:20 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 4.634, 'peak_rss_kb': 112056, 'peak_rss_mb': 109.43, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:18:20 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0582, 'peak_rss_kb': 112056, 'peak_rss_mb': 109.43, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:18:21 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 104.3743, 'peak_rss_kb': 112056, 'peak_rss_mb': 109.43, 'peak_traced_kb': 779, 'peak_traced_mb': 0.761}
+2026-05-02 10:18:21 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 112056, 'peak_rss_mb': 109.43, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:18:23 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 2.2423, 'peak_rss_kb': 112064, 'peak_rss_mb': 109.438, 'peak_traced_kb': 1700, 'peak_traced_mb': 1.66}
+2026-05-02 10:18:23 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 112064, 'peak_rss_mb': 109.438, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:18:37 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 13.6036, 'peak_rss_kb': 113024, 'peak_rss_mb': 110.375, 'peak_traced_kb': 2436, 'peak_traced_mb': 2.379}
+2026-05-02 10:18:37 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 15.8509, 'peak_rss_kb': 113024, 'peak_rss_mb': 110.375, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:18:37 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0567, 'peak_rss_kb': 113024, 'peak_rss_mb': 110.375, 'peak_traced_kb': 305, 'peak_traced_mb': 0.298}
+2026-05-02 10:18:41 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 4.7188, 'peak_rss_kb': 113024, 'peak_rss_mb': 110.375, 'peak_traced_kb': 293, 'peak_traced_mb': 0.286}
+2026-05-02 10:18:44 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 23.9904, 'peak_rss_kb': 113024, 'peak_rss_mb': 110.375, 'peak_traced_kb': 138, 'peak_traced_mb': 0.135}
+2026-05-02 10:19:07 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 23.82, 'peak_rss_kb': 113028, 'peak_rss_mb': 110.379, 'peak_traced_kb': 405, 'peak_traced_mb': 0.396}
+2026-05-02 10:19:07 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 113028, 'peak_rss_mb': 110.379, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:19:09 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8905, 'peak_rss_kb': 113068, 'peak_rss_mb': 110.418, 'peak_traced_kb': 1623, 'peak_traced_mb': 1.585}
+2026-05-02 10:19:09 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 113068, 'peak_rss_mb': 110.418, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:19:11 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.897, 'peak_rss_kb': 114256, 'peak_rss_mb': 111.578, 'peak_traced_kb': 1951, 'peak_traced_mb': 1.905}
+2026-05-02 10:19:11 - src.utils.profiler - DEBUG - [coro_id=1623309229248 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.7912, 'peak_rss_kb': 114256, 'peak_rss_mb': 111.578, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:20:11 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 89.5098, 'peak_rss_kb': 110408, 'peak_rss_mb': 107.82, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:20:11 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 110436, 'peak_rss_mb': 107.848, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:20:13 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8587, 'peak_rss_kb': 112000, 'peak_rss_mb': 109.375, 'peak_traced_kb': 1628, 'peak_traced_mb': 1.59}
+2026-05-02 10:20:13 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 112000, 'peak_rss_mb': 109.375, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:20:15 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.9111, 'peak_rss_kb': 113580, 'peak_rss_mb': 110.918, 'peak_traced_kb': 1987, 'peak_traced_mb': 1.94}
+2026-05-02 10:20:15 - src.utils.profiler - DEBUG - [coro_id=1623309230208 coro_name=Task-4] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.7736, 'peak_rss_kb': 113580, 'peak_rss_mb': 110.918, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:22:54 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 476.7147, 'peak_rss_kb': 113908, 'peak_rss_mb': 111.238, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:22:54 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 113908, 'peak_rss_mb': 111.238, 'peak_traced_kb': 51, 'peak_traced_mb': 0.05}
+2026-05-02 10:22:56 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.8825, 'peak_rss_kb': 114060, 'peak_rss_mb': 111.387, 'peak_traced_kb': 1614, 'peak_traced_mb': 1.576}
+2026-05-02 10:22:56 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 114060, 'peak_rss_mb': 111.387, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 10:22:58 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 2.0519, 'peak_rss_kb': 114772, 'peak_rss_mb': 112.082, 'peak_traced_kb': 1985, 'peak_traced_mb': 1.938}
+2026-05-02 10:22:58 - src.utils.profiler - DEBUG - [coro_id=1623309231552 coro_name=Task-3] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 3.9384, 'peak_rss_kb': 114772, 'peak_rss_mb': 112.082, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:22:58 - src.utils.profiler - DEBUG - [coro_id=1623308443008 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 599.053, 'peak_rss_kb': 114772, 'peak_rss_mb': 112.082, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 10:22:59 - src.utils.profiler - DEBUG - [coro_id=1623308443008 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
+dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 1.5957, 'peak_rss_kb': 116828, 'peak_rss_mb': 114.09, 'peak_traced_kb': 4212, 'peak_traced_mb': 4.113}
+2026-05-02 10:25:07 - src.utils.profiler - DEBUG - [coro_id=1623308443008 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _run_analysis(), 
+dict:{'name': '_run_analysis()', 'elapsed_sec': 127.8446, 'peak_rss_kb': 197832, 'peak_rss_mb': 193.195, 'peak_traced_kb': 35856, 'peak_traced_mb': 35.016}
+2026-05-02 10:25:07 - src.utils.profiler - DEBUG - [coro_id=1623308443008 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 764.1451, 'peak_rss_kb': 153296, 'peak_rss_mb': 149.703, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+
+
+
+INFO: AI Config llm_provider=<LLMProvider.OPENAI: 'openai'> model='inclusionai/ling-2.6-1t:free' temperature=0.5 base_url='https://api.proxyapi.ru/openrouter/v1' timeout=900 max_generate_retries=3 max_fix_attempts=4 max_invoke_retries=3 target_line_coverage=60
+INFO: Console params Namespace(max_async_workers=None, project=WindowsPath('../diplom_projects/m/requests'), max_generate_retries=3, target_line_coverage=60, max_fix_attempts=4, model=None, temperature=None, config=WindowsPath('config/config.yaml'), verbose=False, target_dir=None, target_function=None, target_class=None, target_file='./src/requests/auth.py', tests_dir='tests')
+INFO: Создание venv: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_e2i3w40c\.venv
+INFO: [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_e2i3w40c\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+INFO: [pip upgrade] Зависимости установлены
+INFO: [pip install -r requirements-dev.txt] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_e2i3w40c\.venv\Scripts\python.exe -m pip install -r C:\diplom_projects\m\requests\requirements-dev.txt --quiet
+INFO: [pip install -r requirements-dev.txt] Зависимости установлены
+INFO: [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_e2i3w40c\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov pytest-timeout coverage --quiet
+INFO: [pip install pytest] Зависимости установлены
+INFO: [ORCHESTRATOR] PipelineOrchestrator инициализирован
+INFO: [ORCHESTRATOR] Пайплайн запущен с 3 воркерами
+INFO: [ORCHESTRATOR] Найдено 17 функций для генерации тестов
+INFO: [ORCHESTRATOR] Обработка: _basic_auth_str (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для _basic_auth_str
+INFO: [ORCHESTRATOR] Генерация тестов для _basic_auth_str, попытка 1/3
+INFO: [ORCHESTRATOR] Обработка: AuthBase.__call__ (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для AuthBase.__call__
+INFO: [ORCHESTRATOR] Генерация тестов для AuthBase.__call__, попытка 1/3
+INFO: [ORCHESTRATOR] Обработка: HTTPBasicAuth.__eq__ (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPBasicAuth.__eq__
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPBasicAuth.__eq__, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+WARNING: [REFINE] Провалено 1/17, починка 1/4
+WARNING: [REFINE] Провалено 2/15, починка 1/4
+INFO: Пост-обработка завершена: 53 → 52 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для AuthBase.__call__
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция AuthBase.__call__: покрытие 100.0% (12/12 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для AuthBase.__call__
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для AuthBase.__call__
+INFO: [Mutator] Сгенерировано 0 мутантов для AuthBase.__call__
+INFO: [MUTATION] Мутанты не сгенерированы
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для AuthBase.__call__: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] AuthBase.__call__: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для AuthBase.__call__
+INFO: [ORCHESTRATOR] Осталось обработать: 14 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPBasicAuth.__ne__ (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPBasicAuth.__ne__
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPBasicAuth.__ne__, попытка 1/3
+WARNING: [REFINE] Провалено 3/5, починка 1/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+WARNING: [REFINE] Провалено 1/17, починка 2/4
+INFO: Пост-обработка завершена: 85 → 67 строк
+INFO: Удалены дублирующиеся тесты: ['test_basic_auth_str_encoding_latin1']
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для _basic_auth_str
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция _basic_auth_str: покрытие 100.0% (43/43 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для _basic_auth_str
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для _basic_auth_str
+INFO: [Mutator] Сгенерировано 6 мутантов для _basic_auth_str
+INFO: [MUTATION] Завершено: score=100.0%, killed=6/6, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для _basic_auth_str: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] _basic_auth_str: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для _basic_auth_str
+INFO: [ORCHESTRATOR] Осталось обработать: 13 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPBasicAuth.__call__ (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPBasicAuth.__call__
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPBasicAuth.__call__, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+WARNING: [REFINE] Провалено 4/5, починка 2/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 2)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 64 → 47 строк
+INFO: Удалены дублирующиеся тесты: ['test_eq_with_different_credentials']
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPBasicAuth.__eq__
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPBasicAuth.__eq__: покрытие 100.0% (6/6 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPBasicAuth.__eq__
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPBasicAuth.__eq__
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPBasicAuth.__eq__
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPBasicAuth.__eq__: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPBasicAuth.__eq__: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPBasicAuth.__eq__
+INFO: [ORCHESTRATOR] Осталось обработать: 12 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPProxyAuth.__call__ (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPProxyAuth.__call__
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPProxyAuth.__call__, попытка 1/3
+INFO: Пост-обработка завершена: 89 → 88 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPBasicAuth.__call__
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPBasicAuth.__call__: покрытие 100.0% (13/13 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPBasicAuth.__call__
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPBasicAuth.__call__
+INFO: [Mutator] Сгенерировано 1 мутантов для HTTPBasicAuth.__call__
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPBasicAuth.__call__: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPBasicAuth.__call__: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPBasicAuth.__call__
+INFO: [ORCHESTRATOR] Осталось обработать: 11 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.init_per_thread_state (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.init_per_thread_state
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.init_per_thread_state, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 2)
+INFO: Запуск пост-обработки тестов через LLM...
+WARNING: [REFINE] Провалено 1/5, починка 1/4
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 78 → 61 строк
+INFO: Удалены дублирующиеся тесты: ['test___ne___returns_false_when_eq_returns_true']
+WARNING: [REFINE] Пост-обработка сломала тесты, используется оригинал
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPBasicAuth.__ne__
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPBasicAuth.__ne__: покрытие 100.0% (1/1 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPBasicAuth.__ne__
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPBasicAuth.__ne__
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPBasicAuth.__ne__
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPBasicAuth.__ne__: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPBasicAuth.__ne__: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPBasicAuth.__ne__
+INFO: [ORCHESTRATOR] Осталось обработать: 10 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.md5_utf8 (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.md5_utf8
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.md5_utf8, попытка 1/3
+INFO: Пост-обработка завершена: 90 → 80 строк
+INFO: Удалены дублирующиеся тесты: ['test_возвращает_тот_же_объект_request_что_и_входной']
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPProxyAuth.__call__
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPProxyAuth.__call__: покрытие 100.0% (13/13 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPProxyAuth.__call__
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPProxyAuth.__call__
+INFO: [Mutator] Сгенерировано 1 мутантов для HTTPProxyAuth.__call__
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPProxyAuth.__call__: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPProxyAuth.__call__: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPProxyAuth.__call__
+INFO: [ORCHESTRATOR] Осталось обработать: 9 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.sha_utf8 (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.sha_utf8
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.sha_utf8, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 78 → 75 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.init_per_thread_state
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.init_per_thread_state: покрытие 100.0% (12/12 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.init_per_thread_state
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.init_per_thread_state
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.init_per_thread_state
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.init_per_thread_state: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.init_per_thread_state: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.init_per_thread_state
+INFO: [ORCHESTRATOR] Осталось обработать: 8 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.sha256_utf8 (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.sha256_utf8
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.sha256_utf8, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 68 → 63 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.md5_utf8
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.md5_utf8: покрытие 100.0% (4/4 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.md5_utf8
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.md5_utf8
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.md5_utf8
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.md5_utf8: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.md5_utf8: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.md5_utf8
+INFO: [ORCHESTRATOR] Осталось обработать: 7 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.sha512_utf8 (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.sha512_utf8
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.sha512_utf8, попытка 1/3
+INFO: Пост-обработка завершена: 51 → 50 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.sha_utf8
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.sha_utf8: покрытие 100.0% (4/4 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.sha_utf8
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.sha_utf8
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.sha_utf8
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.sha_utf8: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.sha_utf8: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.sha_utf8
+INFO: [ORCHESTRATOR] Осталось обработать: 6 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.build_digest_header (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.build_digest_header
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.build_digest_header, попытка 1/3
+WARNING: [REFINE] Провалено 1/1, починка 1/4
+WARNING: [REFINE] Провалено 1/11, починка 1/4
+WARNING: [REFINE] Провалено 5/14, починка 1/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 61 → 53 строк
+INFO: Удалены дублирующиеся тесты: ['test_sha256_utf8_returns_hexdigest_string']
+WARNING: [REFINE] Пост-обработка сломала тесты, используется оригинал
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.sha256_utf8
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.sha256_utf8: покрытие 100.0% (4/4 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.sha256_utf8
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.sha256_utf8
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.sha256_utf8
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.sha256_utf8: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.sha256_utf8: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.sha256_utf8
+INFO: [ORCHESTRATOR] Осталось обработать: 5 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.handle_redirect (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.handle_redirect
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.handle_redirect, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+WARNING: [REFINE] Провалено 3/3, починка 1/4
+INFO: Удалено 2 неиспользуемых импортов: ['os', 'time']
+INFO: Пост-обработка завершена: 158 → 135 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.build_digest_header
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.build_digest_header: покрытие 97.4% (75/77 строк)
+INFO: [IMPROVE] Coverage 97.4% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.build_digest_header
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.build_digest_header
+INFO: [Mutator] Сгенерировано 27 мутантов для HTTPDigestAuth.build_digest_header
+INFO: [MUTATION] Завершено: score=100.0%, killed=27/27, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.build_digest_header: coverage 97.4% → 97.4%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.build_digest_header: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.build_digest_header
+INFO: [ORCHESTRATOR] Осталось обработать: 4 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.handle_401 (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.handle_401
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.handle_401, попытка 1/3
+WARNING: [REFINE] Провалено 2/3, починка 2/4
+WARNING: [REFINE] Провалено 2/3, починка 3/4
+WARNING: [REFINE] Провалено 3/9, починка 1/4
+WARNING: [REFINE] Провалено 2/3, починка 4/4
+INFO: [REFINE] Попытка очистки сломанных тестов
+INFO: Найдено 2 проваленных тестов
+INFO: Проваленные тесты удалены из кода
+INFO: Неиспользуемых фикстур не найдено
+INFO: [REFINE] Очищенные тесты ПРОШЛИ
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 27 → 26 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.handle_redirect
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.handle_redirect: покрытие 90.9% (10/11 строк)
+INFO: [IMPROVE] Coverage 90.9% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.handle_redirect
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.handle_redirect
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.handle_redirect
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.handle_redirect: coverage 90.9% → 90.9%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.handle_redirect: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.handle_redirect
+INFO: [ORCHESTRATOR] Осталось обработать: 3 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.__call__ (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.__call__
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.__call__, попытка 1/3
+WARNING: [REFINE] Провалено 2/5, починка 1/4
+WARNING: [REFINE] Провалено 1/9, починка 2/4
+WARNING: [REFINE] Провалено 1/5, починка 2/4
+WARNING: [REFINE] Провалено 1/5, починка 3/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 2)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 3)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 104 → 101 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.__call__
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.__call__: покрытие 100.0% (22/22 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.__call__
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.__call__
+INFO: [Mutator] Сгенерировано 3 мутантов для HTTPDigestAuth.__call__
+INFO: [MUTATION] Завершено: score=100.0%, killed=3/3, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.__call__: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.__call__: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.__call__
+INFO: [ORCHESTRATOR] Осталось обработать: 2 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.__eq__ (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.__eq__
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.__eq__, попытка 1/3
+INFO: Удалено 7 неиспользуемых импортов: ['os', 're', 'time', 'hashlib', 'threading', 'Mock', 'extract_cookies_to_jar']
+INFO: Пост-обработка завершена: 245 → 207 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.handle_401
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.handle_401: покрытие 100.0% (39/39 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.handle_401
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.handle_401
+INFO: [Mutator] Сгенерировано 15 мутантов для HTTPDigestAuth.handle_401
+INFO: [MUTATION] Завершено: score=100.0%, killed=15/15, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.handle_401: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.handle_401: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.handle_401
+INFO: [ORCHESTRATOR] Осталось обработать: 1 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: HTTPDigestAuth.__ne__ (C:\diplom_projects\m\requests\src\requests\auth.py)
+INFO: [ORCHESTRATOR] Контекст собран для HTTPDigestAuth.__ne__
+INFO: [ORCHESTRATOR] Генерация тестов для HTTPDigestAuth.__ne__, попытка 1/3
+WARNING: [REFINE] Провалено 3/6, починка 1/4
+WARNING: [REFINE] Провалено 1/21, починка 1/4
+WARNING: [REFINE] Провалено 2/5, починка 2/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка: LLM не внесла изменений, код чистый
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.__eq__
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.__eq__: покрытие 100.0% (6/6 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.__eq__
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.__eq__
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.__eq__
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.__eq__: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.__eq__: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.__eq__
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+WARNING: [REFINE] Провалено 0/0, починка 3/4
+WARNING: [REFINE] Провалено 10/32, починка 4/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 4)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Удалено 4 неиспользуемых импортов: ['pytest', 'MagicMock', 'patch', 'AuthBase']
+INFO: Пост-обработка завершена: 95 → 92 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.__ne__
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.__ne__: покрытие 100.0% (1/1 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.__ne__
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.__ne__
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.__ne__
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.__ne__: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.__ne__: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.__ne__
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+WARNING: [REFINE] Провалено 1/1, починка 2/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 2)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка завершена: 48 → 47 строк
+WARNING: [REFINE] Пост-обработка сломала тесты, используется оригинал
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для HTTPDigestAuth.sha512_utf8
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция HTTPDigestAuth.sha512_utf8: покрытие 100.0% (4/4 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для HTTPDigestAuth.sha512_utf8
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для HTTPDigestAuth.sha512_utf8
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.sha512_utf8
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\diplom_projects\m\requests\src\requests\auth.py
+INFO: [IMPROVE] Завершено для HTTPDigestAuth.sha512_utf8: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] HTTPDigestAuth.sha512_utf8: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для HTTPDigestAuth.sha512_utf8
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+INFO: Объединение 17 тестов в C:\diplom_projects\m\requests\tests\src\requests\test_auth.py
+INFO: [ORCHESTRATOR] ✓ Тесты записаны: C:\diplom_projects\m\requests\tests\src\requests\test_auth.py
+INFO: [ORCHESTRATOR] Итого: 17 функций → 1 файлов
+INFO: [ORCHESTRATOR] Запуск анализа сгенерированных тестов
+INFO: [REPORT] coverage ...
+INFO: [REPORT] duplication ...
+INFO: [REPORT] reliability ...
+INFO: [REPORT] mutation ...
+INFO: [MUTATION_ANALYZER] Testing function: _basic_auth_str
+INFO: [MUTATION] Запуск для _basic_auth_str
+INFO: [Mutator] Сгенерировано 6 мутантов для _basic_auth_str
+INFO: [MUTATION] Завершено: score=100.0%, killed=6/6, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: AuthBase.__call__
+INFO: [MUTATION] Запуск для AuthBase.__call__
+INFO: [Mutator] Сгенерировано 0 мутантов для AuthBase.__call__
+INFO: [MUTATION] Мутанты не сгенерированы
+INFO: [MUTATION_ANALYZER] Testing function: HTTPBasicAuth.__eq__
+INFO: [MUTATION] Запуск для HTTPBasicAuth.__eq__
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPBasicAuth.__eq__
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPBasicAuth.__ne__
+INFO: [MUTATION] Запуск для HTTPBasicAuth.__ne__
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPBasicAuth.__ne__
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPBasicAuth.__call__
+INFO: [MUTATION] Запуск для HTTPBasicAuth.__call__
+INFO: [Mutator] Сгенерировано 1 мутантов для HTTPBasicAuth.__call__
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPProxyAuth.__call__
+INFO: [MUTATION] Запуск для HTTPProxyAuth.__call__
+INFO: [Mutator] Сгенерировано 1 мутантов для HTTPProxyAuth.__call__
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.init_per_thread_state
+INFO: [MUTATION] Запуск для HTTPDigestAuth.init_per_thread_state
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.init_per_thread_state
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.md5_utf8
+INFO: [MUTATION] Запуск для HTTPDigestAuth.md5_utf8
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.md5_utf8
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.sha_utf8
+INFO: [MUTATION] Запуск для HTTPDigestAuth.sha_utf8
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.sha_utf8
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.sha256_utf8
+INFO: [MUTATION] Запуск для HTTPDigestAuth.sha256_utf8
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.sha256_utf8
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.sha512_utf8
+INFO: [MUTATION] Запуск для HTTPDigestAuth.sha512_utf8
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.sha512_utf8
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.build_digest_header
+INFO: [MUTATION] Запуск для HTTPDigestAuth.build_digest_header
+INFO: [Mutator] Сгенерировано 27 мутантов для HTTPDigestAuth.build_digest_header
+INFO: [MUTATION] Завершено: score=59.3%, killed=16/27, survived=11
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.handle_redirect
+INFO: [MUTATION] Запуск для HTTPDigestAuth.handle_redirect
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.handle_redirect
+INFO: [MUTATION] Завершено: score=50.0%, killed=1/2, survived=1
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.handle_401
+INFO: [MUTATION] Запуск для HTTPDigestAuth.handle_401
+INFO: [Mutator] Сгенерировано 15 мутантов для HTTPDigestAuth.handle_401
+INFO: [MUTATION] Завершено: score=80.0%, killed=12/15, survived=3
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.__call__
+INFO: [MUTATION] Запуск для HTTPDigestAuth.__call__
+INFO: [Mutator] Сгенерировано 3 мутантов для HTTPDigestAuth.__call__
+INFO: [MUTATION] Завершено: score=100.0%, killed=3/3, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.__eq__
+INFO: [MUTATION] Запуск для HTTPDigestAuth.__eq__
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.__eq__
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: HTTPDigestAuth.__ne__
+INFO: [MUTATION] Запуск для HTTPDigestAuth.__ne__
+INFO: [Mutator] Сгенерировано 2 мутантов для HTTPDigestAuth.__ne__
+INFO: [MUTATION] Завершено: score=50.0%, killed=1/2, survived=1
+INFO: [REPORT] HTML → C:\diplom_projects\m\requests\test_analysis_report\index.html
+INFO: [ORCHESTRATOR] HTML-отчёт: C:\diplom_projects\m\requests\test_analysis_report\index.html
+INFO: [ORCHESTRATOR] HTML-отчёт покрытия: C:\diplom_projects\m\requests\test_analysis_report\coverage_html
+INFO: [ORCHESTRATOR] Аннотированные файлы покрытия: C:\diplom_projects\m\requests\test_analysis_report\coverage_annotate
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 1880 prompt + 407 completion = 2287 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 2034 prompt + 565 completion = 2599 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 2357 prompt + 861 completion = 3218 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 1954 prompt + 398 completion = 2352 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #5: 2042 prompt + 450 completion = 2492 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #6: 2829 prompt + 373 completion = 3202 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #7: 2001 prompt + 501 completion = 2502 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #8: 2512 prompt + 565 completion = 3077 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #9: 3222 prompt + 823 completion = 4045 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #10: 2040 prompt + 285 completion = 2325 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #11: 2848 prompt + 647 completion = 3495 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #12: 2082 prompt + 1090 completion = 3172 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #13: 3192 prompt + 688 completion = 3880 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #14: 2489 prompt + 764 completion = 3253 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #15: 2345 prompt + 565 completion = 2910 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #16: 2265 prompt + 398 completion = 2663 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #17: 2919 prompt + 756 completion = 3675 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #18: 2989 prompt + 583 completion = 3572 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #19: 3592 prompt + 679 completion = 4271 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #20: 3658 prompt + 770 completion = 4428 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #21: 2531 prompt + 878 completion = 3409 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #22: 3898 prompt + 336 completion = 4234 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #23: 2346 prompt + 526 completion = 2872 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #24: 3075 prompt + 790 completion = 3865 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #25: 4254 prompt + 760 completion = 5014 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #26: 3534 prompt + 658 completion = 4192 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #27: 4081 prompt + 749 completion = 4830 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #28: 3723 prompt + 679 completion = 4402 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #29: 3855 prompt + 590 completion = 4445 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #30: 4065 prompt + 672 completion = 4737 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #31: 3358 prompt + 1523 completion = 4881 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #32: 3676 prompt + 1168 completion = 4844 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #33: 4459 prompt + 381 completion = 4840 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #34: 4818 prompt + 790 completion = 5608 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #35: 5272 prompt + 1719 completion = 6991 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #36: 4860 prompt + 1162 completion = 6022 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #37: 7325 prompt + 293 completion = 7618 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #38: 4498 prompt + 1052 completion = 5550 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #39: 7638 prompt + 1725 completion = 9363 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #40: 3451 prompt + 466 completion = 3917 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #41: 3485 prompt + 549 completion = 4034 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #42: 4054 prompt + 443 completion = 4497 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #43: 6660 prompt + 1725 completion = 8385 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #44: 3401 prompt + 474 completion = 3875 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #45: 3895 prompt + 459 completion = 4354 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #46: 3387 prompt + 413 completion = 3800 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #47: 6274 prompt + 2474 completion = 8748 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #48: 3820 prompt + 443 completion = 4263 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #49: 3401 prompt + 629 completion = 4030 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #50: 8419 prompt + 1136 completion = 9555 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #51: 4050 prompt + 533 completion = 4583 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #52: 3335 prompt + 212 completion = 3547 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #53: 4300 prompt + 831 completion = 5131 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #54: 4662 prompt + 636 completion = 5298 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #55: 9575 prompt + 2520 completion = 12095 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #56: 5318 prompt + 1014 completion = 6332 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #57: 8188 prompt + 466 completion = 8654 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #58: 4755 prompt + 208 completion = 4963 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #59: 4983 prompt + 913 completion = 5896 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #60: 4639 prompt + 215 completion = 4854 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #61: 8674 prompt + 2601 completion = 11275 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #62: 4874 prompt + 996 completion = 5870 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #63: 4960 prompt + 943 completion = 5903 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #64: 8537 prompt + 2601 completion = 11138 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #65: 3008 prompt + 421 completion = 3429 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #66: 3041 prompt + 692 completion = 3733 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #67: 3150 prompt + 445 completion = 3595 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #68: 3008 prompt + 831 completion = 3839 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #69: 3859 prompt + 339 completion = 4198 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #70: 3615 prompt + 692 completion = 4307 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #71: 3397 prompt + 692 completion = 4089 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #72: 2787 prompt + 757 completion = 3544 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #73: 3564 prompt + 27 completion = 3591 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #74: 2347 prompt + 244 completion = 2591 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #75: 2611 prompt + 1598 completion = 4209 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #76: 5316 prompt + 2013 completion = 7329 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #77: 7349 prompt + 838 completion = 8187 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #78: 3510 prompt + 838 completion = 4348 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #79: 5628 prompt + 32768 completion = 38396 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #80: 68369 prompt + 718 completion = 69087 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #81: 69107 prompt + 1139 completion = 70246 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #82: 4157 prompt + 1161 completion = 5318 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 82 calls, 461436 prompt tokens, 98732 completion tokens, 560168 total tokens
+============================================================
+
+
+ПОК 98
+МУТ 78.1%

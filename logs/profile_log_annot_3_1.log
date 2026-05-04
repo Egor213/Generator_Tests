@@ -1,0 +1,232 @@
+2026-05-01 23:45:34 - src.utils.profiler - DEBUG - [coro_id=2446491852160 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 0.5369, 'peak_rss_kb': 78868, 'peak_rss_mb': 77.02, 'peak_traced_kb': 2557, 'peak_traced_mb': 2.497}
+2026-05-01 23:45:34 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0498, 'peak_rss_kb': 77480, 'peak_rss_mb': 75.664, 'peak_traced_kb': 113, 'peak_traced_mb': 0.11}
+2026-05-01 23:45:46 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 11.4748, 'peak_rss_kb': 93060, 'peak_rss_mb': 90.879, 'peak_traced_kb': 7268, 'peak_traced_mb': 7.098}
+2026-05-01 23:45:56 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 10.3988, 'peak_rss_kb': 90808, 'peak_rss_mb': 88.68, 'peak_traced_kb': 319, 'peak_traced_mb': 0.312}
+2026-05-01 23:45:56 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 90820, 'peak_rss_mb': 88.691, 'peak_traced_kb': 34, 'peak_traced_mb': 0.033}
+2026-05-01 23:45:58 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.4894, 'peak_rss_kb': 91688, 'peak_rss_mb': 89.539, 'peak_traced_kb': 360, 'peak_traced_mb': 0.352}
+2026-05-01 23:45:58 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 91688, 'peak_rss_mb': 89.539, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-01 23:45:58 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 0.7229, 'peak_rss_kb': 92068, 'peak_rss_mb': 89.91, 'peak_traced_kb': 318, 'peak_traced_mb': 0.311}
+2026-05-01 23:45:58 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 2.2199, 'peak_rss_kb': 92068, 'peak_rss_mb': 89.91, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-01 23:45:58 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0433, 'peak_rss_kb': 92072, 'peak_rss_mb': 89.914, 'peak_traced_kb': 74, 'peak_traced_mb': 0.072}
+2026-05-01 23:46:18 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 19.3011, 'peak_rss_kb': 92092, 'peak_rss_mb': 89.934, 'peak_traced_kb': 134, 'peak_traced_mb': 0.131}
+2026-05-01 23:47:36 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 78.23, 'peak_rss_kb': 92296, 'peak_rss_mb': 90.133, 'peak_traced_kb': 701, 'peak_traced_mb': 0.685}
+2026-05-01 23:47:36 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 92296, 'peak_rss_mb': 90.133, 'peak_traced_kb': 34, 'peak_traced_mb': 0.033}
+2026-05-01 23:47:37 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.312, 'peak_rss_kb': 92320, 'peak_rss_mb': 90.156, 'peak_traced_kb': 336, 'peak_traced_mb': 0.328}
+2026-05-01 23:47:37 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 92320, 'peak_rss_mb': 90.156, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-01 23:47:39 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 1.3844, 'peak_rss_kb': 92476, 'peak_rss_mb': 90.309, 'peak_traced_kb': 337, 'peak_traced_mb': 0.329}
+2026-05-01 23:47:39 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 2.7035, 'peak_rss_kb': 92476, 'peak_rss_mb': 90.309, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-01 23:47:39 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0353, 'peak_rss_kb': 92476, 'peak_rss_mb': 90.309, 'peak_traced_kb': 75, 'peak_traced_mb': 0.073}
+2026-05-01 23:47:55 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 16.1149, 'peak_rss_kb': 92464, 'peak_rss_mb': 90.297, 'peak_traced_kb': 130, 'peak_traced_mb': 0.127}
+2026-05-01 23:48:40 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 44.8521, 'peak_rss_kb': 92528, 'peak_rss_mb': 90.359, 'peak_traced_kb': 441, 'peak_traced_mb': 0.431}
+2026-05-01 23:48:40 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 92528, 'peak_rss_mb': 90.359, 'peak_traced_kb': 34, 'peak_traced_mb': 0.033}
+2026-05-01 23:48:41 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.4579, 'peak_rss_kb': 92612, 'peak_rss_mb': 90.441, 'peak_traced_kb': 333, 'peak_traced_mb': 0.325}
+2026-05-01 23:48:41 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 92612, 'peak_rss_mb': 90.441, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-01 23:48:42 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 0.8379, 'peak_rss_kb': 92744, 'peak_rss_mb': 90.57, 'peak_traced_kb': 312, 'peak_traced_mb': 0.305}
+2026-05-01 23:48:42 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 2.3657, 'peak_rss_kb': 92744, 'peak_rss_mb': 90.57, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-01 23:48:42 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0453, 'peak_rss_kb': 92744, 'peak_rss_mb': 90.57, 'peak_traced_kb': 76, 'peak_traced_mb': 0.074}
+2026-05-01 23:49:00 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 17.6556, 'peak_rss_kb': 92744, 'peak_rss_mb': 90.57, 'peak_traced_kb': 139, 'peak_traced_mb': 0.136}
+2026-05-01 23:49:14 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 13.9194, 'peak_rss_kb': 92880, 'peak_rss_mb': 90.703, 'peak_traced_kb': 354, 'peak_traced_mb': 0.346}
+2026-05-01 23:49:14 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 92880, 'peak_rss_mb': 90.703, 'peak_traced_kb': 34, 'peak_traced_mb': 0.033}
+2026-05-01 23:49:15 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.3756, 'peak_rss_kb': 92896, 'peak_rss_mb': 90.719, 'peak_traced_kb': 345, 'peak_traced_mb': 0.337}
+2026-05-01 23:49:15 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 92896, 'peak_rss_mb': 90.719, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-01 23:49:16 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 0.6756, 'peak_rss_kb': 93020, 'peak_rss_mb': 90.84, 'peak_traced_kb': 311, 'peak_traced_mb': 0.304}
+2026-05-01 23:49:16 - src.utils.profiler - DEBUG - [coro_id=2446492657280 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 2.0587, 'peak_rss_kb': 93020, 'peak_rss_mb': 90.84, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-01 23:49:16 - src.utils.profiler - DEBUG - [coro_id=2446491852160 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 221.4954, 'peak_rss_kb': 93020, 'peak_rss_mb': 90.84, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-01 23:49:17 - src.utils.profiler - DEBUG - [coro_id=2446491852160 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
+dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 1.1286, 'peak_rss_kb': 94400, 'peak_rss_mb': 92.188, 'peak_traced_kb': 1440, 'peak_traced_mb': 1.406}
+2026-05-01 23:49:36 - src.utils.profiler - DEBUG - [coro_id=2446491852160 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _run_analysis(), 
+dict:{'name': '_run_analysis()', 'elapsed_sec': 19.64, 'peak_rss_kb': 114512, 'peak_rss_mb': 111.828, 'peak_traced_kb': 8338, 'peak_traced_mb': 8.143}
+2026-05-01 23:49:36 - src.utils.profiler - DEBUG - [coro_id=2446491852160 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 330.4234, 'peak_rss_kb': 105692, 'peak_rss_mb': 103.215, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+
+
+INFO: Console params Namespace(max_async_workers=None, project=WindowsPath('../pet_project'), max_generate_retries=3, target_line_coverage=60, max_fix_attempts=4, model=None, temperature=None, config=WindowsPath('config/config.yaml'), verbose=False, target_dir=None, target_function=None, target_class=None, target_file='./src/services/parce_contract_service/parce_site_service.py', tests_dir='tests')
+INFO: Создание venv: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_s5687o14\.venv
+INFO: [pip upgrade] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_s5687o14\.venv\Scripts\python.exe -m pip install --upgrade pip --quiet
+INFO: [pip upgrade] Зависимости установлены
+INFO: [pip install -r requirements.txt] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_s5687o14\.venv\Scripts\python.exe -m pip install -r C:\pet_project\requirements.txt --quiet
+INFO: [pip install -r requirements.txt] Зависимости установлены
+INFO: [pip install pytest] Выполняю: C:\Users\zamok\AppData\Local\Temp\testgen_sandbox_s5687o14\.venv\Scripts\python.exe -m pip install pytest pytest-asyncio pytest-cov pytest-timeout coverage --quiet
+INFO: [pip install pytest] Зависимости установлены
+INFO: [ORCHESTRATOR] PipelineOrchestrator инициализирован
+INFO: [ORCHESTRATOR] Пайплайн запущен с 1 воркерами
+INFO: [ORCHESTRATOR] Найдено 4 функций для генерации тестов
+INFO: [ORCHESTRATOR] Обработка: ParceSiteService.create_contract (C:\pet_project\src\services\parce_contract_service\parce_site_service.py)
+INFO: [ORCHESTRATOR] Контекст собран для ParceSiteService.create_contract
+INFO: [ORCHESTRATOR] Генерация тестов для ParceSiteService.create_contract, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка: LLM не внесла изменений, код чистый
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\pet_project\src\services\parce_contract_service\parce_site_service.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для ParceSiteService.create_contract
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция ParceSiteService.create_contract: покрытие 100.0% (19/19 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для ParceSiteService.create_contract
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для ParceSiteService.create_contract
+INFO: [Mutator] Сгенерировано 1 мутантов для ParceSiteService.create_contract
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\pet_project\src\services\parce_contract_service\parce_site_service.py
+INFO: [IMPROVE] Завершено для ParceSiteService.create_contract: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] ParceSiteService.create_contract: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для ParceSiteService.create_contract
+INFO: [ORCHESTRATOR] Осталось обработать: 3 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: ParceSiteService.finalize_contract (C:\pet_project\src\services\parce_contract_service\parce_site_service.py)
+INFO: [ORCHESTRATOR] Контекст собран для ParceSiteService.finalize_contract
+INFO: [ORCHESTRATOR] Генерация тестов для ParceSiteService.finalize_contract, попытка 1/3
+WARNING: [REFINE] Провалено 6/6, починка 1/4
+WARNING: [REFINE] Провалено 6/6, починка 2/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 2)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Удалено 1 неиспользуемых импортов: ['ParceSiteContract']
+INFO: Пост-обработка завершена: 143 → 95 строк
+INFO: [REFINE] Пост-обработанные тесты прошли
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\pet_project\src\services\parce_contract_service\parce_site_service.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для ParceSiteService.finalize_contract
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция ParceSiteService.finalize_contract: покрытие 100.0% (20/20 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для ParceSiteService.finalize_contract
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для ParceSiteService.finalize_contract
+INFO: [Mutator] Сгенерировано 2 мутантов для ParceSiteService.finalize_contract
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\pet_project\src\services\parce_contract_service\parce_site_service.py
+INFO: [IMPROVE] Завершено для ParceSiteService.finalize_contract: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] ParceSiteService.finalize_contract: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для ParceSiteService.finalize_contract
+INFO: [ORCHESTRATOR] Осталось обработать: 2 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: ParceSiteService.get_all_contracts (C:\pet_project\src\services\parce_contract_service\parce_site_service.py)
+INFO: [ORCHESTRATOR] Контекст собран для ParceSiteService.get_all_contracts
+INFO: [ORCHESTRATOR] Генерация тестов для ParceSiteService.get_all_contracts, попытка 1/3
+WARNING: [REFINE] Провалено 2/7, починка 1/4
+INFO: [REFINE] Тесты ПРОШЛИ после починки (попытка 1)
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка: LLM не внесла изменений, код чистый
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\pet_project\src\services\parce_contract_service\parce_site_service.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для ParceSiteService.get_all_contracts
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция ParceSiteService.get_all_contracts: покрытие 100.0% (13/13 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для ParceSiteService.get_all_contracts
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для ParceSiteService.get_all_contracts
+INFO: [Mutator] Сгенерировано 1 мутантов для ParceSiteService.get_all_contracts
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\pet_project\src\services\parce_contract_service\parce_site_service.py
+INFO: [IMPROVE] Завершено для ParceSiteService.get_all_contracts: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] ParceSiteService.get_all_contracts: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для ParceSiteService.get_all_contracts
+INFO: [ORCHESTRATOR] Осталось обработать: 1 элементов очереди
+INFO: [ORCHESTRATOR] Обработка: ParceSiteService.get_contract_by_id (C:\pet_project\src\services\parce_contract_service\parce_site_service.py)
+INFO: [ORCHESTRATOR] Контекст собран для ParceSiteService.get_contract_by_id
+INFO: [ORCHESTRATOR] Генерация тестов для ParceSiteService.get_contract_by_id, попытка 1/3
+INFO: [REFINE] Тесты ПРОШЛИ с первого раза
+INFO: Запуск пост-обработки тестов через LLM...
+INFO: Пост-обработка: LLM не внесла изменений, код чистый
+INFO: [ORCHESTRATOR] Тесты после refine прошли!
+INFO: [IMPROVE] Лок захвачен для C:\pet_project\src\services\parce_contract_service\parce_site_service.py
+INFO: [IMPROVE] Фаза 1: закрытие coverage для ParceSiteService.get_contract_by_id
+INFO: [IMPROVE] Coverage improve итерация 1/3
+INFO: Функция ParceSiteService.get_contract_by_id: покрытие 100.0% (17/17 строк)
+INFO: [IMPROVE] Coverage 100.0% >= 60%
+INFO: [IMPROVE] Фаза 2: мутационное тестирование для ParceSiteService.get_contract_by_id
+INFO: [IMPROVE] Mutation итерация 1/3
+INFO: [MUTATION] Запуск для ParceSiteService.get_contract_by_id
+INFO: [Mutator] Сгенерировано 1 мутантов для ParceSiteService.get_contract_by_id
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [IMPROVE] Mutation score 100.0% >= 60.0%, достаточно
+INFO: [IMPROVE] Лок освобождён для C:\pet_project\src\services\parce_contract_service\parce_site_service.py
+INFO: [IMPROVE] Завершено для ParceSiteService.get_contract_by_id: coverage 100.0% → 100.0%, mutation 100.0% → 100.0%
+INFO: [ORCHESTRATOR] ParceSiteService.get_contract_by_id: улучшение не требуется или невозможно
+INFO: [ORCHESTRATOR] ✓ Тесты готовы для ParceSiteService.get_contract_by_id
+INFO: [ORCHESTRATOR] Осталось обработать: 0 элементов очереди
+INFO: Объединение 4 тестов в C:\pet_project\tests\src\services\parce_contract_service\test_parce_site_service.py
+INFO: [ORCHESTRATOR] ✓ Тесты записаны: C:\pet_project\tests\src\services\parce_contract_service\test_parce_site_service.py
+INFO: [ORCHESTRATOR] Итого: 4 функций → 1 файлов
+INFO: [ORCHESTRATOR] Запуск анализа сгенерированных тестов
+INFO: [REPORT] coverage ...
+INFO: [REPORT] duplication ...
+INFO: [REPORT] reliability ...
+INFO: [REPORT] mutation ...
+INFO: [MUTATION_ANALYZER] Testing function: ParceSiteService.create_contract
+INFO: [MUTATION] Запуск для ParceSiteService.create_contract
+INFO: [Mutator] Сгенерировано 1 мутантов для ParceSiteService.create_contract
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: ParceSiteService.finalize_contract
+INFO: [MUTATION] Запуск для ParceSiteService.finalize_contract
+INFO: [Mutator] Сгенерировано 2 мутантов для ParceSiteService.finalize_contract
+INFO: [MUTATION] Завершено: score=100.0%, killed=2/2, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: ParceSiteService.get_all_contracts
+INFO: [MUTATION] Запуск для ParceSiteService.get_all_contracts
+INFO: [Mutator] Сгенерировано 1 мутантов для ParceSiteService.get_all_contracts
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [MUTATION_ANALYZER] Testing function: ParceSiteService.get_contract_by_id
+INFO: [MUTATION] Запуск для ParceSiteService.get_contract_by_id
+INFO: [Mutator] Сгенерировано 1 мутантов для ParceSiteService.get_contract_by_id
+INFO: [MUTATION] Завершено: score=100.0%, killed=1/1, survived=0
+INFO: [REPORT] HTML → C:\pet_project\test_analysis_report\index.html
+INFO: [ORCHESTRATOR] HTML-отчёт: C:\pet_project\test_analysis_report\index.html
+INFO: [ORCHESTRATOR] HTML-отчёт покрытия: C:\pet_project\test_analysis_report\coverage_html
+INFO: [ORCHESTRATOR] Аннотированные файлы покрытия: C:\pet_project\test_analysis_report\coverage_annotate
+============================================================
+LLM USAGE REPORT
+============================================================
+Call #1: 3100 prompt + 1015 completion = 4115 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #2: 3765 prompt + 1015 completion = 4780 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #3: 2916 prompt + 1486 completion = 4402 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #4: 5616 prompt + 1019 completion = 6635 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #5: 6655 prompt + 1796 completion = 8451 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #6: 5585 prompt + 1183 completion = 6768 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #7: 6788 prompt + 1962 completion = 8750 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #8: 4527 prompt + 1962 completion = 6489 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #9: 2738 prompt + 1388 completion = 4126 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #10: 3748 prompt + 527 completion = 4275 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #11: 4295 prompt + 1461 completion = 5756 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #12: 3847 prompt + 1461 completion = 5308 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #13: 3418 prompt + 1517 completion = 4935 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+Call #14: 4583 prompt + 1517 completion = 6100 tokens (model: inclusionai/ling-2.6-1t-20260423:free)
+------------------------------------------------------------
+SUMMARY: 14 calls, 61581 prompt tokens, 19309 completion tokens, 80890 total tokens
+============================================================

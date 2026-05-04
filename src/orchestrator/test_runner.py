@@ -29,7 +29,6 @@ class TestRunner:
         self.workspace_helper.sandbox_dir.mkdir(parents=True, exist_ok=True)
         # self.workspace_helper.ensure_pytest_installed()
         test_file = self.workspace_helper.sandbox_dir / test_filename
-
         try:
             test_file.write_text(test_code, encoding="utf-8")
 
@@ -57,7 +56,7 @@ class TestRunner:
             raw_output = result.stdout + "\n" + result.stderr
 
             if result.returncode == 0:
-                self.logger.info("[TESTRUNNER] Тесты в песочнице ПРОШЛИ")
+                self.logger.debug("[TESTRUNNER] Тесты в песочнице ПРОШЛИ")
                 return True, ""
 
             return False, raw_output

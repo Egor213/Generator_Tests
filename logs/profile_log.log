@@ -1,24 +1,26 @@
-2026-04-27 23:50:21 - src.utils.profiler - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
-dict:{'name': 'analyze()', 'elapsed_sec': 0.0087, 'peak_rss_kb': 77700, 'peak_rss_mb': 75.879, 'peak_traced_kb': 2558, 'peak_traced_mb': 2.498}
-2026-04-27 23:50:21 - src.utils.profiler - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
-dict:{'name': '_collect_context', 'elapsed_sec': 0.0086, 'peak_rss_kb': 76404, 'peak_rss_mb': 74.613, 'peak_traced_kb': 100, 'peak_traced_mb': 0.098}
-2026-04-27 23:50:21 - src.utils.profiler - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
-dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 0.0, 'peak_rss_kb': 76404, 'peak_rss_mb': 74.613, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
-2026-04-27 23:51:54 - src.utils.profiler - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
-dict:{'name': 'refine', 'elapsed_sec': 75.9118, 'peak_rss_kb': 87092, 'peak_rss_mb': 85.051, 'peak_traced_kb': 900, 'peak_traced_mb': 0.879}
-2026-04-27 23:51:54 - src.utils.profiler - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
-dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 87096, 'peak_rss_mb': 85.055, 'peak_traced_kb': 12, 'peak_traced_mb': 0.012}
-2026-04-27 23:51:55 - src.utils.profiler - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
-dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.6299, 'peak_rss_kb': 87744, 'peak_rss_mb': 85.688, 'peak_traced_kb': 221, 'peak_traced_mb': 0.216}
-2026-04-27 23:51:55 - src.utils.profiler - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
-dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 87744, 'peak_rss_mb': 85.688, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
-2026-04-27 23:52:01 - src.utils.profiler - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
-dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 5.3358, 'peak_rss_kb': 87936, 'peak_rss_mb': 85.875, 'peak_traced_kb': 229, 'peak_traced_mb': 0.224}
-2026-04-27 23:52:01 - src.utils.profiler - DEBUG - [coro_id=2429898202496 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
-dict:{'name': '_analyze_and_improve', 'elapsed_sec': 6.977, 'peak_rss_kb': 87940, 'peak_rss_mb': 85.879, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
-2026-04-27 23:52:01 - src.utils.profiler - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
-dict:{'name': '_process_targets()', 'elapsed_sec': 99.4087, 'peak_rss_kb': 87940, 'peak_rss_mb': 85.879, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
-2026-04-27 23:52:01 - src.utils.profiler - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
-dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 0.5918, 'peak_rss_kb': 88396, 'peak_rss_mb': 86.324, 'peak_traced_kb': 664, 'peak_traced_mb': 0.648}
-2026-04-27 23:52:10 - src.utils.profiler - DEBUG - [coro_id=2429897301376 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
-dict:{'name': 'main', 'elapsed_sec': 131.843, 'peak_rss_kb': 95076, 'peak_rss_mb': 92.848, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 20:04:08 - src.utils.profiler - DEBUG - [coro_id=2320860847488 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
+dict:{'name': 'analyze()', 'elapsed_sec': 0.0249, 'peak_rss_kb': 77856, 'peak_rss_mb': 76.031, 'peak_traced_kb': 2558, 'peak_traced_mb': 2.498}
+2026-05-02 20:04:08 - src.utils.profiler - DEBUG - [coro_id=2320861699456 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context(), 
+dict:{'name': '_collect_context()', 'elapsed_sec': 0.0119, 'peak_rss_kb': 77892, 'peak_rss_mb': 76.066, 'peak_traced_kb': 247, 'peak_traced_mb': 0.241}
+2026-05-02 20:04:29 - src.utils.profiler - DEBUG - [coro_id=2320861699456 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _build_and_generate_test_code, 
+dict:{'name': '_build_and_generate_test_code', 'elapsed_sec': 21.4315, 'peak_rss_kb': 92852, 'peak_rss_mb': 90.676, 'peak_traced_kb': 7280, 'peak_traced_mb': 7.109}
+2026-05-02 20:05:22 - src.utils.profiler - DEBUG - [coro_id=2320861699456 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: refine, 
+dict:{'name': 'refine', 'elapsed_sec': 52.8107, 'peak_rss_kb': 91192, 'peak_rss_mb': 89.055, 'peak_traced_kb': 897, 'peak_traced_mb': 0.876}
+2026-05-02 20:05:22 - src.utils.profiler - DEBUG - [coro_id=2320861699456 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage, 
+dict:{'name': '_phase_coverage', 'elapsed_sec': 0.0, 'peak_rss_kb': 91196, 'peak_rss_mb': 89.059, 'peak_traced_kb': 31, 'peak_traced_mb': 0.03}
+2026-05-02 20:05:23 - src.utils.profiler - DEBUG - [coro_id=2320861699456 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_coverage._run_coverage_analysis, 
+dict:{'name': '_phase_coverage._run_coverage_analysis', 'elapsed_sec': 1.1044, 'peak_rss_kb': 92188, 'peak_rss_mb': 90.027, 'peak_traced_kb': 460, 'peak_traced_mb': 0.449}
+2026-05-02 20:05:23 - src.utils.profiler - DEBUG - [coro_id=2320861699456 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing, 
+dict:{'name': '_phase_mutation_killing', 'elapsed_sec': 0.0, 'peak_rss_kb': 92188, 'peak_rss_mb': 90.027, 'peak_traced_kb': 1, 'peak_traced_mb': 0.001}
+2026-05-02 20:05:29 - src.utils.profiler - DEBUG - [coro_id=2320861699456 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _phase_mutation_killing.run_mutation_testing, 
+dict:{'name': '_phase_mutation_killing.run_mutation_testing', 'elapsed_sec': 6.0875, 'peak_rss_kb': 92652, 'peak_rss_mb': 90.48, 'peak_traced_kb': 524, 'peak_traced_mb': 0.512}
+2026-05-02 20:05:29 - src.utils.profiler - DEBUG - [coro_id=2320861699456 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _analyze_and_improve, 
+dict:{'name': '_analyze_and_improve', 'elapsed_sec': 7.1961, 'peak_rss_kb': 92652, 'peak_rss_mb': 90.48, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 20:05:29 - src.utils.profiler - DEBUG - [coro_id=2320860847488 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _process_targets(), 
+dict:{'name': '_process_targets()', 'elapsed_sec': 81.4581, 'peak_rss_kb': 92652, 'peak_rss_mb': 90.48, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}
+2026-05-02 20:05:30 - src.utils.profiler - DEBUG - [coro_id=2320860847488 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _merge_and_write_results(), 
+dict:{'name': '_merge_and_write_results()', 'elapsed_sec': 0.5695, 'peak_rss_kb': 93000, 'peak_rss_mb': 90.82, 'peak_traced_kb': 706, 'peak_traced_mb': 0.689}
+2026-05-02 20:05:41 - src.utils.profiler - DEBUG - [coro_id=2320860847488 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: _run_analysis(), 
+dict:{'name': '_run_analysis()', 'elapsed_sec': 11.1256, 'peak_rss_kb': 102292, 'peak_rss_mb': 99.895, 'peak_traced_kb': 4447, 'peak_traced_mb': 4.343}
+2026-05-02 20:05:41 - src.utils.profiler - DEBUG - [coro_id=2320860847488 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: main, 
+dict:{'name': 'main', 'elapsed_sec': 117.6663, 'peak_rss_kb': 101276, 'peak_rss_mb': 98.902, 'peak_traced_kb': 0, 'peak_traced_mb': 0.0}

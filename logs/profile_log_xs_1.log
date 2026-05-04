@@ -1,3 +1,4 @@
+// Profile_log_xs_1
 2026-04-26 17:58:38 - src.utils.profiler - DEBUG - [coro_id=2143879175552 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
 dict:{'name': 'analyze()', 'elapsed_sec': 0.1454, 'peak_rss_kb': 79736, 'peak_rss_mb': 77.867, 'peak_traced_kb': 2862, 'peak_traced_mb': 2.795}
 2026-04-26 17:58:38 - src.utils.profiler - DEBUG - [coro_id=2143880027136 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 

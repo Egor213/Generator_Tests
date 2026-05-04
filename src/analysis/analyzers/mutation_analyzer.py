@@ -104,7 +104,9 @@ class MutationAnalyzer(BaseAnalyzer):
 
             for node in ast.walk(tree):
                 if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
-                    if node.name.startswith("__") and node.name.endswith("__"):
+                    # if node.name.startswith("__") and node.name.endswith("__"):
+                    #     continue
+                    if node.name == "__init__":
                         continue
                     if node.name.startswith("test"):
                         continue

@@ -167,7 +167,6 @@ class PipelineOrchestrator:
 
     async def _send_prompt(self, **template_params) -> str:
         prompt = self.prompt_engine.render(**template_params)
-        self.logger.debug(f"[ORCHESTRATOR] Отправка промпта: {prompt}")
         response = await self.llm_client.send_prompt(prompt)
         return response.content
 
@@ -223,7 +222,6 @@ class PipelineOrchestrator:
         self.logger.error("[ORCHESTRATOR] Не удалось извлечь код тестов из ответа LLM")
         return None
 
-    @ProfileBlock("_collect_context")
     def _collect_context(self, target: FunctionTarget, dependency_depth: int = -1) -> str | None:
         try:
             context = self.context_manager.collect_context(
@@ -242,7 +240,6 @@ class PipelineOrchestrator:
         path.write_text(code, encoding="utf-8")
         self.written_test_paths.append(path)
 
-    @ProfileBlock("_build_and_generate_test_code")
     async def _build_and_generate_test_code(
         self,
         target: FunctionTarget,
@@ -256,15 +253,16 @@ class PipelineOrchestrator:
         result = FunctionTestResult(target=target)
 
         for step in range(1, self.max_gen_test_retry + 1):
-            context = self._collect_context(target, dependency_depth=step)
-
+            with ProfileBlock("_collect_context()"):
+                context = self._collect_context(target, dependency_depth=step)
             self.logger.info(
                 f"[ORCHESTRATOR] Генерация тестов для {target.function_name}, "
                 f"попытка {step}/{self.max_gen_test_retry}"
             )
 
             try:
-                test_code = await self._build_and_generate_test_code(target, context)
+                with ProfileBlock("_build_and_generate_test_code"):
+                    test_code = await self._build_and_generate_test_code(target, context)
                 if not test_code:
                     continue
 
@@ -279,6 +277,8 @@ class PipelineOrchestrator:
 
                 if not refine_result.success:
                     continue
+                else:
+                    self.logger.info("[ORCHESTRATOR] Тесты после refine прошли!")
 
                 with ProfileBlock("_analyze_and_improve"):
                     final_code, report = await self._analyze_and_improve(
@@ -286,7 +286,10 @@ class PipelineOrchestrator:
                     )
 
                 if report.final_coverage < self.target_line_coverage:
-                    if result.line_coverage is None or report.final_coverage > result.line_coverage:
+                    if (
+                        result.line_coverage is None
+                        or report.final_coverage >= result.line_coverage
+                    ):
                         result.line_coverage = report.final_coverage
                         result.test_code = final_code
                     continue
@@ -692,7 +695,8 @@ class PipelineOrchestrator:
             self._merge_and_write_results()
 
         tests_dir = getattr(self.console.args, "tests_dir", "tests")
-        await self._run_analysis(tests_dir=tests_dir)
+        with ProfileBlock("_run_analysis()"):
+            await self._run_analysis(tests_dir=tests_dir)
 
         self.llm_client.print_usage_report()
         await self.close_llm()

@@ -47,10 +47,21 @@ black -l 100 ./src
 # python main.py --project "../diplom_projects/l/fastapi/" --target-function "./fastapi/dependencies/utils.py::analyze_param"
 
 
-# python main.py --project "../diplom_projects/kogn/9/" --target-function "./main.py::nine_level_priority_processor"
+python main.py --project "../diplom_projects/kogn/9/" --target-file "./main.py"
 
 
-python main.py --project "../Generator_Test_for_test/" --target-file "./src/orchestrator/orchestrator.py"
+# python main.py --project "../Generator_Test_for_test/" --target-file "./src/orchestrator/orchestrator.py"
 
 # python main.py --project "../Generator_Test_for_test/" --target-function "./src/orchestrator/orchestrator.py::PipelineOrchestrator.orchestrate_pipeline"
 
+
+
+# python main.py --project "../Generator_Test_for_test/" --target-file "./src/orchestrator/post_processor.py"
+
+
+# python main.py --project "../pet_project/" --target-function "./src/services/parce_contract_service/parce_site_service.py::ParceSiteService.finalize_contract"
+
+
+# python main.py --project "../pet_project/" --target-file "./src/services/parce_contract_service/parce_site_service.py"
+
+# python main.py --project "../diplom_projects/m/requests/" --target-file "./src/requests/auth.py"

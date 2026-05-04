@@ -1,3 +1,4 @@
+// Profile_log_cogn_5
 2026-04-27 22:34:12 - src.utils.profiler - DEBUG - [coro_id=2545932918144 coro_name=Task-1] - [ProfileBlock] Результаты профилирования: analyze(), 
 dict:{'name': 'analyze()', 'elapsed_sec': 0.0065, 'peak_rss_kb': 77200, 'peak_rss_mb': 75.391, 'peak_traced_kb': 2558, 'peak_traced_mb': 2.498}
 2026-04-27 22:34:12 - src.utils.profiler - DEBUG - [coro_id=2545933719424 coro_name=Task-2] - [ProfileBlock] Результаты профилирования: _collect_context, 
@@ -80,3 +81,6 @@ Call #4: 3232 prompt + 2200 completion = 5432 tokens (model: inclusionai/ling-2.
 ------------------------------------------------------------
 SUMMARY: 4 calls, 13286 prompt tokens, 7440 completion tokens, 20726 total tokens
 ============================================================
+
+
+НАДО ОПИСАТЬ ОГРАНИЧЕНИЯ ЧТО РАБОТАТЬ С ПУТЯМИ И ФАЙЛАМИ НЕ ПОЛУЧАЕТСЯ.

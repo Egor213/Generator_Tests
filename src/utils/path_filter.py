@@ -30,7 +30,9 @@ class PathFilter:
         path_file, function_name = function_path.rsplit("::", 1)
         parts = function_name.split(".")
 
-        if self._is_dunder(parts[-1]):
+        # if self._is_dunder(parts[-1]):
+        #     return False
+        if parts[-1] == "__init__":
             return False
         if parts[-1] in SKIP_EXACT_NAMES:
             return False
