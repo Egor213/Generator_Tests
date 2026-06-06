@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Test Analysis Report</title>
+  
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:      #f1f5f9;
+  --surface: #ffffff;
+  --border:  #e2e8f0;
+  --text:    #1e293b;
+  --muted:   #64748b;
+  --radius:  14px;
+  --shadow:  0 1px 3px #0000000a, 0 8px 24px #00000008;
+  --green:   #059669;
+  --yellow:  #ca8a04;
+  --red:     #dc2626;
+  --blue:    #2563eb;
+  --indigo:  #4f46e5;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.65;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre {
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+}
+
+.wrap { max-width: 1060px; margin: 0 auto; padding: 32px 16px 80px; }
+
+/* ── page header ── */
+.page-header {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #fff; border-radius: var(--radius);
+  padding: 32px 40px; margin-bottom: 32px;
+}
+.page-header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
+.page-header .meta { font-size: .85rem; opacity: .6; }
+.page-header .meta span { margin-right: 20px; }
+
+/* ── card ── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px 32px;
+  margin-bottom: 24px; box-shadow: var(--shadow);
+}
+.card-title {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+}
+.card-title h2 { font-size: 1.15rem; font-weight: 700; }
+.card-title .icon { font-size: 1.5rem; }
+
+/* ── metrics ── */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px; margin-bottom: 24px;
+}
+.metric {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 18px;
+}
+.metric .val {
+  font-size: 1.9rem; font-weight: 800; line-height: 1; margin-bottom: 4px;
+}
+.metric .lbl { font-size: .78rem; color: var(--muted); }
+.metric.green  .val { color: var(--green); }
+.metric.yellow .val { color: var(--yellow); }
+.metric.red    .val { color: var(--red); }
+.metric.blue   .val { color: var(--blue); }
+.metric.neutral .val { color: var(--text); }
+
+/* ── coverage single bar ── */
+.cov-total-bar {
+  height: 12px; border-radius: 20px;
+  background: #e2e8f0; overflow: hidden; margin-bottom: 8px;
+}
+.cov-total-bar-fill { height: 100%; border-radius: 20px; transition: width .4s; }
+.cov-total-label {
+  font-size: .8rem; color: var(--muted); margin-bottom: 20px;
+}
+
+/* ── duplication pairs ── */
+.dup-list { display: flex; flex-direction: column; gap: 8px; }
+.dup-item {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px;
+}
+.dup-names { font-size: .875rem; }
+.dup-names code {
+  background: rgba(0,0,0,.05); padding: 1px 6px; border-radius: 4px;
+  font-size: .82rem;
+}
+.dup-sim {
+  font-size: .8rem; font-weight: 700; padding: 3px 10px;
+  border-radius: 20px;
+}
+.dup-exact { background: #fef2f2; color: var(--red); }
+.dup-near  { background: #fefce8; color: var(--yellow); }
+.no-dups {
+  text-align: center; padding: 24px; color: var(--muted); font-size: .9rem;
+}
+
+/* ── mutation tabs ── */
+.mut-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.mut-tab {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border: 1px solid var(--border);
+  border-radius: 20px; cursor: pointer; font-size: .82rem;
+  background: var(--surface); transition: all .15s; font-family: inherit;
+}
+.mut-tab:hover { border-color: var(--indigo); color: var(--indigo); }
+.mut-tab.active { background: #1e293b; color: #fff; border-color: #1e293b; }
+.mut-panel { display: none; }
+.mut-panel.active { display: block; }
+
+/* ── main tabs (new) ── */
+.main-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.main-tab {
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  border-radius: 30px 30px 0 0;
+  cursor: pointer;
+  color: var(--muted);
+}
+.main-tab:hover {
+  color: var(--indigo);
+  background: #eef2ff;
+}
+.main-tab.active {
+  color: var(--indigo);
+  background: #eef2ff;
+  border-bottom: 2px solid var(--indigo);
+}
+.tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+}
+
+/* ── mutation search ── */
+.mut-search {
+  margin: 16px 0 12px 0;
+}
+.mut-search input {
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  font-size: 0.85rem;
+  background: var(--surface);
+}
+.mut-search input:focus {
+  outline: none;
+  border-color: var(--indigo);
+}
+.mut-tab.hidden {
+  display: none;
+}
+.mut-panel.hidden {
+  display: none;
+}
+
+/* rest of existing styles ... */
+.func-header {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 10px;
+  background: var(--bg); border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 12px;
+}
+.func-name { font-weight: 700; font-size: .95rem; }
+.func-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.badge {
+  padding: 3px 10px; border-radius: 20px;
+  font-size: .75rem; font-weight: 700;
+}
+.badge-green { background: #f0fdf4; color: var(--green); }
+.badge-red   { background: #fef2f2; color: var(--red); }
+.badge-muted { background: var(--bg); color: var(--muted);
+               border: 1px solid var(--border); }
+
+/* mutant cards */
+.mutants { display: flex; flex-direction: column; gap: 6px; }
+.mutant {
+  border: 1px solid var(--border); border-left-width: 4px;
+  border-radius: 8px; overflow: hidden;
+}
+.mutant summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 14px; cursor: pointer; list-style: none; font-size: .85rem;
+}
+.mutant summary::-webkit-details-marker { display: none; }
+.mutant-left { display: flex; align-items: center; gap: 10px; }
+.mutant-id   { color: var(--muted); font-family: monospace; font-size: .78rem; }
+.mutant-type {
+  background: rgba(0,0,0,.05); border-radius: 4px;
+  padding: 1px 7px; font-size: .76rem;
+}
+.mutant-ln { font-size: .76rem; color: var(--muted); }
+.mutant-body { padding: 10px 14px; border-top: 1px solid rgba(0,0,0,.06); }
+.mutant-desc { font-size: .8rem; color: var(--muted); margin-bottom: 8px; }
+
+/* diff */
+.diff { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+.diff-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 5px 12px; background: #f8fafc; font-size: .76rem;
+}
+.diff-legend { display: flex; gap: 10px; }
+.diff-legend .r { color: var(--red); }
+.diff-legend .g { color: var(--green); }
+.diff-code { font-size: .79rem; }
+.diff-line {
+  display: grid; grid-template-columns: 36px 14px 1fr; padding: 1px 0;
+}
+.diff-ln   { text-align: right; padding-right: 6px; color: #94a3b8; user-select: none; }
+.diff-sign { color: #94a3b8; user-select: none; }
+.diff-ct   { padding-left: 4px; white-space: pre-wrap; }
+.dl-removed { background: #fef2f2; }
+.dl-removed .diff-sign { color: var(--red); }
+.dl-removed .diff-ct   { color: #7f1d1d; }
+.dl-added { background: #f0fdf4; }
+.dl-added .diff-sign { color: var(--green); }
+.dl-added .diff-ct   { color: #14532d; }
+.dl-ctx  { background: #fff; }
+.dl-hunk { background: #eff6ff; }
+.dl-hunk .diff-ct { color: #1d4ed8; }
+
+/* ── reliability ── */
+.runs-grid { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.run-chip {
+  padding: 4px 12px; border-radius: 20px; font-size: .8rem; font-weight: 600;
+}
+.run-pass { background: #f0fdf4; color: var(--green); }
+.run-fail { background: #fef2f2; color: var(--red); }
+.flaky-list { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+.flaky-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; background: #fef9c3; border: 1px solid #fde047;
+  border-radius: 8px; font-size: .85rem;
+}
+
+/* coverage link */
+.cov-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 18px; background: var(--blue); color: #fff;
+  border-radius: 8px; font-weight: 600; font-size: .875rem; margin-top: 16px;
+}
+.cov-link:hover { background: #1d4ed8; text-decoration: none; }
+
+.no-data { text-align: center; color: var(--muted); padding: 32px; font-size: .9rem; }
+
+@media (max-width: 600px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .llm-ex-grid { grid-template-columns: 1fr; }
+  .page-header { padding: 24px 20px; }
+  .card { padding: 20px; }
+}
+
+
+/* ===== COVERAGE TREE ===== */
+.coverage-tree {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--rs);
+  padding: 12px;
+}
+
+.cov-folder {
+  margin-bottom: 4px;
+  border-left: 2px solid var(--border);
+  margin-left: 0;
+}
+
+.cov-folder-level-0 {
+  border-left: none;
+  border: 1px solid var(--border);
+  border-radius: var(--rs);
+  margin-bottom: 8px;
+}
+
+.cov-folder-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--bg3);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  border-radius: 6px;
+}
+
+.cov-folder-level-0 > .cov-folder-header {
+  background: var(--surface);
+  padding: 10px 14px;
+}
+
+.cov-folder-header::-webkit-details-marker {
+  display: none;
+}
+
+.cov-folder-header::marker {
+  display: none;
+}
+
+.cov-folder-header::before {
+  content: '▶';
+  font-size: 0.7rem;
+  color: var(--muted);
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.cov-folder[open] > .cov-folder-header::before {
+  transform: rotate(90deg);
+}
+
+.cov-folder-header:hover {
+  background: var(--surface);
+}
+
+.cov-folder-level-0 > .cov-folder-header:hover {
+  background: var(--bg3);
+}
+
+.cov-folder-icon {
+  font-size: 1rem;
+}
+
+.cov-folder-name {
+  flex: 1;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+.cov-folder-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cov-folder-content {
+  padding: 4px 8px 4px 20px;
+}
+
+.cov-folder-level-0 > .cov-folder-content {
+  padding: 8px 12px 12px 12px;
+  background: var(--bg);
+}
+
+.cov-files-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.cov-file-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--surface);
+  transition: background 0.15s;
+}
+
+.cov-file-item:hover {
+  background: var(--bg3);
+}
+
+.cov-file-icon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.cov-file-name {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cov-file-percent {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  min-width: 50px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cov-file-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.cov-file-link:hover {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .cov-folder-content {
+    padding-left: 12px;
+  }
+  
+  .cov-file-item {
+    flex-wrap: wrap;
+  }
+  
+  .cov-file-name {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  
+<div class="page-header">
+  <h1>🔬 Test Analysis Report</h1>
+  <div class="meta">
+    <span>📁 C:\Generator_Test_for_test</span>
+    <span>🕐 2026-05-02T16:58:38</span>
+  </div>
+</div>
+<div class="main-tabs">
+  <button id="tab-coverage" class="main-tab active" onclick="switchMainTab('coverage')">📊 Coverage</button>
+  <button id="tab-duplication" class="main-tab" onclick="switchMainTab('duplication')">📋 Duplication</button>
+  <button id="tab-mutation" class="main-tab" onclick="switchMainTab('mutation')">🧬 Mutation</button>
+  <button id="tab-reliability" class="main-tab" onclick="switchMainTab('reliability')">⚡ Reliability</button>
+</div>
+<div id="panel-coverage" class="tab-panel active">
+<div class="card">
+  <div class="card-title"><span class="icon">📊</span><h2>Coverage</h2></div>
+  <div class="metrics"><div class="metric red"><div class="val">23.5%</div><div class="lbl">Total Coverage</div></div><div class="metric neutral"><div class="val">4341</div><div class="lbl">Statements</div></div><div class="metric green"><div class="val">1022</div><div class="lbl">Covered</div></div><div class="metric red"><div class="val">3319</div><div class="lbl">Missing</div></div></div>
+  
+<div class="cov-total-bar">
+  <div class="cov-total-bar-fill" style="width:23.5%;background:#dc2626"></div>
+</div>
+<div class="cov-total-label">1022 of 4341 statements covered</div>
+  <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+    <a href="coverage_html\index.html" class="cov-link" target="_blank">📊 Open Detailed Coverage Report</a>
+  </div>
+  
+        <div style="margin-top: 24px;">
+            <h3 style="font-size:1rem; margin-bottom:12px;">📂 Annotated source files</h3>
+            <div class="coverage-tree">
+                
+<details class="cov-folder cov-folder-level-0" open>
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📁</span>
+    <span class="cov-folder-name">src</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        36.7%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        42 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+
+<details class="cov-folder cov-folder-level-1" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">analysis</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        26.3%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        11 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+
+<details class="cov-folder cov-folder-level-2" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">analyzers</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        35.2%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        5 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">base.py</span>
+        <span class="cov-file-percent metric green">90.9%</span>
+        <a href="coverage_annotate/src_analysis_analyzers_base.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">coverage_analyzer.py</span>
+        <span class="cov-file-percent metric red">22.1%</span>
+        <a href="coverage_annotate/src_analysis_analyzers_coverage_analyzer.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">duplication.py</span>
+        <span class="cov-file-percent metric red">19.1%</span>
+        <a href="coverage_annotate/src_analysis_analyzers_duplication.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">mutation_analyzer.py</span>
+        <span class="cov-file-percent metric red">23.7%</span>
+        <a href="coverage_annotate/src_analysis_analyzers_mutation_analyzer.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">reliability.py</span>
+        <span class="cov-file-percent metric red">20.0%</span>
+        <a href="coverage_annotate/src_analysis_analyzers_reliability.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">analysis.py</span>
+        <span class="cov-file-percent metric red">11.0%</span>
+        <a href="coverage_annotate/src_analysis_analysis.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">html_renderer.py</span>
+        <span class="cov-file-percent metric red">0.0%</span>
+        <a href="coverage_annotate/src_analysis_html_renderer.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">mutation_tester.py</span>
+        <span class="cov-file-percent metric red">25.7%</span>
+        <a href="coverage_annotate/src_analysis_mutation_tester.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">mutator.py</span>
+        <span class="cov-file-percent metric red">33.0%</span>
+        <a href="coverage_annotate/src_analysis_mutator.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">quality_improver.py</span>
+        <span class="cov-file-percent metric red">26.5%</span>
+        <a href="coverage_annotate/src_analysis_quality_improver.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">report_generator.py</span>
+        <span class="cov-file-percent metric red">17.2%</span>
+        <a href="coverage_annotate/src_analysis_report_generator.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="cov-folder cov-folder-level-1" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">app</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        33.7%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        2 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">app.py</span>
+        <span class="cov-file-percent metric red">0.0%</span>
+        <a href="coverage_annotate/src_app_app.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">logger.py</span>
+        <span class="cov-file-percent metric yellow">67.4%</span>
+        <a href="coverage_annotate/src_app_logger.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="cov-folder cov-folder-level-1" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">entity</span>
+    <span class="cov-folder-stats">
+      <span class="metric green" style="font-size:0.85rem; padding:2px 8px;">
+        90.5%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        3 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">llm.py</span>
+        <span class="cov-file-percent metric green">100.0%</span>
+        <a href="coverage_annotate/src_entity_llm.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">pipeline.py</span>
+        <span class="cov-file-percent metric yellow">71.4%</span>
+        <a href="coverage_annotate/src_entity_pipeline.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">project.py</span>
+        <span class="cov-file-percent metric green">100.0%</span>
+        <a href="coverage_annotate/src_entity_project.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="cov-folder cov-folder-level-1" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">factories</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        50.0%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        1 file
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">invoker_factory.py</span>
+        <span class="cov-file-percent metric red">50.0%</span>
+        <a href="coverage_annotate/src_factories_invoker_factory.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="cov-folder cov-folder-level-1" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">llm</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        46.1%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        5 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+
+<details class="cov-folder cov-folder-level-2" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">clients</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        40.0%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        1 file
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">llm_client.py</span>
+        <span class="cov-file-percent metric red">40.0%</span>
+        <a href="coverage_annotate/src_llm_clients_llm_client.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="cov-folder cov-folder-level-2" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">invokers</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        27.5%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        2 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">openai.py</span>
+        <span class="cov-file-percent metric red">32.3%</span>
+        <a href="coverage_annotate/src_llm_invokers_openai.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">request.py</span>
+        <span class="cov-file-percent metric red">22.7%</span>
+        <a href="coverage_annotate/src_llm_invokers_request.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">errors.py</span>
+        <span class="cov-file-percent metric green">100.0%</span>
+        <a href="coverage_annotate/src_llm_errors.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">invoker.py</span>
+        <span class="cov-file-percent metric red">35.4%</span>
+        <a href="coverage_annotate/src_llm_invoker.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="cov-folder cov-folder-level-1" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">managers</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        30.5%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        6 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">config.py</span>
+        <span class="cov-file-percent metric yellow">74.5%</span>
+        <a href="coverage_annotate/src_managers_config.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">console.py</span>
+        <span class="cov-file-percent metric red">6.8%</span>
+        <a href="coverage_annotate/src_managers_console.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">context_manager.py</span>
+        <span class="cov-file-percent metric red">15.2%</span>
+        <a href="coverage_annotate/src_managers_context_manager.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">project_indexer.py</span>
+        <span class="cov-file-percent metric red">17.2%</span>
+        <a href="coverage_annotate/src_managers_project_indexer.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">prompt_engine.py</span>
+        <span class="cov-file-percent metric red">33.3%</span>
+        <a href="coverage_annotate/src_managers_prompt_engine.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">text_parser.py</span>
+        <span class="cov-file-percent metric red">36.0%</span>
+        <a href="coverage_annotate/src_managers_text_parser.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="cov-folder cov-folder-level-1" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">orchestrator</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        34.1%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        7 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">cleaner.py</span>
+        <span class="cov-file-percent metric red">18.6%</span>
+        <a href="coverage_annotate/src_orchestrator_cleaner.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">feedback_parser.py</span>
+        <span class="cov-file-percent metric red">17.8%</span>
+        <a href="coverage_annotate/src_orchestrator_feedback_parser.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">merger.py</span>
+        <span class="cov-file-percent metric red">28.3%</span>
+        <a href="coverage_annotate/src_orchestrator_merger.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">orchestrator.py</span>
+        <span class="cov-file-percent metric red">16.9%</span>
+        <a href="coverage_annotate/src_orchestrator_orchestrator.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">post_processor.py</span>
+        <span class="cov-file-percent metric green">92.4%</span>
+        <a href="coverage_annotate/src_orchestrator_post_processor.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">refiner.py</span>
+        <span class="cov-file-percent metric red">33.1%</span>
+        <a href="coverage_annotate/src_orchestrator_refiner.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">runner.py</span>
+        <span class="cov-file-percent metric red">31.2%</span>
+        <a href="coverage_annotate/src_orchestrator_runner.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="cov-folder cov-folder-level-1" >
+  <summary class="cov-folder-header">
+    <span class="cov-folder-icon">📂</span>
+    <span class="cov-folder-name">utils</span>
+    <span class="cov-folder-stats">
+      <span class="metric red" style="font-size:0.85rem; padding:2px 8px;">
+        30.5%
+      </span>
+      <span style="color:var(--muted); font-size:0.8rem;">
+        7 files
+      </span>
+    </span>
+  </summary>
+  <div class="cov-folder-content">
+    <div class="cov-files-list">
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">file_lock.py</span>
+        <span class="cov-file-percent metric red">31.4%</span>
+        <a href="coverage_annotate/src_utils_file_lock.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">import_cleaner.py</span>
+        <span class="cov-file-percent metric red">40.5%</span>
+        <a href="coverage_annotate/src_utils_import_cleaner.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">path_filter.py</span>
+        <span class="cov-file-percent metric red">41.8%</span>
+        <a href="coverage_annotate/src_utils_path_filter.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">profiler.py</span>
+        <span class="cov-file-percent metric red">42.7%</span>
+        <a href="coverage_annotate/src_utils_profiler.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">tokens.py</span>
+        <span class="cov-file-percent metric red">0.0%</span>
+        <a href="coverage_annotate/src_utils_tokens.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">usage_tracker.py</span>
+        <span class="cov-file-percent metric red">37.5%</span>
+        <a href="coverage_annotate/src_utils_usage_tracker.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+
+      <div class="cov-file-item">
+        <span class="cov-file-icon">📄</span>
+        <span class="cov-file-name">workspace_helper.py</span>
+        <span class="cov-file-percent metric red">19.4%</span>
+        <a href="coverage_annotate/src_utils_workspace_helper.cover" class="cov-file-link" target="_blank">view</a>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+  </div>
+</details>
+
+            </div>
+            <div style="margin-top:12px; font-size:0.8rem; color:var(--muted);">
+                💡 Annotated files show covered lines with <code>&gt;</code> and missing lines with <code>!</code>.
+            </div>
+        </div>
+        
+</div></div>
+<div id="panel-duplication" class="tab-panel">
+<div class="card">
+  <div class="card-title"><span class="icon">📋</span><h2>Duplication</h2></div>
+  <div class="metrics"><div class="metric neutral"><div class="val">21</div><div class="lbl">Tests Analyzed</div></div><div class="metric yellow"><div class="val">3</div><div class="lbl">Near Duplicates</div></div></div>
+  <div class="dup-list">
+<div class="dup-item">
+  <div class="dup-names">
+    <code>TestPostProcessorSendReview.test_send_review_extracted_too_short_returns_none</code>
+    <span style="margin:0 8px;color:var(--muted)">↔</span>
+    <code>TestPostProcessorSendReview.test_send_review_extracted_empty_returns_none</code>
+  </div>
+  <span class="dup-sim dup-near">Similar 96%</span>
+</div>
+<div class="dup-item">
+  <div class="dup-names">
+    <code>TestPostProcessorSendReview.test_send_review_extracted_too_short_returns_none</code>
+    <span style="margin:0 8px;color:var(--muted)">↔</span>
+    <code>TestPostProcessorSendReview.test_send_review_extracted_none_returns_none</code>
+  </div>
+  <span class="dup-sim dup-near">Similar 92%</span>
+</div>
+<div class="dup-item">
+  <div class="dup-names">
+    <code>TestPostProcessorSendReview.test_send_review_extracted_empty_returns_none</code>
+    <span style="margin:0 8px;color:var(--muted)">↔</span>
+    <code>TestPostProcessorSendReview.test_send_review_extracted_none_returns_none</code>
+  </div>
+  <span class="dup-sim dup-near">Similar 94%</span>
+</div></div>
+</div></div>
+<div id="panel-mutation" class="tab-panel">
+<div class="card">
+  <div class="card-title"><span class="icon">🧬</span><h2>Mutation Testing</h2></div>
+  <div class="metrics"><div class="metric green"><div class="val">80.0%</div><div class="lbl">Kill Rate</div></div><div class="metric neutral"><div class="val">40</div><div class="lbl">Mutants</div></div><div class="metric green"><div class="val">32</div><div class="lbl">Killed ✅</div></div><div class="metric red"><div class="val">8</div><div class="lbl">Survived ❌</div></div><div class="metric neutral"><div class="val">6</div><div class="lbl">Functions</div></div><div class="metric neutral"><div class="val">73.6s</div><div class="lbl">Duration</div></div></div>
+  
+<div class="mut-root" style="margin-top:4px">
+  <div style="font-size:.78rem;color:var(--muted);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.05em">
+    Per-function details
+  </div>
+  
+<div class="mut-search">
+  <input type="text" id="mutSearchInput" placeholder="🔍 Filter by function name..." oninput="filterMutationFunctions()">
+</div>
+  <div class="mut-tabs">
+<button class="mut-tab active" onclick="mutTab(this,'mpanel-0')">
+  🟢 review <strong>83%</strong>
+</button>
+<button class="mut-tab " onclick="mutTab(this,'mpanel-1')">
+  🟢 _unchanged_result <strong>100%</strong>
+</button>
+<button class="mut-tab " onclick="mutTab(this,'mpanel-2')">
+  🔴 _send_review <strong>33%</strong>
+</button>
+<button class="mut-tab " onclick="mutTab(this,'mpanel-3')">
+  🟢 _is_safe_modification <strong>90%</strong>
+</button>
+<button class="mut-tab " onclick="mutTab(this,'mpanel-4')">
+  🟢 _preserves_test_coverage <strong>88%</strong>
+</button>
+<button class="mut-tab " onclick="mutTab(this,'mpanel-5')">
+  🟢 _extract_test_names <strong>100%</strong>
+</button></div>
+  
+<div class="mut-panel active" id="mpanel-0">
+  <div class="func-header">
+    <span class="func-name">⚡ PostProcessor.review</span>
+    <div class="func-badges">
+      <span class="badge badge-green">✅ 10 killed</span>
+      <span class="badge badge-red">❌ 2 survived</span>
+      <span class="badge badge-muted" style="color:#059669">83.3%</span>
+    </div>
+  </div>
+  <div class="mutants">
+<details class="mutant" style="border-color:#ef4444;background:#ef444408">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#48</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 39</span>
+    </div>
+    <span class="badge badge-red">SURVIVED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 39: &#x27;return self._unchanged_result(test_code)&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -37,5 +37,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">37</span><span class="diff-sign"> </span><span class="diff-ct">        if not self._is_safe_modification(test_code, reviewed_code):</span></div><div class="diff-line dl-ctx"><span class="diff-ln">38</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;LLM удалила слишком много кода при пост-обработке, используется оригинал&#x27;)</span></div><div class="diff-line dl-removed"><span class="diff-ln">39</span><span class="diff-sign">−</span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div><div class="diff-line dl-added"><span class="diff-ln">39</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">40</span><span class="diff-sign"> </span><span class="diff-ct">        original_tests = self._extract_test_names(test_code)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">41</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_tests = self._extract_test_names(reviewed_code)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#ef4444;background:#ef444408">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#49</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 45</span>
+    </div>
+    <span class="badge badge-red">SURVIVED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 45: &#x27;return self._unchanged_result(test_code)&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -43,5 +43,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">43</span><span class="diff-sign"> </span><span class="diff-ct">        if not self._preserves_test_coverage(original_tests, reviewed_tests):</span></div><div class="diff-line dl-ctx"><span class="diff-ln">44</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;LLM удалила слишком много тестов при пост-обработке, используется оригинал&#x27;)</span></div><div class="diff-line dl-removed"><span class="diff-ln">45</span><span class="diff-sign">−</span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div><div class="diff-line dl-added"><span class="diff-ln">45</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">46</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_code = self.import_cleaner.clean_unused_imports(reviewed_code)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">47</span><span class="diff-sign"> </span><span class="diff-ct">        was_modified = test_code.strip() != reviewed_code.strip()</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#41</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 34</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 34: &#x27;if reviewed_code is None:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -32,5 +32,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">32</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.info(&#x27;Используется оригинальный код без изменений&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">33</span><span class="diff-sign"> </span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div><div class="diff-line dl-removed"><span class="diff-ln">34</span><span class="diff-sign">−</span><span class="diff-ct">        if reviewed_code is None:</span></div><div class="diff-line dl-added"><span class="diff-ln">34</span><span class="diff-sign">+</span><span class="diff-ct">        if not reviewed_code is None:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">35</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;Не удалось извлечь код из ответа LLM, используется оригинал&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">36</span><span class="diff-sign"> </span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#42</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 37</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 37: &#x27;if not self._is_safe_modification(test_code, reviewed_code):&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -35,5 +35,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">35</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;Не удалось извлечь код из ответа LLM, используется оригинал&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">36</span><span class="diff-sign"> </span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div><div class="diff-line dl-removed"><span class="diff-ln">37</span><span class="diff-sign">−</span><span class="diff-ct">        if not self._is_safe_modification(test_code, reviewed_code):</span></div><div class="diff-line dl-added"><span class="diff-ln">37</span><span class="diff-sign">+</span><span class="diff-ct">        if not not self._is_safe_modification(test_code, reviewed_code):</span></div><div class="diff-line dl-ctx"><span class="diff-ln">38</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;LLM удалила слишком много кода при пост-обработке, используется оригинал&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">39</span><span class="diff-sign"> </span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#43</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 43</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 43: &#x27;if not self._preserves_test_coverage(original_tests, reviewed_tests):&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -41,5 +41,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">41</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_tests = self._extract_test_names(reviewed_code)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">42</span><span class="diff-sign"> </span><span class="diff-ct">        removed_tests = sorted(original_tests - reviewed_tests)</span></div><div class="diff-line dl-removed"><span class="diff-ln">43</span><span class="diff-sign">−</span><span class="diff-ct">        if not self._preserves_test_coverage(original_tests, reviewed_tests):</span></div><div class="diff-line dl-added"><span class="diff-ln">43</span><span class="diff-sign">+</span><span class="diff-ct">        if not not self._preserves_test_coverage(original_tests, reviewed_tests):</span></div><div class="diff-line dl-ctx"><span class="diff-ln">44</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;LLM удалила слишком много тестов при пост-обработке, используется оригинал&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">45</span><span class="diff-sign"> </span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#44</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 48</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 48: &#x27;if was_modified:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -46,5 +46,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">46</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_code = self.import_cleaner.clean_unused_imports(reviewed_code)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">47</span><span class="diff-sign"> </span><span class="diff-ct">        was_modified = test_code.strip() != reviewed_code.strip()</span></div><div class="diff-line dl-removed"><span class="diff-ln">48</span><span class="diff-sign">−</span><span class="diff-ct">        if was_modified:</span></div><div class="diff-line dl-added"><span class="diff-ln">48</span><span class="diff-sign">+</span><span class="diff-ct">        if not was_modified:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">49</span><span class="diff-sign"> </span><span class="diff-ct">            original_lines = len(test_code.strip().splitlines())</span></div><div class="diff-line dl-ctx"><span class="diff-ln">50</span><span class="diff-sign"> </span><span class="diff-ct">            reviewed_lines = len(reviewed_code.strip().splitlines())</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#45</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 56</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 56: &#x27;return PostProcessResult(reviewed_code=reviewed_code, was_modified=was_modified)&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -54,5 +54,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">54</span><span class="diff-sign"> </span><span class="diff-ct">        else:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">55</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.info(&#x27;Пост-обработка: LLM не внесла изменений, код чистый&#x27;)</span></div><div class="diff-line dl-removed"><span class="diff-ln">56</span><span class="diff-sign">−</span><span class="diff-ct">        return PostProcessResult(reviewed_code=reviewed_code, was_modified=was_modified)</span></div><div class="diff-line dl-added"><span class="diff-ln">56</span><span class="diff-sign">+</span><span class="diff-ct">        return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">57</span><span class="diff-sign"> </span><span class="diff-ct"></span></div><div class="diff-line dl-ctx"><span class="diff-ln">58</span><span class="diff-sign"> </span><span class="diff-ct">    def _unchanged_result(self, test_code: str) -&gt; PostProcessResult:</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#46</span>
+      <span class="mutant-type">⚖️ Comparison Swap</span>
+      <span class="mutant-ln">line 34</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">comparison_swap на строке 34: &#x27;if reviewed_code is None:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -32,5 +32,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">32</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.info(&#x27;Используется оригинальный код без изменений&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">33</span><span class="diff-sign"> </span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div><div class="diff-line dl-removed"><span class="diff-ln">34</span><span class="diff-sign">−</span><span class="diff-ct">        if reviewed_code is None:</span></div><div class="diff-line dl-added"><span class="diff-ln">34</span><span class="diff-sign">+</span><span class="diff-ct">        if reviewed_code is not None:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">35</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;Не удалось извлечь код из ответа LLM, используется оригинал&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">36</span><span class="diff-sign"> </span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#47</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 36</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 36: &#x27;return self._unchanged_result(test_code)&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -34,5 +34,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">34</span><span class="diff-sign"> </span><span class="diff-ct">        if reviewed_code is None:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">35</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;Не удалось извлечь код из ответа LLM, используется оригинал&#x27;)</span></div><div class="diff-line dl-removed"><span class="diff-ln">36</span><span class="diff-sign">−</span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div><div class="diff-line dl-added"><span class="diff-ln">36</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">37</span><span class="diff-sign"> </span><span class="diff-ct">        if not self._is_safe_modification(test_code, reviewed_code):</span></div><div class="diff-line dl-ctx"><span class="diff-ln">38</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;LLM удалила слишком много кода при пост-обработке, используется оригинал&#x27;)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#50</span>
+      <span class="mutant-type">⚖️ Comparison Swap</span>
+      <span class="mutant-ln">line 47</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">comparison_swap на строке 47: &#x27;was_modified = test_code.strip() != reviewed_code.strip()&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -45,5 +45,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">45</span><span class="diff-sign"> </span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">46</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_code = self.import_cleaner.clean_unused_imports(reviewed_code)</span></div><div class="diff-line dl-removed"><span class="diff-ln">47</span><span class="diff-sign">−</span><span class="diff-ct">        was_modified = test_code.strip() != reviewed_code.strip()</span></div><div class="diff-line dl-added"><span class="diff-ln">47</span><span class="diff-sign">+</span><span class="diff-ct">        was_modified = test_code.strip() == reviewed_code.strip()</span></div><div class="diff-line dl-ctx"><span class="diff-ln">48</span><span class="diff-sign"> </span><span class="diff-ct">        if was_modified:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">49</span><span class="diff-sign"> </span><span class="diff-ct">            original_lines = len(test_code.strip().splitlines())</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#51</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 33</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 33: &#x27;return self._unchanged_result(test_code)&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -31,5 +31,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">31</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.error(f&#x27;Ошибка пост-обработки: {e}&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">32</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.info(&#x27;Используется оригинальный код без изменений&#x27;)</span></div><div class="diff-line dl-removed"><span class="diff-ln">33</span><span class="diff-sign">−</span><span class="diff-ct">            return self._unchanged_result(test_code)</span></div><div class="diff-line dl-added"><span class="diff-ln">33</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">34</span><span class="diff-sign"> </span><span class="diff-ct">        if reviewed_code is None:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">35</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;Не удалось извлечь код из ответа LLM, используется оригинал&#x27;)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#52</span>
+      <span class="mutant-type">➕ Arithmetic Swap</span>
+      <span class="mutant-ln">line 42</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">arithmetic_swap на строке 42: &#x27;removed_tests = sorted(original_tests - reviewed_tests)&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -40,5 +40,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">40</span><span class="diff-sign"> </span><span class="diff-ct">        original_tests = self._extract_test_names(test_code)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">41</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_tests = self._extract_test_names(reviewed_code)</span></div><div class="diff-line dl-removed"><span class="diff-ln">42</span><span class="diff-sign">−</span><span class="diff-ct">        removed_tests = sorted(original_tests - reviewed_tests)</span></div><div class="diff-line dl-added"><span class="diff-ln">42</span><span class="diff-sign">+</span><span class="diff-ct">        removed_tests = sorted(original_tests + reviewed_tests)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">43</span><span class="diff-sign"> </span><span class="diff-ct">        if not self._preserves_test_coverage(original_tests, reviewed_tests):</span></div><div class="diff-line dl-ctx"><span class="diff-ln">44</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(&#x27;LLM удалила слишком много тестов при пост-обработке, используется оригинал&#x27;)</span></div></div>
+    </div>
+  </div>
+</details></div>
+</div>
+<div class="mut-panel " id="mpanel-1">
+  <div class="func-header">
+    <span class="func-name">⚡ PostProcessor._unchanged_result</span>
+    <div class="func-badges">
+      <span class="badge badge-green">✅ 2 killed</span>
+      <span class="badge badge-red">❌ 0 survived</span>
+      <span class="badge badge-muted" style="color:#059669">100.0%</span>
+    </div>
+  </div>
+  <div class="mutants">
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#53</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 61</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 61: &#x27;return PostProcessResult(reviewed_code=cleaned, was_modified=was_modified)&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -59,5 +59,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">59</span><span class="diff-sign"> </span><span class="diff-ct">        cleaned = self.import_cleaner.clean_unused_imports(test_code)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">60</span><span class="diff-sign"> </span><span class="diff-ct">        was_modified = cleaned.strip() != test_code.strip()</span></div><div class="diff-line dl-removed"><span class="diff-ln">61</span><span class="diff-sign">−</span><span class="diff-ct">        return PostProcessResult(reviewed_code=cleaned, was_modified=was_modified)</span></div><div class="diff-line dl-added"><span class="diff-ln">61</span><span class="diff-sign">+</span><span class="diff-ct">        return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">62</span><span class="diff-sign"> </span><span class="diff-ct"></span></div><div class="diff-line dl-ctx"><span class="diff-ln">63</span><span class="diff-sign"> </span><span class="diff-ct">    async def _send_review(self, test_code: str, source_code: str) -&gt; str | None:</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#54</span>
+      <span class="mutant-type">⚖️ Comparison Swap</span>
+      <span class="mutant-ln">line 60</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">comparison_swap на строке 60: &#x27;was_modified = cleaned.strip() != test_code.strip()&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -58,5 +58,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">58</span><span class="diff-sign"> </span><span class="diff-ct">    def _unchanged_result(self, test_code: str) -&gt; PostProcessResult:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">59</span><span class="diff-sign"> </span><span class="diff-ct">        cleaned = self.import_cleaner.clean_unused_imports(test_code)</span></div><div class="diff-line dl-removed"><span class="diff-ln">60</span><span class="diff-sign">−</span><span class="diff-ct">        was_modified = cleaned.strip() != test_code.strip()</span></div><div class="diff-line dl-added"><span class="diff-ln">60</span><span class="diff-sign">+</span><span class="diff-ct">        was_modified = cleaned.strip() == test_code.strip()</span></div><div class="diff-line dl-ctx"><span class="diff-ln">61</span><span class="diff-sign"> </span><span class="diff-ct">        return PostProcessResult(reviewed_code=cleaned, was_modified=was_modified)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">62</span><span class="diff-sign"> </span><span class="diff-ct"></span></div></div>
+    </div>
+  </div>
+</details></div>
+</div>
+<div class="mut-panel " id="mpanel-2">
+  <div class="func-header">
+    <span class="func-name">⚡ PostProcessor._send_review</span>
+    <div class="func-badges">
+      <span class="badge badge-green">✅ 2 killed</span>
+      <span class="badge badge-red">❌ 4 survived</span>
+      <span class="badge badge-muted" style="color:#dc2626">33.3%</span>
+    </div>
+  </div>
+  <div class="mutants">
+<details class="mutant" style="border-color:#ef4444;background:#ef444408">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#57</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 69</span>
+    </div>
+    <span class="badge badge-red">SURVIVED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 69: &#x27;return None&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="no-data">No diff</div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#ef4444;background:#ef444408">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#58</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 73</span>
+    </div>
+    <span class="badge badge-red">SURVIVED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 73: &#x27;return None&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="no-data">No diff</div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#ef4444;background:#ef444408">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#59</span>
+      <span class="mutant-type">⚖️ Comparison Swap</span>
+      <span class="mutant-ln">line 68</span>
+    </div>
+    <span class="badge badge-red">SURVIVED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">comparison_swap на строке 68: &#x27;if not extracted or len(extracted.strip()) &lt; 10:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -66,5 +66,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">66</span><span class="diff-sign"> </span><span class="diff-ct">        try:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">67</span><span class="diff-sign"> </span><span class="diff-ct">            extracted = self.text_parser.extract_code(response.content)</span></div><div class="diff-line dl-removed"><span class="diff-ln">68</span><span class="diff-sign">−</span><span class="diff-ct">            if not extracted or len(extracted.strip()) &lt; 10:</span></div><div class="diff-line dl-added"><span class="diff-ln">68</span><span class="diff-sign">+</span><span class="diff-ct">            if not extracted or len(extracted.strip()) &lt;= 10:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">69</span><span class="diff-sign"> </span><span class="diff-ct">                return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">70</span><span class="diff-sign"> </span><span class="diff-ct">            return extracted</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#ef4444;background:#ef444408">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#60</span>
+      <span class="mutant-type">🔢 Constant Swap</span>
+      <span class="mutant-ln">line 68</span>
+    </div>
+    <span class="badge badge-red">SURVIVED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">constant_swap на строке 68: &#x27;if not extracted or len(extracted.strip()) &lt; 10:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -66,5 +66,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">66</span><span class="diff-sign"> </span><span class="diff-ct">        try:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">67</span><span class="diff-sign"> </span><span class="diff-ct">            extracted = self.text_parser.extract_code(response.content)</span></div><div class="diff-line dl-removed"><span class="diff-ln">68</span><span class="diff-sign">−</span><span class="diff-ct">            if not extracted or len(extracted.strip()) &lt; 10:</span></div><div class="diff-line dl-added"><span class="diff-ln">68</span><span class="diff-sign">+</span><span class="diff-ct">            if not extracted or len(extracted.strip()) &lt; 11:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">69</span><span class="diff-sign"> </span><span class="diff-ct">                return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">70</span><span class="diff-sign"> </span><span class="diff-ct">            return extracted</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#55</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 68</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 68: &#x27;if not extracted or len(extracted.strip()) &lt; 10:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -66,5 +66,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">66</span><span class="diff-sign"> </span><span class="diff-ct">        try:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">67</span><span class="diff-sign"> </span><span class="diff-ct">            extracted = self.text_parser.extract_code(response.content)</span></div><div class="diff-line dl-removed"><span class="diff-ln">68</span><span class="diff-sign">−</span><span class="diff-ct">            if not extracted or len(extracted.strip()) &lt; 10:</span></div><div class="diff-line dl-added"><span class="diff-ln">68</span><span class="diff-sign">+</span><span class="diff-ct">            if not (not extracted or len(extracted.strip()) &lt; 10):</span></div><div class="diff-line dl-ctx"><span class="diff-ln">69</span><span class="diff-sign"> </span><span class="diff-ct">                return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">70</span><span class="diff-sign"> </span><span class="diff-ct">            return extracted</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#56</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 70</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 70: &#x27;return extracted&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -68,5 +68,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">68</span><span class="diff-sign"> </span><span class="diff-ct">            if not extracted or len(extracted.strip()) &lt; 10:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">69</span><span class="diff-sign"> </span><span class="diff-ct">                return None</span></div><div class="diff-line dl-removed"><span class="diff-ln">70</span><span class="diff-sign">−</span><span class="diff-ct">            return extracted</span></div><div class="diff-line dl-added"><span class="diff-ln">70</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">71</span><span class="diff-sign"> </span><span class="diff-ct">        except Exception as e:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">72</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.warning(f&#x27;Не удалось извлечь код из ответа: {e}&#x27;)</span></div></div>
+    </div>
+  </div>
+</details></div>
+</div>
+<div class="mut-panel " id="mpanel-3">
+  <div class="func-header">
+    <span class="func-name">⚡ PostProcessor._is_safe_modification</span>
+    <div class="func-badges">
+      <span class="badge badge-green">✅ 9 killed</span>
+      <span class="badge badge-red">❌ 1 survived</span>
+      <span class="badge badge-muted" style="color:#059669">90.0%</span>
+    </div>
+  </div>
+  <div class="mutants">
+<details class="mutant" style="border-color:#ef4444;background:#ef444408">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#67</span>
+      <span class="mutant-type">⚖️ Comparison Swap</span>
+      <span class="mutant-ln">line 81</span>
+    </div>
+    <span class="badge badge-red">SURVIVED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">comparison_swap на строке 81: &#x27;if removal_ratio &gt; self.MAX_REMOVAL_RATIO:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -79,5 +79,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">79</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">80</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = 1 - reviewed_lines / original_lines</span></div><div class="diff-line dl-removed"><span class="diff-ln">81</span><span class="diff-sign">−</span><span class="diff-ct">        if removal_ratio &gt; self.MAX_REMOVAL_RATIO:</span></div><div class="diff-line dl-added"><span class="diff-ln">81</span><span class="diff-sign">+</span><span class="diff-ct">        if removal_ratio &gt;= self.MAX_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">82</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Коэффициент удаления строк: {removal_ratio:.1%} (порог: {self.MAX_REMOVAL_RATIO:.0%})&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">83</span><span class="diff-sign"> </span><span class="diff-ct">            return False</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#61</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 78</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 78: &#x27;if original_lines == 0:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -76,5 +76,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">76</span><span class="diff-sign"> </span><span class="diff-ct">        original_lines = len([l for l in original.strip().splitlines() if l.strip()])</span></div><div class="diff-line dl-ctx"><span class="diff-ln">77</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_lines = len([l for l in reviewed.strip().splitlines() if l.strip()])</span></div><div class="diff-line dl-removed"><span class="diff-ln">78</span><span class="diff-sign">−</span><span class="diff-ct">        if original_lines == 0:</span></div><div class="diff-line dl-added"><span class="diff-ln">78</span><span class="diff-sign">+</span><span class="diff-ct">        if not original_lines == 0:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">79</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">80</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = 1 - reviewed_lines / original_lines</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#62</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 81</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 81: &#x27;if removal_ratio &gt; self.MAX_REMOVAL_RATIO:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -79,5 +79,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">79</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">80</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = 1 - reviewed_lines / original_lines</span></div><div class="diff-line dl-removed"><span class="diff-ln">81</span><span class="diff-sign">−</span><span class="diff-ct">        if removal_ratio &gt; self.MAX_REMOVAL_RATIO:</span></div><div class="diff-line dl-added"><span class="diff-ln">81</span><span class="diff-sign">+</span><span class="diff-ct">        if not removal_ratio &gt; self.MAX_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">82</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Коэффициент удаления строк: {removal_ratio:.1%} (порог: {self.MAX_REMOVAL_RATIO:.0%})&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">83</span><span class="diff-sign"> </span><span class="diff-ct">            return False</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#63</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 84</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 84: &#x27;return True&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -82,5 +82,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">82</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Коэффициент удаления строк: {removal_ratio:.1%} (порог: {self.MAX_REMOVAL_RATIO:.0%})&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">83</span><span class="diff-sign"> </span><span class="diff-ct">            return False</span></div><div class="diff-line dl-removed"><span class="diff-ln">84</span><span class="diff-sign">−</span><span class="diff-ct">        return True</span></div><div class="diff-line dl-added"><span class="diff-ln">84</span><span class="diff-sign">+</span><span class="diff-ct">        return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">85</span><span class="diff-sign"> </span><span class="diff-ct"></span></div><div class="diff-line dl-ctx"><span class="diff-ln">86</span><span class="diff-sign"> </span><span class="diff-ct">    def _preserves_test_coverage(self, original_tests: set[str], reviewed_tests: set[str]) -&gt; bool:</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#64</span>
+      <span class="mutant-type">⚖️ Comparison Swap</span>
+      <span class="mutant-ln">line 78</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">comparison_swap на строке 78: &#x27;if original_lines == 0:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -76,5 +76,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">76</span><span class="diff-sign"> </span><span class="diff-ct">        original_lines = len([l for l in original.strip().splitlines() if l.strip()])</span></div><div class="diff-line dl-ctx"><span class="diff-ln">77</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_lines = len([l for l in reviewed.strip().splitlines() if l.strip()])</span></div><div class="diff-line dl-removed"><span class="diff-ln">78</span><span class="diff-sign">−</span><span class="diff-ct">        if original_lines == 0:</span></div><div class="diff-line dl-added"><span class="diff-ln">78</span><span class="diff-sign">+</span><span class="diff-ct">        if original_lines != 0:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">79</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">80</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = 1 - reviewed_lines / original_lines</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#65</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 79</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 79: &#x27;return True&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -77,5 +77,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">77</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_lines = len([l for l in reviewed.strip().splitlines() if l.strip()])</span></div><div class="diff-line dl-ctx"><span class="diff-ln">78</span><span class="diff-sign"> </span><span class="diff-ct">        if original_lines == 0:</span></div><div class="diff-line dl-removed"><span class="diff-ln">79</span><span class="diff-sign">−</span><span class="diff-ct">            return True</span></div><div class="diff-line dl-added"><span class="diff-ln">79</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">80</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = 1 - reviewed_lines / original_lines</span></div><div class="diff-line dl-ctx"><span class="diff-ln">81</span><span class="diff-sign"> </span><span class="diff-ct">        if removal_ratio &gt; self.MAX_REMOVAL_RATIO:</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#66</span>
+      <span class="mutant-type">➕ Arithmetic Swap</span>
+      <span class="mutant-ln">line 80</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">arithmetic_swap на строке 80: &#x27;removal_ratio = 1 - reviewed_lines / original_lines&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -78,5 +78,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">78</span><span class="diff-sign"> </span><span class="diff-ct">        if original_lines == 0:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">79</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-removed"><span class="diff-ln">80</span><span class="diff-sign">−</span><span class="diff-ct">        removal_ratio = 1 - reviewed_lines / original_lines</span></div><div class="diff-line dl-added"><span class="diff-ln">80</span><span class="diff-sign">+</span><span class="diff-ct">        removal_ratio = 1 + reviewed_lines / original_lines</span></div><div class="diff-line dl-ctx"><span class="diff-ln">81</span><span class="diff-sign"> </span><span class="diff-ct">        if removal_ratio &gt; self.MAX_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">82</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Коэффициент удаления строк: {removal_ratio:.1%} (порог: {self.MAX_REMOVAL_RATIO:.0%})&#x27;)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#68</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 83</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 83: &#x27;return False&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -81,5 +81,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">81</span><span class="diff-sign"> </span><span class="diff-ct">        if removal_ratio &gt; self.MAX_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">82</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Коэффициент удаления строк: {removal_ratio:.1%} (порог: {self.MAX_REMOVAL_RATIO:.0%})&#x27;)</span></div><div class="diff-line dl-removed"><span class="diff-ln">83</span><span class="diff-sign">−</span><span class="diff-ct">            return False</span></div><div class="diff-line dl-added"><span class="diff-ln">83</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">84</span><span class="diff-sign"> </span><span class="diff-ct">        return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">85</span><span class="diff-sign"> </span><span class="diff-ct"></span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#69</span>
+      <span class="mutant-type">🔢 Constant Swap</span>
+      <span class="mutant-ln">line 78</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">constant_swap на строке 78: &#x27;if original_lines == 0:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -76,5 +76,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">76</span><span class="diff-sign"> </span><span class="diff-ct">        original_lines = len([l for l in original.strip().splitlines() if l.strip()])</span></div><div class="diff-line dl-ctx"><span class="diff-ln">77</span><span class="diff-sign"> </span><span class="diff-ct">        reviewed_lines = len([l for l in reviewed.strip().splitlines() if l.strip()])</span></div><div class="diff-line dl-removed"><span class="diff-ln">78</span><span class="diff-sign">−</span><span class="diff-ct">        if original_lines == 0:</span></div><div class="diff-line dl-added"><span class="diff-ln">78</span><span class="diff-sign">+</span><span class="diff-ct">        if original_lines == 1:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">79</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">80</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = 1 - reviewed_lines / original_lines</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#70</span>
+      <span class="mutant-type">🔢 Constant Swap</span>
+      <span class="mutant-ln">line 80</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">constant_swap на строке 80: &#x27;removal_ratio = 1 - reviewed_lines / original_lines&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -78,5 +78,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">78</span><span class="diff-sign"> </span><span class="diff-ct">        if original_lines == 0:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">79</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-removed"><span class="diff-ln">80</span><span class="diff-sign">−</span><span class="diff-ct">        removal_ratio = 1 - reviewed_lines / original_lines</span></div><div class="diff-line dl-added"><span class="diff-ln">80</span><span class="diff-sign">+</span><span class="diff-ct">        removal_ratio = 0 - reviewed_lines / original_lines</span></div><div class="diff-line dl-ctx"><span class="diff-ln">81</span><span class="diff-sign"> </span><span class="diff-ct">        if removal_ratio &gt; self.MAX_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">82</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Коэффициент удаления строк: {removal_ratio:.1%} (порог: {self.MAX_REMOVAL_RATIO:.0%})&#x27;)</span></div></div>
+    </div>
+  </div>
+</details></div>
+</div>
+<div class="mut-panel " id="mpanel-4">
+  <div class="func-header">
+    <span class="func-name">⚡ PostProcessor._preserves_test_coverage</span>
+    <div class="func-badges">
+      <span class="badge badge-green">✅ 7 killed</span>
+      <span class="badge badge-red">❌ 1 survived</span>
+      <span class="badge badge-muted" style="color:#059669">87.5%</span>
+    </div>
+  </div>
+  <div class="mutants">
+<details class="mutant" style="border-color:#ef4444;background:#ef444408">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#77</span>
+      <span class="mutant-type">⚖️ Comparison Swap</span>
+      <span class="mutant-ln">line 91</span>
+    </div>
+    <span class="badge badge-red">SURVIVED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">comparison_swap на строке 91: &#x27;if removal_ratio &gt; self.MAX_TEST_REMOVAL_RATIO:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -89,5 +89,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">89</span><span class="diff-sign"> </span><span class="diff-ct">        removed = original_tests - reviewed_tests</span></div><div class="diff-line dl-ctx"><span class="diff-ln">90</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = len(removed) / len(original_tests)</span></div><div class="diff-line dl-removed"><span class="diff-ln">91</span><span class="diff-sign">−</span><span class="diff-ct">        if removal_ratio &gt; self.MAX_TEST_REMOVAL_RATIO:</span></div><div class="diff-line dl-added"><span class="diff-ln">91</span><span class="diff-sign">+</span><span class="diff-ct">        if removal_ratio &gt;= self.MAX_TEST_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">92</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Удалено тестов: {len(removed)}/{len(original_tests)} ({removal_ratio:.0%}, порог: {self.MAX_TEST_REMOVAL_RATIO:.0%}). Удалённые: {sorted(removed)}&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">93</span><span class="diff-sign"> </span><span class="diff-ct">            return False</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#71</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 87</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 87: &#x27;if not original_tests:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -85,5 +85,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">85</span><span class="diff-sign"> </span><span class="diff-ct"></span></div><div class="diff-line dl-ctx"><span class="diff-ln">86</span><span class="diff-sign"> </span><span class="diff-ct">    def _preserves_test_coverage(self, original_tests: set[str], reviewed_tests: set[str]) -&gt; bool:</span></div><div class="diff-line dl-removed"><span class="diff-ln">87</span><span class="diff-sign">−</span><span class="diff-ct">        if not original_tests:</span></div><div class="diff-line dl-added"><span class="diff-ln">87</span><span class="diff-sign">+</span><span class="diff-ct">        if not not original_tests:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">88</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">89</span><span class="diff-sign"> </span><span class="diff-ct">        removed = original_tests - reviewed_tests</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#72</span>
+      <span class="mutant-type">🔄 Negate Condition</span>
+      <span class="mutant-ln">line 91</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">negate_condition на строке 91: &#x27;if removal_ratio &gt; self.MAX_TEST_REMOVAL_RATIO:&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -89,5 +89,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">89</span><span class="diff-sign"> </span><span class="diff-ct">        removed = original_tests - reviewed_tests</span></div><div class="diff-line dl-ctx"><span class="diff-ln">90</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = len(removed) / len(original_tests)</span></div><div class="diff-line dl-removed"><span class="diff-ln">91</span><span class="diff-sign">−</span><span class="diff-ct">        if removal_ratio &gt; self.MAX_TEST_REMOVAL_RATIO:</span></div><div class="diff-line dl-added"><span class="diff-ln">91</span><span class="diff-sign">+</span><span class="diff-ct">        if not removal_ratio &gt; self.MAX_TEST_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">92</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Удалено тестов: {len(removed)}/{len(original_tests)} ({removal_ratio:.0%}, порог: {self.MAX_TEST_REMOVAL_RATIO:.0%}). Удалённые: {sorted(removed)}&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">93</span><span class="diff-sign"> </span><span class="diff-ct">            return False</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#73</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 94</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 94: &#x27;return True&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -92,5 +92,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">92</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Удалено тестов: {len(removed)}/{len(original_tests)} ({removal_ratio:.0%}, порог: {self.MAX_TEST_REMOVAL_RATIO:.0%}). Удалённые: {sorted(removed)}&#x27;)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">93</span><span class="diff-sign"> </span><span class="diff-ct">            return False</span></div><div class="diff-line dl-removed"><span class="diff-ln">94</span><span class="diff-sign">−</span><span class="diff-ct">        return True</span></div><div class="diff-line dl-added"><span class="diff-ln">94</span><span class="diff-sign">+</span><span class="diff-ct">        return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">95</span><span class="diff-sign"> </span><span class="diff-ct"></span></div><div class="diff-line dl-ctx"><span class="diff-ln">96</span><span class="diff-sign"> </span><span class="diff-ct">    @staticmethod</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#74</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 88</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 88: &#x27;return True&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -86,5 +86,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">86</span><span class="diff-sign"> </span><span class="diff-ct">    def _preserves_test_coverage(self, original_tests: set[str], reviewed_tests: set[str]) -&gt; bool:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">87</span><span class="diff-sign"> </span><span class="diff-ct">        if not original_tests:</span></div><div class="diff-line dl-removed"><span class="diff-ln">88</span><span class="diff-sign">−</span><span class="diff-ct">            return True</span></div><div class="diff-line dl-added"><span class="diff-ln">88</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">89</span><span class="diff-sign"> </span><span class="diff-ct">        removed = original_tests - reviewed_tests</span></div><div class="diff-line dl-ctx"><span class="diff-ln">90</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = len(removed) / len(original_tests)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#75</span>
+      <span class="mutant-type">➕ Arithmetic Swap</span>
+      <span class="mutant-ln">line 89</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">arithmetic_swap на строке 89: &#x27;removed = original_tests - reviewed_tests&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -87,5 +87,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">87</span><span class="diff-sign"> </span><span class="diff-ct">        if not original_tests:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">88</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-removed"><span class="diff-ln">89</span><span class="diff-sign">−</span><span class="diff-ct">        removed = original_tests - reviewed_tests</span></div><div class="diff-line dl-added"><span class="diff-ln">89</span><span class="diff-sign">+</span><span class="diff-ct">        removed = original_tests + reviewed_tests</span></div><div class="diff-line dl-ctx"><span class="diff-ln">90</span><span class="diff-sign"> </span><span class="diff-ct">        removal_ratio = len(removed) / len(original_tests)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">91</span><span class="diff-sign"> </span><span class="diff-ct">        if removal_ratio &gt; self.MAX_TEST_REMOVAL_RATIO:</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#76</span>
+      <span class="mutant-type">➕ Arithmetic Swap</span>
+      <span class="mutant-ln">line 90</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">arithmetic_swap на строке 90: &#x27;removal_ratio = len(removed) / len(original_tests)&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -88,5 +88,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">88</span><span class="diff-sign"> </span><span class="diff-ct">            return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">89</span><span class="diff-sign"> </span><span class="diff-ct">        removed = original_tests - reviewed_tests</span></div><div class="diff-line dl-removed"><span class="diff-ln">90</span><span class="diff-sign">−</span><span class="diff-ct">        removal_ratio = len(removed) / len(original_tests)</span></div><div class="diff-line dl-added"><span class="diff-ln">90</span><span class="diff-sign">+</span><span class="diff-ct">        removal_ratio = len(removed) * len(original_tests)</span></div><div class="diff-line dl-ctx"><span class="diff-ln">91</span><span class="diff-sign"> </span><span class="diff-ct">        if removal_ratio &gt; self.MAX_TEST_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">92</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Удалено тестов: {len(removed)}/{len(original_tests)} ({removal_ratio:.0%}, порог: {self.MAX_TEST_REMOVAL_RATIO:.0%}). Удалённые: {sorted(removed)}&#x27;)</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#78</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 93</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 93: &#x27;return False&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -91,5 +91,5 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">91</span><span class="diff-sign"> </span><span class="diff-ct">        if removal_ratio &gt; self.MAX_TEST_REMOVAL_RATIO:</span></div><div class="diff-line dl-ctx"><span class="diff-ln">92</span><span class="diff-sign"> </span><span class="diff-ct">            self.logger.debug(f&#x27;Удалено тестов: {len(removed)}/{len(original_tests)} ({removal_ratio:.0%}, порог: {self.MAX_TEST_REMOVAL_RATIO:.0%}). Удалённые: {sorted(removed)}&#x27;)</span></div><div class="diff-line dl-removed"><span class="diff-ln">93</span><span class="diff-sign">−</span><span class="diff-ct">            return False</span></div><div class="diff-line dl-added"><span class="diff-ln">93</span><span class="diff-sign">+</span><span class="diff-ct">            return None</span></div><div class="diff-line dl-ctx"><span class="diff-ln">94</span><span class="diff-sign"> </span><span class="diff-ct">        return True</span></div><div class="diff-line dl-ctx"><span class="diff-ln">95</span><span class="diff-sign"> </span><span class="diff-ct"></span></div></div>
+    </div>
+  </div>
+</details></div>
+</div>
+<div class="mut-panel " id="mpanel-5">
+  <div class="func-header">
+    <span class="func-name">⚡ PostProcessor._extract_test_names</span>
+    <div class="func-badges">
+      <span class="badge badge-green">✅ 2 killed</span>
+      <span class="badge badge-red">❌ 0 survived</span>
+      <span class="badge badge-muted" style="color:#059669">100.0%</span>
+    </div>
+  </div>
+  <div class="mutants">
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#79</span>
+      <span class="mutant-type">↩️ Return None</span>
+      <span class="mutant-ln">line 101</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">return_none на строке 101: &#x27;return names&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -99,3 +99,3 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">99</span><span class="diff-sign"> </span><span class="diff-ct">        for match in re.finditer(&#x27;(?:async\\s+)?def\\s+(test_\\w+)\\s*\\(&#x27;, code):</span></div><div class="diff-line dl-ctx"><span class="diff-ln">100</span><span class="diff-sign"> </span><span class="diff-ct">            names.add(match.group(1))</span></div><div class="diff-line dl-removed"><span class="diff-ln">101</span><span class="diff-sign">−</span><span class="diff-ct">        return names</span></div><div class="diff-line dl-added"><span class="diff-ln">101</span><span class="diff-sign">+</span><span class="diff-ct">        return None</span></div></div>
+    </div>
+  </div>
+</details>
+<details class="mutant" style="border-color:#10b981;background:#05966908">
+  <summary>
+    <div class="mutant-left">
+      <span class="mutant-id">#80</span>
+      <span class="mutant-type">🔢 Constant Swap</span>
+      <span class="mutant-ln">line 100</span>
+    </div>
+    <span class="badge badge-green">KILLED</span>
+  </summary>
+  <div class="mutant-body">
+    <div class="mutant-desc">constant_swap на строке 100: &#x27;names.add(match.group(1))&#x27;</div>
+    <div class="diff">
+      <div class="diff-head">
+        <span>Code Change</span>
+        <span class="diff-legend">
+          <span class="r">− original</span>
+          <span class="g">+ mutant</span>
+        </span>
+      </div>
+      <div class="diff-code"><div class="diff-line dl-hunk"><span class="diff-ln"></span><span class="diff-sign"> </span><span class="diff-ct">@@ -98,4 +98,4 @@</span></div><div class="diff-line dl-ctx"><span class="diff-ln">98</span><span class="diff-sign"> </span><span class="diff-ct">        names = set()</span></div><div class="diff-line dl-ctx"><span class="diff-ln">99</span><span class="diff-sign"> </span><span class="diff-ct">        for match in re.finditer(&#x27;(?:async\\s+)?def\\s+(test_\\w+)\\s*\\(&#x27;, code):</span></div><div class="diff-line dl-removed"><span class="diff-ln">100</span><span class="diff-sign">−</span><span class="diff-ct">            names.add(match.group(1))</span></div><div class="diff-line dl-added"><span class="diff-ln">100</span><span class="diff-sign">+</span><span class="diff-ct">            names.add(match.group(0))</span></div><div class="diff-line dl-ctx"><span class="diff-ln">101</span><span class="diff-sign"> </span><span class="diff-ct">        return names</span></div></div>
+    </div>
+  </div>
+</details></div>
+</div>
+</div>
+</div></div>
+<div id="panel-reliability" class="tab-panel">
+<div class="card">
+  <div class="card-title"><span class="icon">⚡</span><h2>Reliability</h2></div>
+  <div class="metrics"><div class="metric neutral"><div class="val">3</div><div class="lbl">Total Runs</div></div><div class="metric green"><div class="val">3</div><div class="lbl">Passed</div></div><div class="metric green"><div class="val">0</div><div class="lbl">Failed</div></div><div class="metric green"><div class="val">0</div><div class="lbl">Flaky</div></div></div>
+  <div class="runs-grid"><span class="run-chip run-pass">Run passed ✅</span><span class="run-chip run-pass">Run passed ✅</span><span class="run-chip run-pass">Run passed ✅</span></div>
+  
+</div></div>
+</div>
+
+<script>
+// Main tab switching
+function switchMainTab(tabId) {
+    document.querySelectorAll('.main-tab').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+    document.getElementById('panel-' + tabId).classList.add('active');
+    document.getElementById('tab-' + tabId).classList.add('active');
+}
+
+// Mutation per‑function tabs (original)
+function mutTab(btn, panelId) {
+    const root = btn.closest('.mut-root');
+    root.querySelectorAll('.mut-tab').forEach(t => t.classList.remove('active'));
+    root.querySelectorAll('.mut-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(panelId).classList.add('active');
+}
+
+function filterMutationFunctions() {
+    const input = document.getElementById('mutSearchInput');
+    const filter = input.value.toLowerCase().trim();
+    const root = document.querySelector('.mut-root');
+    if (!root) return;
+    const tabs = root.querySelectorAll('.mut-tab');
+    const panels = root.querySelectorAll('.mut-panel');
+    let firstVisible = null;
+    tabs.forEach((tab, idx) => {
+        const text = tab.textContent.toLowerCase();
+        const matches = filter === '' || text.includes(filter);
+        if (matches) {
+            tab.classList.remove('hidden');
+            if (firstVisible === null) firstVisible = idx;
+        } else {
+            tab.classList.add('hidden');
+        }
+    });
+    panels.forEach((panel, idx) => {
+        const tab = tabs[idx];
+        if (tab && !tab.classList.contains('hidden')) {
+            panel.classList.remove('hidden');
+        } else {
+            panel.classList.add('hidden');
+        }
+    });
+    const activeTab = root.querySelector('.mut-tab.active');
+    if (activeTab && activeTab.classList.contains('hidden')) {
+        if (firstVisible !== null) {
+            const firstTab = tabs[firstVisible];
+            const match = firstTab.getAttribute('onclick').match(/'(mpanel-\d+)'/);
+            if (match) mutTab(firstTab, match[1]);
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
