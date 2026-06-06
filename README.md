@@ -34,7 +34,67 @@ python main.py -h
 
 Обычная генерация занимает время от 10 до 30 минут при небольшом количестве функции. Время можно уменьшить, если уменьшить параметры `max-fix-attempts` и `max-generate-retries`
 
+> ⚠️ **Пример:**
+> В config/config.yaml находится пример конфига
+> https://github.com/Egor213/Test-gen - пример использования инструмента
 
+## Пример конфига
+```yaml
+name: Auto-generate tests
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  workflow_dispatch:
+    inputs:
+      target_dir:
+        description: 'Папка для генерации'
+        required: false
+      target_file:
+        description: 'Файл'
+        required: false
+      target_function:
+        description: 'Функция'
+        required: false
+      target_class:
+        description: 'Класс'
+        required: false
+
+jobs:
+  generate-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate tests
+        uses: Egor213/llm-test-generator-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          ai_api_key: ${{ secrets.OPENAI_API_KEY_2 }}
+          project_root: 'Task_project'
+          target_dir: ${{ inputs.target_dir }}
+          target_file: ${{ inputs.target_file }}
+          target_function: ${{ inputs.target_function }}
+          target_class: ${{ inputs.target_class }}
+          model: "inclusionai/ling-2.6-1t:free"
+          temperature: 0.5
+          max_generate_retries: 3
+          max_fix_attempts: 4
+          target_line_coverage: 60
+          config_path: "../config/config.yaml"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-report
+          path: Task_project/test_analysis_report/
+```
 
 1. **Запустите LM Studio** и **загрузите любую локальную модель** или использовать API KEY моделей.
 
@@ -88,9 +148,4 @@ python main.py -h
    python main.py -h
    ```
 
----
-
-> ⚠️ **Важно:**
-> На данный момент не все функции реализованы.
-> Промпт для генерации тестов пока **статический**.
 

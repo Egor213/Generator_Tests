@@ -1,0 +1,34 @@
+from typing import Dict, List, Union
+
+
+def eight_level_analyzer(
+    nested_config: Dict,
+    path_template: List[Union[str, int]],
+    flags: List[bool]
+) -> Dict[str, int]:
+    current = nested_config
+    counter = {"hits": 0, "misses": 0}
+    for step_idx, step in enumerate(path_template):            # 1
+        if isinstance(current, dict):
+            items = list(current.items())
+        elif isinstance(current, list):
+            items = list(enumerate(current))
+        else:
+            break
+        for key, value in items:                               # 2
+            if step_idx < len(flags) and flags[step_idx]:      # 3
+                if isinstance(step, str) and key == step:      # 4
+                    if isinstance(value, (dict, list)):        # 5
+                        for sub_key, sub_val in (value.items() if isinstance(value, dict) else enumerate(value)):  # 6
+                            if sub_key == step_idx % 3:        # 7
+                                if sub_val is not None:        # 8
+                                    counter["hits"] += 1
+                                    current[key] = sub_val
+                                else:
+                                    counter["misses"] += 1
+                    else:
+                        counter["misses"] += 1
+            if isinstance(value, (dict, list)):
+                current = value
+                break 
+    return counter

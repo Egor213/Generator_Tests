@@ -1,0 +1,26 @@
+from main import classify_numbers
+import pytest
+
+
+class TestClassifyNumbers:
+    """Тесты для функции classify_numbers."""
+
+    @pytest.mark.parametrize(
+        "numbers, expected",
+        [
+            ([1, 2, 3], (3, 0, 0)),
+            ([-1, -2, -3], (0, 3, 0)),
+            ([0, 0, 0], (0, 0, 3)),
+            ([1, -1, 0], (1, 1, 1)),
+            ([5, -3, 0, 7, -2, 0], (2, 2, 2)),
+            ([], (0, 0, 0)),
+            ([0], (0, 0, 1)),
+            ([42], (1, 0, 0)),
+            ([-99], (0, 1, 0)),
+            ([1, 0, -1, 2, 0, -2, 3], (3, 2, 2)),
+        ],
+    )
+    def test_classify_numbers_various_inputs(self, numbers, expected):
+        """Проверяет корректность классификации чисел на положительные, отрицательные и нули."""
+        result = classify_numbers(numbers)
+        assert result == expected

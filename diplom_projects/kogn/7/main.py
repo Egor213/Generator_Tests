@@ -1,0 +1,22 @@
+from typing import List, Dict, Set
+
+def seven_level_transformer(
+    matrix: List[List[int]],
+    thresholds: List[int],
+    exclude_values: Set[int],
+    factor: float,
+    min_factor: float = 0.5
+) -> Dict[str, List[int]]:
+    result: Dict[str, List[int]] = {"rows": [], "cols": []}
+    for i, row in enumerate(matrix):                         # уровень 1
+        row_threshold = thresholds[i % len(thresholds)]
+        for j, val in enumerate(row):                        # уровень 2
+            if val > row_threshold:                          # уровень 3
+                if val not in exclude_values:                # уровень 4
+                    for k in range(j, min(j + 3, len(row))): # уровень 5
+                        if k < len(row):                     # уровень 6
+                            if factor > min_factor:          # уровень 7
+                                result["rows"].append(i)
+                                result["cols"].append(k)
+                                row[k] = int(row[k] * factor)
+    return result

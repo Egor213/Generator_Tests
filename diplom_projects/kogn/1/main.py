@@ -1,0 +1,10 @@
+def classify_numbers(numbers: list[int]) -> tuple[int, int, int]:
+    pos = neg = zero = 0
+    for n in numbers:
+        if n > 0:
+            pos += 1
+        elif n < 0:
+            neg += 1
+        else:
+            zero += 1
+    return pos, neg, zero

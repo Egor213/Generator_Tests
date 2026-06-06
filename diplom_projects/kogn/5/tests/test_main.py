@@ -1,0 +1,131 @@
+from main import process_transactions_heavy
+import pytest
+
+
+class TestProcessTransactionsHeavy:
+    @pytest.fixture
+    def sample_transactions(self):
+        return [
+            {"type": "deposit", "amount": 200.0, "currency": "EUR", "status": "approved", "tags": ["fast", "priority"]},
+            {"type": "withdrawal", "amount": 50.0, "currency": "USD", "status": "pending", "tags": ["slow"]},
+            {"type": "deposit", "amount": 500.0, "currency": "EUR", "status": "rejected", "tags": ["priority"]},
+            {"type": "transfer", "amount": 1000.0, "currency": "EUR", "status": "approved", "tags": []},
+        ]
+
+    @pytest.fixture
+    def sample_thresholds(self):
+        return {"deposit": 100.0, "withdrawal": 200.0, "transfer": 500.0}
+
+    @pytest.fixture
+    def sample_allowed_statuses(self):
+        return ["approved", "pending"]
+
+    @pytest.fixture
+    def sample_tag_weights(self):
+        return {"fast": 1.5, "priority": 2.0, "slow": 0.5}
+
+    def test_возвращает_пустой_словарь_при_пустом_списке_транзакций(self):
+        """Должен вернуть пустой словарь, если список транзакций пуст."""
+        result = process_transactions_heavy([], {}, [])
+        assert result == {}
+
+    def test_игнорирует_транзакции_ниже_порога(self):
+        """Должен игнорировать транзакции, сумма которых не превышает порог."""
+        transactions = [{"type": "deposit", "amount": 50.0, "currency": "EUR", "status": "approved", "tags": ["fast"]}]
+        thresholds = {"deposit": 100.0}
+        result = process_transactions_heavy(transactions, thresholds, ["approved"])
+        assert result == {}
+
+    def test_учитывает_транзакции_выше_порога_в_EUR_с_разрешенным_статусом(self):
+        """Должен учитывать транзакции выше порога в EUR с разрешенным статусом и тегами."""
+        transactions = [
+            {"type": "deposit", "amount": 200.0, "currency": "EUR", "status": "approved", "tags": ["fast", "priority"]}
+        ]
+        thresholds = {"deposit": 100.0}
+        tag_weights = {"fast": 1.5, "priority": 2.0}
+        result = process_transactions_heavy(transactions, thresholds, ["approved"], tag_weights)
+        # amount = 200 * 1.1 = 220
+        # fast: 220 * 1.5 = 330
+        # priority: 220 * 2.0 = 440
+        assert result == pytest.approx({"fast": 330.0, "priority": 440.0})
+
+    def test_игнорирует_транзакции_выше_порога_в_EUR_с_недопустимым_статусом(self):
+        """Должен игнорировать транзакции выше порога в EUR с недопустимым статусом."""
+        transactions = [
+            {"type": "deposit", "amount": 200.0, "currency": "EUR", "status": "rejected", "tags": ["fast"]}
+        ]
+        thresholds = {"deposit": 100.0}
+        result = process_transactions_heavy(transactions, thresholds, ["approved"], {"fast": 1.5})
+        assert result == {}
+
+    def test_игнорирует_транзакции_выше_порога_не_в_EUR(self):
+        """Должен игнорировать транзакции выше порога, но не в EUR."""
+        transactions = [
+            {"type": "deposit", "amount": 200.0, "currency": "USD", "status": "approved", "tags": ["fast"]}
+        ]
+        thresholds = {"deposit": 100.0}
+        result = process_transactions_heavy(transactions, thresholds, ["approved"], {"fast": 1.5})
+        assert result == {}
+
+    def test_использует_значение_по_умолчанию_для_неизвестного_типа(self):
+        """Должен использовать порог 0.0 для неизвестного типа транзакции."""
+        transactions = [
+            {"type": "unknown", "amount": 50.0, "currency": "EUR", "status": "approved", "tags": ["fast"]}
+        ]
+        thresholds = {}
+        result = process_transactions_heavy(transactions, thresholds, ["approved"], {"fast": 1.5})
+        # amount = 50 * 1.1 = 55
+        # fast: 55 * 1.5 = 82.5
+        assert result == pytest.approx({"fast": 82.5})
+
+    def test_использует_значение_по_умолчанию_для_отсутствующих_тегов(self):
+        """Должен использовать пустой список, если теги отсутствуют."""
+        transactions = [
+            {"type": "deposit", "amount": 200.0, "currency": "EUR", "status": "approved"}
+        ]
+        thresholds = {"deposit": 100.0}
+        result = process_transactions_heavy(transactions, thresholds, ["approved"])
+        assert result == {}
+
+    def test_накапливает_вклады_одного_тега_из_нескольких_транзакций(self):
+        """Должен накапливать вклады одного тега из нескольких транзакций."""
+        transactions = [
+            {"type": "deposit", "amount": 200.0, "currency": "EUR", "status": "approved", "tags": ["fast"]},
+            {"type": "deposit", "amount": 300.0, "currency": "EUR", "status": "approved", "tags": ["fast"]},
+        ]
+        thresholds = {"deposit": 100.0}
+        tag_weights = {"fast": 1.5}
+        result = process_transactions_heavy(transactions, thresholds, ["approved"], tag_weights)
+        # tx1: 200 * 1.1 = 220 -> 220 * 1.5 = 330
+        # tx2: 300 * 1.1 = 330 -> 330 * 1.5 = 495
+        assert result == pytest.approx({"fast": 825.0})
+
+    def test_не_использует_веса_тегов_если_они_не_указаны(self):
+        """Должен использовать множитель 1.0, если веса тегов не указаны."""
+        transactions = [
+            {"type": "deposit", "amount": 200.0, "currency": "EUR", "status": "approved", "tags": ["fast"]}
+        ]
+        thresholds = {"deposit": 100.0}
+        result = process_transactions_heavy(transactions, thresholds, ["approved"])
+        # amount = 200 * 1.1 = 220
+        # fast: 220 * 1.0 = 220
+        assert result == pytest.approx({"fast": 220.0})
+
+    def test_корректно_обрабатывает_несколько_транзакций_разных_типов(self, sample_transactions, sample_thresholds, sample_allowed_statuses, sample_tag_weights):
+        """Должен корректно обрабатывать несколько транзакций разных типов."""
+        result = process_transactions_heavy(
+            sample_transactions,
+            sample_thresholds,
+            sample_allowed_statuses,
+            sample_tag_weights,
+        )
+        # deposit 200 EUR approved -> 220 -> fast:330, priority:440
+        # withdrawal 50 USD -> ниже порога 200 -> игнор
+        # deposit 500 EUR rejected -> статус не разрешен -> игнор
+        # transfer 1000 EUR approved -> 1100 -> тегов нет -> игнор
+        assert result == pytest.approx({"fast": 330.0, "priority": 440.0})
+
+    def test_возвращает_пустой_словарь_если_нет_соответствующих_условиям_транзакций(self, sample_transactions, sample_thresholds):
+        """Должен вернуть пустой словарь, если нет транзакций, соответствующих условиям."""
+        result = process_transactions_heavy(sample_transactions, sample_thresholds, ["cancelled"])
+        assert result == {}

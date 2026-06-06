@@ -1,0 +1,128 @@
+> from typing import Dict, List, Set
+  
+> from main import deep_nested_six
+> import pytest
+  
+  
+> class TestDeepNestedSix:
+>     """Тесты для функции deep_nested_six."""
+  
+>     @pytest.mark.parametrize(
+>         "matrix,thresholds,exclude_values,factor,expected",
+>         [
+>             (
+>                 [[10, 20], [30, 40]],
+>                 [15],
+>                 set(),
+>                 1.0,
+>                 {"rows": [0, 1, 1, 1], "cols": [1, 0, 1, 1]},
+>             ),
+>             (
+>                 [[1, 2], [3, 4]],
+>                 [10],
+>                 set(),
+>                 1.0,
+>                 {"rows": [], "cols": []},
+>             ),
+>             (
+>                 [[5, 6, 7], [8, 9, 10]],
+>                 [5, 8],
+>                 {9},
+>                 0.5,
+>                 {"rows": [0, 0, 1], "cols": [1, 2, 2]},
+>             ),
+>             (
+>                 [[100]],
+>                 [50],
+>                 {200},
+>                 0.1,
+>                 {"rows": [0], "cols": [0]},
+>             ),
+>             (
+>                 [[1, 2, 3, 4]],
+>                 [2],
+>                 {4},
+>                 3.0,
+>                 {"rows": [0, 0, 0], "cols": [2, 3, 3]},
+>             ),
+>         ],
+>     )
+>     def test_deep_nested_six_variants(
+>         self,
+>         matrix: List[List[int]],
+>         thresholds: List[int],
+>         exclude_values: Set[int],
+>         factor: float,
+>         expected: Dict[str, List[int]],
+>     ) -> None:
+>         """Проверяет различные варианты входных данных и ожидаемые результаты."""
+>         result = deep_nested_six(matrix, thresholds, exclude_values, factor)
+>         assert result == expected
+  
+>     def test_deep_nested_six_empty_matrix(self) -> None:
+>         """Проверяет поведение при пустой матрице."""
+>         result = deep_nested_six([], [1], set(), 1.0)
+>         assert result == {"rows": [], "cols": []}
+  
+>     def test_deep_nested_six_empty_rows(self) -> None:
+>         """Проверяет поведение при матрице с пустыми строками."""
+>         result = deep_nested_six([[], []], [5], set(), 2.0)
+>         assert result == {"rows": [], "cols": []}
+  
+>     def test_deep_nested_six_modifies_matrix_in_place(self) -> None:
+>         """Проверяет, что функция изменяет исходную матрицу на месте."""
+>         matrix = [[10, 20]]
+>         thresholds = [5]
+>         exclude_values = set()
+>         factor = 0.5
+  
+>         deep_nested_six(matrix, thresholds, exclude_values, factor)
+  
+>         assert matrix == [[5, 5]]
+  
+>     def test_deep_nested_six_exclude_values_respected(self) -> None:
+>         """Проверяет, что исключённые значения не добавляются в результат."""
+>         matrix = [[10, 20, 30]]
+>         thresholds = [5]
+>         exclude_values = {20}
+>         factor = 1.0
+  
+>         result = deep_nested_six(matrix, thresholds, exclude_values, factor)
+  
+>         assert result == {"rows": [0, 0, 0], "cols": [0, 1, 2]}
+  
+>     def test_deep_nested_six_factor_applied_correctly(self) -> None:
+>         """Проверяет корректное применение множителя к элементам матрицы."""
+>         matrix = [[10, 20]]
+>         thresholds = [5]
+>         exclude_values = set()
+>         factor = 0.1
+  
+>         deep_nested_six(matrix, thresholds, exclude_values, factor)
+  
+>         assert matrix == [[1, 2]]
+  
+>     def test_deep_nested_six_thresholds_cycling(self) -> None:
+>         """Проверяет циклическое использование порогов для строк матрицы."""
+>         matrix = [[10, 20], [30, 40], [50, 60]]
+>         thresholds = [15, 25]
+>         exclude_values = set()
+>         factor = 1.0
+  
+>         result = deep_nested_six(matrix, thresholds, exclude_values, factor)
+  
+>         assert result == {
+>             "rows": [0, 1, 1, 1, 2, 2, 2],
+>             "cols": [1, 0, 1, 1, 0, 1, 1],
+>         }
+  
+>     def test_deep_nested_six_single_row_multiple_cols(self) -> None:
+>         """Проверяет матрицу с одной строкой и несколькими столбцами."""
+>         matrix = [[1, 10, 2, 20, 3]]
+>         thresholds = [5]
+>         exclude_values = {10}
+>         factor = 1.0
+  
+>         result = deep_nested_six(matrix, thresholds, exclude_values, factor)
+  
+>         assert result == {"rows": [0, 0], "cols": [3, 4]}

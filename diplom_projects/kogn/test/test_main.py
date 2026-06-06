@@ -1,0 +1,5 @@
+import pytest
+from main import calculate_discount
+
+def test_price_zero():
+    assert calculate_discount(1, "regular") == 1.0      # покрывает ветвь A
